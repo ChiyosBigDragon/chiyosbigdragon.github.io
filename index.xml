@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Wer isst meinen Apfel?</title>
+    <title>Der Pinguin werft das Fenster mit dem Apfel ein.</title>
     <link>https://chiyosbigdragon.github.io/</link>
-    <description>Recent content on Wer isst meinen Apfel?</description>
+    <description>Recent content on Der Pinguin werft das Fenster mit dem Apfel ein.</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
     <lastBuildDate>Fri, 15 Mar 2019 13:27:28 +0900</lastBuildDate>
@@ -17,16 +17,27 @@
       <pubDate>Fri, 15 Mar 2019 13:27:28 +0900</pubDate>
       
       <guid>https://chiyosbigdragon.github.io/post/second/</guid>
-      <description>Guten Morgen</description>
+      <description>Guten Morgen
+$$x + y = z$$ についておはなしします</description>
     </item>
     
     <item>
       <title>First</title>
-      <link>https://chiyosbigdragon.github.io/post/first/</link>
+      <link>https://chiyosbigdragon.github.io/post/2019/03/first/</link>
       <pubDate>Fri, 15 Mar 2019 13:17:29 +0900</pubDate>
       
-      <guid>https://chiyosbigdragon.github.io/post/first/</guid>
-      <description>Hello World!</description>
+      <guid>https://chiyosbigdragon.github.io/post/2019/03/first/</guid>
+      <description>&lt;p&gt;Hello World!
+nanda&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Node.jsで作る番組情報通知Bot</title>
+      <link>https://chiyosbigdragon.github.io/post/2019/03/13/main/</link>
+      <pubDate>Wed, 13 Mar 2019 18:00:00 +0900</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/post/2019/03/13/main/</guid>
+      <description>&lt;p&gt;&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

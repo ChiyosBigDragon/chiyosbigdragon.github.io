@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Slack on Der Pinguin werft das Fenster mit dem Apfel ein.</title>
+    <link>https://chiyosbigdragon.github.io/tags/slack/</link>
+    <description>Recent content in Slack on Der Pinguin werft das Fenster mit dem Apfel ein.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2019. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 13 Mar 2019 18:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://chiyosbigdragon.github.io/tags/slack/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Node.jsで作る番組情報通知Bot</title>
+      <link>https://chiyosbigdragon.github.io/post/2019/03/13/main/</link>
+      <pubDate>Wed, 13 Mar 2019 18:00:00 +0900</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/post/2019/03/13/main/</guid>
+      <description>&lt;p&gt;&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Wer isst meinen Apfel?</title>
+    <title>Tags on Der Pinguin werft das Fenster mit dem Apfel ein.</title>
     <link>https://chiyosbigdragon.github.io/tags/</link>
-    <description>Recent content in Tags on Wer isst meinen Apfel?</description>
+    <description>Recent content in Tags on Der Pinguin werft das Fenster mit dem Apfel ein.</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
+    <lastBuildDate>Wed, 13 Mar 2019 18:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chiyosbigdragon.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Node.js</title>
+      <link>https://chiyosbigdragon.github.io/tags/node.js/</link>
+      <pubDate>Wed, 13 Mar 2019 18:00:00 +0900</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/tags/node.js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Slack</title>
+      <link>https://chiyosbigdragon.github.io/tags/slack/</link>
+      <pubDate>Wed, 13 Mar 2019 18:00:00 +0900</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/tags/slack/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
