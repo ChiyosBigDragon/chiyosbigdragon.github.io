@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.54.0" />
 
-  <title>Tags &middot; Der Pinguin werft das Fenster mit dem Apfel ein.</title>
+  <title>SRM500 Div2Easy SRMCards &middot; Der Pinguin werft das Fenster mit dem Apfel ein.</title>
 
   
   
@@ -39,8 +39,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
-  
-  <link rel="alternate" type="application/rss+xml" title="Der Pinguin werft das Fenster mit dem Apfel ein." href="https://chiyosbigdragon.github.io/tags/index.xml" />
   
 
   
@@ -115,10 +113,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://chiyosbigdragon.github.io/tags/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -226,28 +220,137 @@
 
 
 <div class="header">
-  <h1>Tags</h1>
+  <h1>SRM500 Div2Easy SRMCards</h1>
+  <h2></h2>
 </div>
 <div class="content">
-  <ul>
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>18 Jul 2018, 12:00</time>
+  </div>
+
+  
+
   
   
-    <li>
-      <a href="srm">srm</a>
-      <span>&#40;2&#41;</span>
-    </li>
   
-    <li>
-      <a href="node.js">node.js</a>
-      <span>&#40;1&#41;</span>
-    </li>
+  <div>
+    <i class="fa fa-folder fa-fw"></i>
+    
+      <a class="post-taxonomy-topic" href="https://chiyosbigdragon.github.io/topics/competitiveprogramming">CompetitiveProgramming</a>
+    
+  </div>
   
-    <li>
-      <a href="slack">slack</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-  </ul>
+
+  
+  
+  
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>
+    
+  </div>
+  
+  
+
+</div>
+
+  <p><p></p>
+
+<p></p></p>
+
+<h2 id="url">URL</h2>
+
+<p><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=11341">http://community.topcoder.com/stat?c=problem_statement&amp;pm=11341</a></p>
+
+<h2 id="概略">概略</h2>
+
+<p>数列が空になるまで以下の操作を繰り返す．</p>
+
+<ul>
+<li>数列から1つ数字を選びこれを消す．</li>
+<li>上で選んだ数字を $n$とするとき，数列に $n\pm 1$ が存在すればこれ(ら)も同時に消す．</li>
+</ul>
+
+<p>取り得る操作回数のうち最大を求める．</p>
+
+<h2 id="方針">方針</h2>
+
+<p>ソートして小さい順に選択すると最大．証明は苦しいが，3個同時に消せる場面では必ず2-1と2回に分けて消せることに注意する．</p>
+
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+class SRMCards {
+public:
+   int maxTurns( vector &lt;int&gt; cards ) {
+       sort(cards.begin(),cards.end());
+
+       int ret=0;
+       while(cards.size()){
+           ret++;
+           int i=cards[0]; cards.erase(cards.begin());
+           if(cards.size()&amp;&amp;cards[0]==i+1){
+               cards.erase(cards.begin());
+           }
+       }
+       return ret;
+   }
+};
+</code></pre>
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://chiyosbigdragon.github.io/post/2018/07/18/20180718-2/">SRM500 Div1Easy MafiaGame</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://chiyosbigdragon.github.io/post/2018/07/18/20180718-2/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'Your Disqus shortname';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
 </div>
 
 
@@ -272,3 +375,4 @@
 
 
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,600&amp;subset=japanese" rel="stylesheet">
+

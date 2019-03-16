@@ -13,12 +13,32 @@
   </url>
   
   <url>
-    <loc>https://chiyosbigdragon.github.io/post/2019/03/13/main/</loc>
+    <loc>https://chiyosbigdragon.github.io/post/2019/03/13/20190313/</loc>
     <lastmod>2019-03-13T18:00:00+09:00</lastmod>
   </url>
   
   <url>
+    <loc>https://chiyosbigdragon.github.io/post/2018/07/18/20180718-2/</loc>
+    <lastmod>2018-07-18T12:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chiyosbigdragon.github.io/post/2018/07/18/20180718-1/</loc>
+    <lastmod>2018-07-18T12:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chiyosbigdragon.github.io/about/</loc>
+  </url>
+  
+  <url>
     <loc>https://chiyosbigdragon.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chiyosbigdragon.github.io/topics/competitiveprogramming/</loc>
+    <lastmod>2018-07-18T12:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -53,6 +73,12 @@
   </url>
   
   <url>
+    <loc>https://chiyosbigdragon.github.io/tags/srm/</loc>
+    <lastmod>2018-07-18T12:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://chiyosbigdragon.github.io/tags/</loc>
     <lastmod>2019-03-13T18:00:00+09:00</lastmod>
     <priority>0</priority>
@@ -60,7 +86,7 @@
   
   <url>
     <loc>https://chiyosbigdragon.github.io/topics/</loc>
-    <lastmod>2019-03-13T18:00:00+09:00</lastmod>
+    <lastmod>2018-07-18T12:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
