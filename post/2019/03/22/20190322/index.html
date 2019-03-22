@@ -309,11 +309,11 @@ public:
             return true;
         }
         int root(int x){
-        	if(par[x]==x) return x; // xはroot
-        	return (par[x]=root(par[x])); // xの親のroot
+            if(par[x]==x) return x; // xはroot
+            return (par[x]=root(par[x])); // xの親のroot
         }
         bool same(int x,int y){
-        	return (root(x)==root(y));
+            return (root(x)==root(y));
         }
         int size(int x){
             return sz[root(x)];
