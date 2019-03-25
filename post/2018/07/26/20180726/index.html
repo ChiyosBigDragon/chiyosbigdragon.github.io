@@ -52,6 +52,9 @@
 
   <link rel="shortcut icon" href="https://chiyosbigdragon.github.io/img/favicon.ico" type="image/x-icon" />
 
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
   
     
         <link rel="stylesheet" href="https://chiyosbigdragon.github.io/css/my.css">
@@ -59,7 +62,7 @@
   
   
     
-        <script src="https://chiyosbigdragon.github.io/js/my.js"></script>
+        <script src="https://chiyosbigdragon.github.io/js/srcReader.js"></script>
     
   
 
@@ -287,46 +290,7 @@
 
 <p><a href="http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0557">1年生 (A First Grader) &mdash; Aizu Online Judge</a> を解いた経験からDP解を思いつくも，うまくいかない．しぶしぶ考察すると，「足してから掛けたい」「正負は融通が利くので絶対値を大きくしたい」など思いついたため，全部入れ込んだ．場合分けはコードを参照．</p>
 
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-class FoxPlayingGame {
-public:
-   double theMax( int nA, int nB, int paramA, int paramB ) {
-       double scoreA=paramA/1000.0,scoreB=paramB/1000.0;
-       double ret1=scoreA*nA;
-       double ret2=ret1; for(int i=0;i&lt;nB;i++) ret2*=scoreB;
-       // Bの絶対値1未満
-       if(abs(scoreB)&lt;1){
-           // Aが非負→A*nA
-           if(scoreA&gt;=0) return ret1;
-           // Aが負
-           else{
-               // Bが非負→A*nA*(B^nB)
-               if(scoreB&gt;=0) return ret2;
-               // Bが負→A*nA*B
-               return ret1*scoreB;
-           }
-       }
-       // Bの絶対値1以上
-       else{
-           // Aが非負→A*nA*(B^nB)偶数回
-           if(scoreA&gt;=0){
-               if(nB%2==0) return ret2;
-               else return ret2/scoreB;
-           }
-           // Aが負
-           else{
-               // Bが非負→A*nA
-               if(scoreB&gt;=0) return ret1;
-               // Bが負→A*nA*(B^nB)奇数回
-               if(nB%2==1) return ret2;
-               else return ret2/scoreB;
-           }
-       }
-    }
-};
-</code></pre>
+<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/SRM/master/500-519/501Div1E_FoxPlayingGame.cpp"></code></pre>
 
 <p>追記：他人の解法が鮮やかすぎて直視できない</p>
 
@@ -417,4 +381,7 @@ public:
 
         gtag('config', 'UA-126147693-2');
     </script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 

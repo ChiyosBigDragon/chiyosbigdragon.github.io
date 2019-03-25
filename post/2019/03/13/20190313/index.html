@@ -52,6 +52,9 @@
 
   <link rel="shortcut icon" href="https://chiyosbigdragon.github.io/img/favicon.ico" type="image/x-icon" />
 
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
   
     
         <link rel="stylesheet" href="https://chiyosbigdragon.github.io/css/my.css">
@@ -59,7 +62,7 @@
   
   
     
-        <script src="https://chiyosbigdragon.github.io/js/my.js"></script>
+        <script src="https://chiyosbigdragon.github.io/js/srcReader.js"></script>
     
   
 
@@ -299,60 +302,13 @@
 
 <h3 id="url-json">url.json</h3>
 
-<pre><code class="language-json">{
-    &quot;list&quot;: [
-        {
-            &quot;id&quot;: &quot;地上波+金属バット&quot;,
-            &quot;url&quot;: &quot;https://tv.so-net.ne.jp/schedulesBySearch.action?condition.genres%5B0%5D.parentId=-1&amp;condition.genres%5B0%5D.childId=-1&amp;stationPlatformId=1&amp;condition.keyword=%E9%87%91%E5%B1%9E%E3%83%90%E3%83%83%E3%83%88&amp;submit=%E6%A4%9C%E7%B4%A2&amp;descriptive=true&quot;
-        },
-        {
-            &quot;id&quot;: &quot;スカパー！+ゲームセンターCX&quot;,
-            &quot;url&quot;: &quot;https://tv.so-net.ne.jp/schedulesBySearch.action?stationPlatformId=5&amp;condition.keyword=%E3%82%B2%E3%83%BC%E3%83%A0%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BCCX&amp;submit=%E6%A4%9C%E7%B4%A2&amp;descriptive=true&quot;
-        }
-    ]
-}
-
-</code></pre>
+<pre><code class="language-json" src="https://raw.githubusercontent.com/ChiyosBigDragon/TV_Scrape/master/url.json"></code></pre>
 
 <h2 id="スクレイピングと整形">スクレイピングと整形</h2>
 
 <h3 id="tv-scrape-js">TV_scrape.js</h3>
 
-<pre><code class="language-js">const httpClient = require('cheerio-httpcli');
-
-async function fetch(url) {
-    const baseUrl = url;
-    const scheduleList = [];
-    const result = await httpClient.fetch(baseUrl);
-    const $ = result.$;
-    $('.utileList', '.contBlockNB').each(function () {
-        const row = $(this);
-        scheduleList.push({
-            title: $('h2 a', row).text().trim(),
-            date: $('.utileListProperty', row).text().trim().replace(/([\s\t\n]|&amp;nbsp;)+/g, ' '),
-            caps: $('.utileListDetail', row).text().trim(),
-        });
-    });
-    return scheduleList;
-}
-
-function stringifyList(scheduleList) {
-    return scheduleList.map(schedule =&gt; stringify(schedule)).join('\n\n');
-}
-
-function stringify(schedule) {
-    let text = schedule.date + '\n';
-    text += '*' + schedule.title + '*' + '\n';
-    text += '&gt;' + schedule.caps + '\n';
-    return text;
-}
-
-module.exports = {
-    fetch,
-    stringifyList,
-    stringify
-}
-</code></pre>
+<pre><code class="language-js" src="https://raw.githubusercontent.com/ChiyosBigDragon/TV_Scrape/master/TV_scrape.js"></code></pre>
 
 <h3 id="メモ">メモ</h3>
 
@@ -368,35 +324,7 @@ module.exports = {
 
 <h3 id="slack-js">slack.js</h3>
 
-<pre><code class="language-js">const request = require('request');
-
-module.exports = {
-    postMessage: async (token, channel, text) =&gt; {
-        const options = {
-            headers: {
-                'Authorization': 'Bearer ' + token
-            },
-            form: {
-                channel: channel,
-                text: text,
-                as_user: true
-            },
-            json: true
-        };
-        return new Promise((resolve,reject) =&gt; {
-            request.post('https://slack.com/api/chat.postMessage', options, (error, res, body) =&gt; {
-                if(error) {
-                    reject(error);
-                }
-                resolve({
-                    response: res,
-                    body: body
-                });
-            });
-        });
-    }
-};
-</code></pre>
+<pre><code class="language-js" src="https://raw.githubusercontent.com/ChiyosBigDragon/TV_Scrape/master/slack.js"></code></pre>
 
 <h3 id="メモ-1">メモ</h3>
 
@@ -409,23 +337,7 @@ module.exports = {
 
 <p>通知といったら瓦版なのでチャンネル名は<code>#瓦版</code>です．<code>fetch</code>の前に<code>await</code>を入れないとエラーを吐くので気を付けます(1敗)．</p>
 
-<pre><code class="language-js">const slack = require('./slack');
-const TVScrape = require('./TV_scrape');
-const fs = require('fs');
-
-function main() {
-    const jsonObject = JSON.parse(fs.readFileSync('./url.json', 'utf8'));
-    jsonObject.list.forEach(async (obj) =&gt; {
-        const scheduleList = await TVScrape.fetch(obj.url);
-        const scheduleListText = TVScrape.stringifyList(scheduleList);
-        const slackMessageText = '*&lt;' + obj.id + ' の番組情報&gt;*\n\n' + scheduleListText;
-        const token = 'API_TOKEN';
-        slack.postMessage(token, '#瓦版', slackMessageText);
-    });
-}
-
-main();
-</code></pre>
+<pre><code class="language-js" src="https://raw.githubusercontent.com/ChiyosBigDragon/TV_Scrape/master/index.js"></code></pre>
 
 <h2 id="実行">実行</h2>
 
@@ -548,4 +460,7 @@ main();
 
         gtag('config', 'UA-126147693-2');
     </script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 

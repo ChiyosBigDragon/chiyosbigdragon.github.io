@@ -52,6 +52,9 @@
 
   <link rel="shortcut icon" href="https://chiyosbigdragon.github.io/img/favicon.ico" type="image/x-icon" />
 
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
   
     
         <link rel="stylesheet" href="https://chiyosbigdragon.github.io/css/my.css">
@@ -59,7 +62,7 @@
   
   
     
-        <script src="https://chiyosbigdragon.github.io/js/my.js"></script>
+        <script src="https://chiyosbigdragon.github.io/js/srcReader.js"></script>
     
   
 
@@ -300,23 +303,7 @@
 
 <p><img src="../images/toast.png" alt="" /></p>
 
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-class ToastXToast {
-public:
-   int bake( vector &lt;int&gt; undertoasted, vector &lt;int&gt; overtoasted ) {
-       sort(undertoasted.begin(),undertoasted.end());
-       sort(overtoasted.begin(),overtoasted.end());
-       int o1=*overtoasted.begin(),u1=*undertoasted.begin();
-       int o2=*(overtoasted.end()-1),u2=*(undertoasted.end()-1);
-
-       if(o1&lt;u1 or o2&lt;u2) return -1;
-       if(u2&lt;o1) return 1;
-       return 2;
-   }
-};
-</code></pre>
+<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/SRM/master/500-519/503Div1E_ToastXToast.cpp"></code></pre>
 
   
 <div class="prev-next-post pure-g">
@@ -405,4 +392,7 @@ public:
 
         gtag('config', 'UA-126147693-2');
     </script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 

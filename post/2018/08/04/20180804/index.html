@@ -52,6 +52,9 @@
 
   <link rel="shortcut icon" href="https://chiyosbigdragon.github.io/img/favicon.ico" type="image/x-icon" />
 
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
   
     
         <link rel="stylesheet" href="https://chiyosbigdragon.github.io/css/my.css">
@@ -59,7 +62,7 @@
   
   
     
-        <script src="https://chiyosbigdragon.github.io/js/my.js"></script>
+        <script src="https://chiyosbigdragon.github.io/js/srcReader.js"></script>
     
   
 
@@ -330,48 +333,7 @@ public:
 
 <p>この二つが $O(N)$ なので省略する必要があったが，ここで異常に悩む．<code>erase</code>の代替を<code>pop_back</code>で考えていたため，<code>reverse</code>と両立できなかったのが原因．結局，<code>reverse</code>は色反転と同じようにフラグ管理で，<code>erase</code>は<code>index</code>を操作することで解決．</p>
 
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-class MathContest {
-public:
-   int countBlack( string ballSequence, int repetitions ) {
-       int n=ballSequence.size();
-       vector&lt;bool&gt; balls;
-       for(int i=0;i&lt;repetitions;i++){
-           for(int j=0;j&lt;n;j++){
-               if(ballSequence[j]=='B') balls.push_back(1);
-               else balls.push_back(0);
-           }
-       }
-       int black=0; bool rev=1,LR=1;
-       auto left=balls.begin(),right=balls.end()-1;
-       while(left!=right){
-           bool color;
-           if(LR){
-               color=*left;
-               left++;
-           }else{
-               color=*right;
-               right--;
-           }
-           if(color^rev){
-               LR=!LR;
-           }else{
-               rev=!rev;
-               black++;
-           }
-           if(left==right){
-               color=*left;
-               if(!(color^rev)){
-                   black++;
-               }
-           }
-       }
-       return black;
-   }
-};
-</code></pre>
+<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/SRM/master/500-519/504Div1E_MathContest.cpp"></code></pre>
 
 <p>計算量を落とす問題がどうも苦手…</p>
 
@@ -462,4 +424,7 @@ public:
 
         gtag('config', 'UA-126147693-2');
     </script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
