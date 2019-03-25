@@ -285,26 +285,7 @@
 
 <p>ソートして小さい順に選択すると最大．証明は苦しいが，3個同時に消せる場面では必ず2-1と2回に分けて消せることに注意する．</p>
 
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-class SRMCards {
-public:
-   int maxTurns( vector &lt;int&gt; cards ) {
-       sort(cards.begin(),cards.end());
-
-       int ret=0;
-       while(cards.size()){
-           ret++;
-           int i=cards[0]; cards.erase(cards.begin());
-           if(cards.size()&amp;&amp;cards[0]==i+1){
-               cards.erase(cards.begin());
-           }
-       }
-       return ret;
-   }
-};
-</code></pre>
+<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/SRM/master/500-519/500Div2E_SRMCards.cpp"></code></pre>
 
   
 <div class="prev-next-post pure-g">
