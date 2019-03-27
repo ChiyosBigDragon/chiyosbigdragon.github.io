@@ -39,6 +39,15 @@
     </item>
     
     <item>
+      <title>Html</title>
+      <link>https://chiyosbigdragon.github.io/tags/html/</link>
+      <pubDate>Wed, 27 Mar 2019 10:00:00 +0900</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/tags/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Independent Set</title>
       <link>https://chiyosbigdragon.github.io/tags/independent-set/</link>
       <pubDate>Fri, 22 Mar 2019 14:00:00 +0900</pubDate>
@@ -48,9 +57,18 @@
     </item>
     
     <item>
+      <title>Jquery</title>
+      <link>https://chiyosbigdragon.github.io/tags/jquery/</link>
+      <pubDate>Wed, 27 Mar 2019 10:00:00 +0900</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/tags/jquery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Math</title>
       <link>https://chiyosbigdragon.github.io/tags/math/</link>
-      <pubDate>Fri, 27 Jul 2018 21:30:00 +0900</pubDate>
+      <pubDate>Fri, 10 Aug 2018 22:00:00 +0900</pubDate>
       
       <guid>https://chiyosbigdragon.github.io/tags/math/</guid>
       <description></description>
@@ -62,6 +80,15 @@
       <pubDate>Wed, 13 Mar 2019 18:00:00 +0900</pubDate>
       
       <guid>https://chiyosbigdragon.github.io/tags/node.js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recursion</title>
+      <link>https://chiyosbigdragon.github.io/tags/recursion/</link>
+      <pubDate>Fri, 10 Aug 2018 22:00:00 +0900</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/tags/recursion/</guid>
       <description></description>
     </item>
     

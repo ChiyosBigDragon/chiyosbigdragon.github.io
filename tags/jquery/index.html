@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.54.0" />
 
-  <title>SRM753 Div1Easy MaxCutFree &middot; Der Pinguin werft das Fenster mit dem Apfel ein.</title>
+  <title>Jquery &middot; Der Pinguin werft das Fenster mit dem Apfel ein.</title>
 
   
   
@@ -39,6 +39,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
+  
+  <link rel="alternate" type="application/rss+xml" title="Der Pinguin werft das Fenster mit dem Apfel ein." href="https://chiyosbigdragon.github.io/tags/jquery/index.xml" />
   
 
   
@@ -116,6 +118,10 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://chiyosbigdragon.github.io/tags/jquery/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+    </li>
     
 
     
@@ -223,16 +229,19 @@
 
 
 <div class="header">
-  <h1>SRM753 Div1Easy MaxCutFree</h1>
-  <h2></h2>
+  <h1>Jquery</h1>
 </div>
-<div class="content">
 
-  <div class="post-meta">
+<div class="content">
+  
+    <article>
+  <header>
+    <h2><a href="https://chiyosbigdragon.github.io/post/2019/03/27/20190327/">ブログ記事中のスニペットを外部参照する</a></h2>
+    <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>22 Mar 2019, 14:00</time>
+    <time>27 Mar 2019, 10:00</time>
   </div>
 
   
@@ -243,7 +252,7 @@
   <div>
     <i class="fa fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="https://chiyosbigdragon.github.io/topics/competitiveprogramming">CompetitiveProgramming</a>
+      <a class="post-taxonomy-topic" href="https://chiyosbigdragon.github.io/topics/programming">Programming</a>
     
   </div>
   
@@ -255,101 +264,21 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/jquery">jQuery</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/graph-theory">Graph Theory</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/independent-set">Independent set</a>
+      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/html">HTML</a>
     
   </div>
   
   
 
 </div>
-
-  <p><p></p>
-
-<p></p></p>
-
-<h2 id="url">URL</h2>
-
-<p><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=15257">https://community.topcoder.com/stat?c=problem_statement&amp;pm=15257</a></p>
-
-<h2 id="概略">概略</h2>
-
-<p>単純無向グラフ $G$ が与えられる．$G$ の<a href="https://ja.wikipedia.org/wiki/%E9%80%A3%E7%B5%90%E3%82%B0%E3%83%A9%E3%83%95#%E8%BE%BA%E9%80%A3%E7%B5%90%E5%BA%A6">橋</a>を含まないような<a href="https://ja.wikipedia.org/wiki/%E3%82%B0%E3%83%A9%E3%83%95%E7%90%86%E8%AB%96#%E9%83%A8%E5%88%86%E3%82%B0%E3%83%A9%E3%83%95%E3%81%A8%E6%8B%A1%E5%A4%A7%E3%82%B0%E3%83%A9%E3%83%95">誘導部分グラフ</a>のうち，頂点数が最大となるものを求める．</p>
-
-<h2 id="方針">方針</h2>
-
-<p>要は，$G$ から橋だけを残したグラフについての<a href="https://ja.wikipedia.org/wiki/%E6%9C%80%E5%A4%A7%E7%8B%AC%E7%AB%8B%E9%9B%86%E5%90%88%E5%95%8F%E9%A1%8C">最大独立集合問題</a>である．このグラフは明らかに<a href="https://ja.wikipedia.org/wiki/%E6%9C%A8_(%E6%95%B0%E5%AD%A6)">森</a>であるから，木DPが使える．</p>
-
-<h3 id="参考">参考</h3>
-
-<iframe class="hatenablogcard" style="width:100%;height:155px;max-width:680px;" title="木の上での最大重み独立集合問題" src="https://hatenablog-parts.com/embed?url=http://tatanaideyo.hatenablog.com/entry/2015/04/26/182621" width="300" height="150" frameborder="0" scrolling="no"></iframe>
-
-<p>制約が甘いので橋の検出にはUnionFindを使う．各辺ごとにそれを除いたグラフを構築し，端点の連結性を判定する．</p>
-
-<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/SRM/master/740-759/753Div1E_MaxCutFree.cpp"></code></pre>
-
-<h2 id="反省">反省</h2>
-
-<p>本番では橋の検出までしかできなかった．最大独立集合問題であることにはなんとなく気付いていたが，名前だけが先走った．「NP困難じゃん…」</p>
-
-<p><code>dp</code>等の初期化も忘れずに．</p>
+  </header>
 
   
-<div class="prev-next-post pure-g">
-  <div class="pure-u-1-24" style="text-align: left;">
-    
-    <a href="https://chiyosbigdragon.github.io/post/2019/03/13/20190313/"><i class="fa fa-chevron-left"></i></a>
-    
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="prev">
-      <a href="https://chiyosbigdragon.github.io/post/2019/03/13/20190313/">Node.jsで作る番組情報通知Bot</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-2-24">
-    &nbsp;
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="next">
-      <a href="https://chiyosbigdragon.github.io/post/2019/03/27/20190327/">ブログ記事中のスニペットを外部参照する</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://chiyosbigdragon.github.io/post/2019/03/27/20190327/"><i class="fa fa-chevron-right"></i></a>
-    
-  </div>
-</div>
-
-
+</article>
 
   
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-
-(function() {
-    
-    
-    if (window.location.hostname == "localhost")
-        return;
-
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    var disqus_shortname = 'Your Disqus shortname';
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
 </div>
 
 
@@ -387,4 +316,3 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
