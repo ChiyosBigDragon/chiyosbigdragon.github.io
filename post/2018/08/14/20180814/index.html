@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.54.0" />
 
-  <title>CompetitiveProgramming &middot; Spielsand</title>
+  <title>SRM505 Div2Medium PerfectSequences &middot; Spielsand</title>
 
   
   
@@ -39,8 +39,6 @@
   
 
  
-  
-  <link rel="alternate" type="application/rss+xml" title="Spielsand" href="https://chiyosbigdragon.github.io/topics/competitiveprogramming/index.xml" />
   
 
   
@@ -118,10 +116,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://chiyosbigdragon.github.io/topics/competitiveprogramming/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -229,62 +223,12 @@
 
 
 <div class="header">
-  <h1>CompetitiveProgramming</h1>
+  <h1>SRM505 Div2Medium PerfectSequences</h1>
+  <h2></h2>
 </div>
-
 <div class="content">
-  
-    <article>
-  <header>
-    <h2><a href="https://chiyosbigdragon.github.io/post/2019/03/22/20190322/">SRM753 Div1Easy MaxCutFree</a></h2>
-    <div class="post-meta">
 
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>22 Mar 2019, 14:00</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://chiyosbigdragon.github.io/topics/competitiveprogramming">CompetitiveProgramming</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/graph-theory">Graph Theory</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/independent-set">Independent set</a>
-    
-  </div>
-  
-  
-
-</div>
-  </header>
-
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://chiyosbigdragon.github.io/post/2018/08/14/20180814/">SRM505 Div2Medium PerfectSequences</a></h2>
-    <div class="post-meta">
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
@@ -320,286 +264,107 @@
   
 
 </div>
-  </header>
+
+  <p><p></p>
+
+<p></p></p>
+
+<h2 id="url">URL</h2>
+
+<p><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=11397">https://community.topcoder.com/stat?c=problem_statement&amp;pm=11397</a></p>
+
+<h2 id="概略">概略</h2>
+
+<p><code>perfect sequence</code> とは以下の条件をともに満たす数列である．</p>
+
+<ul>
+<li>全要素が非負整数</li>
+<li>全要素の積と和が等しい</li>
+</ul>
+
+<p><code>seq</code> の要素をひとつだけ変更して <code>perfect sequence</code> が作れるかを判定する．</p>
+
+<h2 id="方針">方針</h2>
+
+<p>$$
+S_i = \frac {\sum_k{seq[k]}} {seq[i]}
+$$
+$$
+P_i = \frac {\prod_k{seq[k]}} {seq[i]}
+$$
+とすれば，<code>perfect sequence</code>が作れる時
+$$
+S_i + x = T_i \times x ⇔ S_i = (T_i - 1) \times x
+$$
+をみたす $x$ が1つ以上の $i$ で存在する．</p>
+
+<p>ただし以下の点に注意．</p>
+
+<ul>
+<li>変更しないのはダメ．</li>
+<li><code>seq</code> のサイズが1なら必ず <code>Yes</code></li>
+<li>$T_i - 1 = 0$ のとき0除算で危ない．この場合， $S_i = 0$ であればよい。</li>
+</ul>
+
+<p>最悪のケースだと $T_i \approx 10 ^ {9 \times 50}$になってオーバーフローするからこのコードはダメなはず…だけど，普通に通る．</p>
+
+<p>あえて対処するなら，実行時間に余裕があるので一つ一つ $T_i$ を計算するべき．</p>
+
+<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/SRM/master/500-519/505Div2M_PerfectSequences.cpp"></code></pre>
 
   
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://chiyosbigdragon.github.io/post/2018/08/04/20180804/">SRM504 Div1Easy MathContest</a></h2>
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>04 Aug 2018, 12:00</time>
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://chiyosbigdragon.github.io/post/2018/08/04/20180804/"><i class="fa fa-chevron-left"></i></a>
+    
   </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
+  <div class="pure-u-10-24">
     
-      <a class="post-taxonomy-topic" href="https://chiyosbigdragon.github.io/topics/competitiveprogramming">CompetitiveProgramming</a>
+    <nav class="prev">
+      <a href="https://chiyosbigdragon.github.io/post/2018/08/04/20180804/">SRM504 Div1Easy MathContest</a>
+    </nav>
     
   </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
     
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/simulation">Simulation</a>
+    <nav class="next">
+      <a href="https://chiyosbigdragon.github.io/post/2019/03/13/20190313/">Node.jsで作る番組情報通知Bot</a>
+    </nav>
     
   </div>
-  
-  
-
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://chiyosbigdragon.github.io/post/2019/03/13/20190313/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
 </div>
-  </header>
+
+
 
   
-</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
 
-  
-    <article>
-  <header>
-    <h2><a href="https://chiyosbigdragon.github.io/post/2018/07/31/20180731/">SRM503 Div1Easy ToastXToast</a></h2>
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>31 Jul 2018, 16:00</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
+(function() {
     
-      <a class="post-taxonomy-topic" href="https://chiyosbigdragon.github.io/topics/competitiveprogramming">CompetitiveProgramming</a>
     
-  </div>
-  
-  
+    if (window.location.hostname == "localhost")
+        return;
 
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/ad-hoc">Ad hoc</a>
-    
-  </div>
-  
-  
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'Your Disqus shortname';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
-</div>
-  </header>
 
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://chiyosbigdragon.github.io/post/2018/07/27/20180727/">SRM502 Div1Easy TheLotteryBothDivs</a></h2>
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>27 Jul 2018, 21:30</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://chiyosbigdragon.github.io/topics/competitiveprogramming">CompetitiveProgramming</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/math">Math</a>
-    
-  </div>
-  
-  
-
-</div>
-  </header>
-
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://chiyosbigdragon.github.io/post/2018/07/26/20180726/">SRM501 Div1Easy FoxPlayingGame</a></h2>
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>26 Jul 2018, 17:30</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://chiyosbigdragon.github.io/topics/competitiveprogramming">CompetitiveProgramming</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/math">Math</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/greedy">Greedy</a>
-    
-  </div>
-  
-  
-
-</div>
-  </header>
-
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://chiyosbigdragon.github.io/post/2018/07/18/20180718-2/">SRM500 Div1Easy MafiaGame</a></h2>
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>18 Jul 2018, 12:00</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://chiyosbigdragon.github.io/topics/competitiveprogramming">CompetitiveProgramming</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/math">Math</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/simulation">Simulation</a>
-    
-  </div>
-  
-  
-
-</div>
-  </header>
-
-  
-</article>
-
-  
-    <article>
-  <header>
-    <h2><a href="https://chiyosbigdragon.github.io/post/2018/07/18/20180718-1/">SRM500 Div2Easy SRMCards</a></h2>
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>18 Jul 2018, 12:00</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://chiyosbigdragon.github.io/topics/competitiveprogramming">CompetitiveProgramming</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/greedy">Greedy</a>
-    
-  </div>
-  
-  
-
-</div>
-  </header>
-
-  
-</article>
-
-  
 </div>
 
 
@@ -634,3 +399,4 @@
 
         gtag('config', 'UA-126147693-2');
     </script>
+
