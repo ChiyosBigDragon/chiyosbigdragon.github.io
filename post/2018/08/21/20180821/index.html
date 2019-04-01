@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.54.0" />
 
-  <title>SRM506 Div1Easy SlimeXSlimesCity &middot; Spielsand</title>
+  <title>SRM504.5 Div1Easy TheNumbersWithLuckyLastDigit &middot; Spielsand</title>
 
   
   
@@ -223,7 +223,7 @@
 
 
 <div class="header">
-  <h1>SRM506 Div1Easy SlimeXSlimesCity</h1>
+  <h1>SRM504.5 Div1Easy TheNumbersWithLuckyLastDigit</h1>
   <h2></h2>
 </div>
 <div class="content">
@@ -232,7 +232,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>16 Aug 2018, 03:30</time>
+    <time>21 Aug 2018, 20:00</time>
   </div>
 
   
@@ -257,7 +257,7 @@
     
       <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/greedy">Greedy</a>
+      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/math">Math</a>
     
   </div>
   
@@ -269,42 +269,36 @@
 
 <h2 id="url">URL</h2>
 
-<p><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=11154">https://community.topcoder.com/stat?c=problem_statement&amp;pm=11154</a></p>
+<p><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=11096">https://community.topcoder.com/stat?c=problem_statement&amp;pm=11096</a></p>
 
 <h2 id="概略">概略</h2>
 
-<p>$N$ 個の街があり各々には名前がついている．2つの街の合併を繰り返し，最終的に1つにすることを考える．</p>
-
-<p>合併前の街の人口を $i,j (i \leq j)$ とする．</p>
-
-<ul>
-<li>$i &lt; j$ のとき
-
-<ul>
-<li>合併後の街の名前は $j$ を継承する．</li>
-</ul></li>
-<li>$i = j$ のとき
-
-<ul>
-<li>合併後の街の名前は $i$ または $j$ を継承する．</li>
-</ul></li>
-</ul>
-
-<p>最終的に街が1つになったとき，その名前として取り得るものは何通りか．</p>
+<p>$n$ が与えられる．$n$ を下1桁が $4$ または $7$ である正の数の和として表すとき，必要な項数の最小はいくつであるか．構成不可能であれば <code>-1</code> を返す．</p>
 
 <h2 id="方針">方針</h2>
 
-<p><del><a href="https://atcoder.jp/contests/agc011/tasks/agc011_b">B - Colorful Creatures &mdash; AtCoder Grand Contest 011</a></del></p>
+<p>$4+10k,7+10k$ を使うことが出来るので，$n$ が項数 $x$ で構成可能であるとき，$n+10k$ も項数 $x$ で構成可能．したがって $n$ の下1桁に注目してやればいい．</p>
 
-<p>サンプル5の解釈を説明する．</p>
+<p>例えば下1桁が $3$ になるような項数最小の構成法は
+$$
+23 = 4 \times 4 + 7 \times 1
+$$
+である．これを下1桁 $0 \sim 9$ についてやればよく，結果下図が完成した．</p>
 
-<p><img src="../images/merge.png" alt="" /></p>
+<p><center>
+    <figure>
+    <img src="../images/sum.png"/> 
+</figure>
 
-<p>ソートして人口の昇順に並べても一般性は失われない．また赤は累積和である．</p>
+    <figcaption>4と7で表せる数の下一桁</figcaption>
+    <figure>
+    <img src="../images/minimum.png"/> 
+</figure>
 
-<p>合併のルールから，自分より人口の少ない街は無条件に取り込めるので全て取り込むことにする．これで増えた人口でも1つ右の街が取り込めなければ，その街が生き残ることはない．最終目標は全ての街を合併することなので，右から赤と黒を判定をしていき，図の点線のように断層ができるまでの数が答え．</p>
+    <figcaption>最小値未満の数は表せない</figcaption>
+</center></p>
 
-<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/SRM/master/500-519/506Div1E_SlimeXSlimesCity.cpp"></code></pre>
+<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/SRM/master/500-519/504.5Div1E_TheNumbersWithLuckyLastDigit.cpp"></code></pre>
 
 
 
@@ -312,13 +306,13 @@
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://chiyosbigdragon.github.io/post/2018/08/14/20180814/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://chiyosbigdragon.github.io/post/2018/08/16/20180816/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://chiyosbigdragon.github.io/post/2018/08/14/20180814/">SRM505 Div2Medium PerfectSequences</a>
+      <a href="https://chiyosbigdragon.github.io/post/2018/08/16/20180816/">SRM506 Div1Easy SlimeXSlimesCity</a>
     </nav>
     
   </div>
@@ -328,13 +322,13 @@
   <div class="pure-u-10-24">
     
     <nav class="next">
-      <a href="https://chiyosbigdragon.github.io/post/2018/08/21/20180821/">SRM504.5 Div1Easy TheNumbersWithLuckyLastDigit</a>
+      <a href="https://chiyosbigdragon.github.io/post/2019/03/13/20190313/">Node.jsで作る番組情報通知Bot</a>
     </nav>
     
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
     
-    <a href="https://chiyosbigdragon.github.io/post/2018/08/21/20180821/"><i class="fa fa-chevron-right"></i></a>
+    <a href="https://chiyosbigdragon.github.io/post/2019/03/13/20190313/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
