@@ -13,15 +13,15 @@
     
     <item>
       <title>SRM753 Div1Easy MaxCutFree</title>
-      <link>https://chiyosbigdragon.github.io/post/2019/03/22/20190322/</link>
+      <link>https://chiyosbigdragon.github.io/blog/2019/03/22/20190322/</link>
       <pubDate>Fri, 22 Mar 2019 14:00:00 +0900</pubDate>
       
-      <guid>https://chiyosbigdragon.github.io/post/2019/03/22/20190322/</guid>
+      <guid>https://chiyosbigdragon.github.io/blog/2019/03/22/20190322/</guid>
       <description>URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=15257
 概略 単純無向グラフ $G$ が与えられる．$G$ の橋を含まないような誘導部分グラフのうち，頂点数が最大となるものを求める．
 方針 要は，$G$ から橋だけを残したグラフについての最大独立集合問題である．このグラフは明らかに森であるから，木DPが使える．
 参考  制約が甘いので橋の検出にはUnionFindを使う．各辺ごとにそれを除いたグラフを構築し，端点の連結性を判定する．
- 反省 本番では橋の検出までしかできなかった．最大独立集合問題であることにはなんとなく気付いていたが，名前だけが先走った．「NP困難じゃん…」
+反省 本番では橋の検出までしかできなかった．最大独立集合問題であることにはなんとなく気付いていたが，名前だけが先走った．「NP困難じゃん…」
 dp等の初期化も忘れずに．</description>
     </item>
     
