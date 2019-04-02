@@ -18,6 +18,11 @@
   </url>
   
   <url>
+    <loc>https://chiyosbigdragon.github.io/blog/2018/08/22/20180822/</loc>
+    <lastmod>2018-08-22T16:30:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chiyosbigdragon.github.io/blog/2018/08/21/20180821/</loc>
     <lastmod>2018-08-21T20:00:00+09:00</lastmod>
   </url>
@@ -63,11 +68,12 @@
   </url>
   
   <url>
-    <loc>https://chiyosbigdragon.github.io/competitiveprogramming/tools/</loc>
+    <loc>https://chiyosbigdragon.github.io/about/dummy/</loc>
   </url>
   
   <url>
     <loc>https://chiyosbigdragon.github.io/about/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -79,6 +85,12 @@
   <url>
     <loc>https://chiyosbigdragon.github.io/blog/</loc>
     <lastmod>2019-03-27T10:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chiyosbigdragon.github.io/tags/brute-force/</loc>
+    <lastmod>2018-08-22T16:30:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -123,11 +135,11 @@
   </url>
   
   <url>
-    <loc>https://chiyosbigdragon.github.io/competitiveprogramming/library/</loc>
+    <loc>https://chiyosbigdragon.github.io/competitiveprogramming/library/graph_theory/lca/lca/</loc>
   </url>
   
   <url>
-    <loc>https://chiyosbigdragon.github.io/competitiveprogramming/library/graph_theory/lca/lca/</loc>
+    <loc>https://chiyosbigdragon.github.io/competitiveprogramming/library/</loc>
   </url>
   
   <url>
@@ -176,6 +188,10 @@
     <loc>https://chiyosbigdragon.github.io/tags/</loc>
     <lastmod>2018-07-31T16:00:00+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chiyosbigdragon.github.io/competitiveprogramming/tools/</loc>
   </url>
   
   <url>

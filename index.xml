@@ -62,6 +62,22 @@ url.json スクレイピングと整形 TV_scrape.js メモ  ライブラリ�
     </item>
     
     <item>
+      <title>SRM508 Div1Easy DivideAndShift</title>
+      <link>https://chiyosbigdragon.github.io/blog/2018/08/22/20180822/</link>
+      <pubDate>Wed, 22 Aug 2018 16:30:00 +0900</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/blog/2018/08/22/20180822/</guid>
+      <description> URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11434
+概略 $1 \sim N$ のスロットが1列に並んでいる．プレイヤーは常にスロット $1$ の中身しか取得することができない．ゲームの目的は，開始時にスロット $M$ にあった中身を取得することである．
+スロットには2通りの操作を行うことが出来る．
+ Divide  $N$ を割り切れる素数 $p$ を選びスロットを $[1,\frac{N}{p}],[\frac{N}{p}+1,\frac{2N}{p}],…$ に分割する．この内，目的のスロットを含む部分列のみを保持する．その後，$N←\frac{N}{p}$とし，スロットの番号を $1 \sim \frac{N}{p}$ に振り直す．  Shift  スロットを左/右にシフトする．シフトするとスロット番号が $-1/+1$ だけ変化する．スロット $0$ は $N$ に，$N+1$ は $1$ に別途移動する．   最低で何回操作をすれば目的を達成できるか．
+方針 全然できなかった．調べたら「DivideとShiftの操作は可換」ということがわかって（証明は知らない）そこからはノーヒントで行けた．これで250ptなんだ…
+Shiftは数えるだけなので先にDivideを行う．Divideのやり方は高々、2^(素因数の数)だから全列挙してやればいい．あとは各々についてShiftの回数を求める．
+のんきに数えてたらTLEしたので，剰余で考える必要があるのだが，これが難しかった．右にShiftする場合の式がよくわからなくて，手元のサンプルと帳尻を合わせるように書いたら通った（最悪）
+</description>
+    </item>
+    
+    <item>
       <title>SRM504.5 Div1Easy TheNumbersWithLuckyLastDigit</title>
       <link>https://chiyosbigdragon.github.io/blog/2018/08/21/20180821/</link>
       <pubDate>Tue, 21 Aug 2018 20:00:00 +0900</pubDate>
@@ -188,35 +204,15 @@ url.json スクレイピングと整形 TV_scrape.js メモ  ライブラリ�
     
     <item>
       <title></title>
-      <link>https://chiyosbigdragon.github.io/competitiveprogramming/tools/</link>
+      <link>https://chiyosbigdragon.github.io/about/dummy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://chiyosbigdragon.github.io/competitiveprogramming/tools/</guid>
+      <guid>https://chiyosbigdragon.github.io/about/dummy/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>About</title>
-      <link>https://chiyosbigdragon.github.io/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://chiyosbigdragon.github.io/about/</guid>
-      <description>前ブログ(https://chiyosbigdragon.hatenablog.jp/) より移転中です．
-今のところ不備しかありません．ごめんなさい．
-ブログ以外の用途も模索中です．</description>
-    </item>
-    
-    <item>
-      <title>Library</title>
-      <link>https://chiyosbigdragon.github.io/competitiveprogramming/library/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://chiyosbigdragon.github.io/competitiveprogramming/library/</guid>
-      <description> GraphTheory  Lowest Common Ancestor (LCA)  </description>
-    </item>
-    
-    <item>
-      <title>Lowest Common Ancestor (LCA)</title>
+      <title>LCA (Lowest Common Ancestor)</title>
       <link>https://chiyosbigdragon.github.io/competitiveprogramming/library/graph_theory/lca/lca/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -226,6 +222,24 @@ url.json スクレイピングと整形 TV_scrape.js メモ  ライブラリ�
 例として下図の木にアルゴリズムを用いる．
 Euler Tour 木をDFSする．欲しい情報は以下の通り．
  nodeOrder[i]: $i$ 番目に訪問した頂点番号 depthOrder[i]: $i$ 番目に訪問した頂点の深さ（根を0とする） nodeFirstID[v]: 頂点 $v$ が最初に現れるタイミング     $i$ 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14     nodeOrder[i] 0 1 4 1 5 6 5 7 5 1 0 2 0 3 0   depthOrder[i] 0 1 2 1 2 3 2 3 2 1 0 1 0 1 0       $v$ 0 1 2 3 4 5 6 7     nodeFirstID[v] 0 1 11 13 2 4 5 7    nodeOrderのサイズは必ず頂点数*2-1になる．これは各辺を2回通ることに由来する．</description>
+    </item>
+    
+    <item>
+      <title>Library</title>
+      <link>https://chiyosbigdragon.github.io/competitiveprogramming/library/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/competitiveprogramming/library/</guid>
+      <description> Graph Theory  Lowest Common Ancestor (LCA)  </description>
+    </item>
+    
+    <item>
+      <title>Tools</title>
+      <link>https://chiyosbigdragon.github.io/competitiveprogramming/tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/competitiveprogramming/tools/</guid>
+      <description></description>
     </item>
     
   </channel>
