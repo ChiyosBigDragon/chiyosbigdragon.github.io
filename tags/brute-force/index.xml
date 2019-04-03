@@ -13,10 +13,10 @@
     
     <item>
       <title>SRM508 Div1Easy DivideAndShift</title>
-      <link>https://chiyosbigdragon.github.io/blog/2018/08/22/20180822/</link>
+      <link>https://chiyosbigdragon.github.io/blog/2018/08/22/</link>
       <pubDate>Wed, 22 Aug 2018 16:30:00 +0900</pubDate>
       
-      <guid>https://chiyosbigdragon.github.io/blog/2018/08/22/20180822/</guid>
+      <guid>https://chiyosbigdragon.github.io/blog/2018/08/22/</guid>
       <description> URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11434
 概略 $1 \sim N$ のスロットが1列に並んでいる．プレイヤーは常にスロット $1$ の中身しか取得することができない．ゲームの目的は，開始時にスロット $M$ にあった中身を取得することである．
 スロットには2通りの操作を行うことが出来る．

@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.54.0" />
 
-  <title>Slack &middot; Spielsand</title>
+  <title>SRM503 Div1Easy ToastXToast &middot; Spielsand</title>
 
   
   
@@ -39,8 +39,6 @@
   
 
  
-  
-  <link rel="alternate" type="application/rss+xml" title="Spielsand" href="https://chiyosbigdragon.github.io/tags/slack/index.xml" />
   
 
   
@@ -118,10 +116,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://chiyosbigdragon.github.io/tags/slack/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -229,20 +223,16 @@
 
 
 <div class="header">
-    <h1>Slack</h1>
-    <h2><a href="https://chiyosbigdragon.github.io/blog">Blog</a> >> <a href="https://chiyosbigdragon.github.io/tags">Tags</a> >> Slack</h2>
+    <h1>SRM503 Div1Easy ToastXToast</h1>
+    <h2><a href="https://chiyosbigdragon.github.io/blog">Blog</a> >> SRM503 Div1Easy ToastXToast</h2>
 </div>
-
 <div class="content">
-    
-        <article>
-  <header>
-    <h2><a href="https://chiyosbigdragon.github.io/blog/2019/03/13/">Node.jsで作る番組情報通知Bot</a></h2>
-    <div class="post-meta">
+
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>13 Mar 2019, 18:00</time>
+    <time>31 Jul 2018, 16:00</time>
   </div>
 
   
@@ -253,7 +243,7 @@
   <div>
     <i class="fa fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="https://chiyosbigdragon.github.io/topics/programming">Programming</a>
+      <a class="post-taxonomy-topic" href="https://chiyosbigdragon.github.io/topics/competitiveprogramming">CompetitiveProgramming</a>
     
   </div>
   
@@ -265,22 +255,108 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/node.js">Node.js</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/slack">Slack</a>
+      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/ad-hoc">Ad hoc</a>
     
   </div>
   
   
 
 </div>
-  </header>
 
   
-</article>
 
+<h2 id="url">URL</h2>
+
+<p><a href="http://community.topcoder.com/stat?c=problem_statement&amp;pm=11204">http://community.topcoder.com/stat?c=problem_statement&amp;pm=11204</a></p>
+
+<h2 id="概略">概略</h2>
+
+<p>$N$ 種のパンについての情報<code>under</code>と<code>over</code>が与えられる．各種のパンには $X_i$ が定められており，これより小さいパンは<code>under</code>，大きいパンは<code>over</code>である．$\min N$ はいくらであるか．条件を満たすパンが存在しない場合<code>-1</code>を返す．</p>
+
+<h2 id="方針">方針</h2>
+
+<p>最初サンプル3の意味がわからなくて焦った.</p>
+
+<p>1列に並べた時に</p>
+
+<ul>
+<li>左端に<code>over</code> || 右端に<code>under</code>
+
+<ul>
+<li>そんなパンはないので，<code>-1</code></li>
+</ul></li>
+<li><code>under</code>と<code>over</code>が完全に分かれている
+
+<ul>
+<li>Xがその間に置けて，<code>1</code></li>
+</ul></li>
+<li>その他
+
+<ul>
+<li>下図より，<code>2</code>（のはず）</li>
+</ul></li>
+</ul>
+
+<p><img src="./images/toast.png" alt="" /></p>
+
+<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/SRM/master/500-519/503Div1E_ToastXToast.cpp"></code></pre>
+
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://chiyosbigdragon.github.io/blog/2018/07/27/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://chiyosbigdragon.github.io/blog/2018/07/27/">SRM502 Div1Easy TheLotteryBothDivs</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://chiyosbigdragon.github.io/blog/2018/08/04/">SRM504 Div1Easy MathContest</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://chiyosbigdragon.github.io/blog/2018/08/04/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
     
     
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'Your Disqus shortname';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
 
 </div>
 

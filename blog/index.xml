@@ -13,25 +13,25 @@
     
     <item>
       <title>ブログ記事中のスニペットを外部参照する</title>
-      <link>https://chiyosbigdragon.github.io/blog/2019/03/27/20190327/</link>
+      <link>https://chiyosbigdragon.github.io/blog/2019/03/27/</link>
       <pubDate>Wed, 27 Mar 2019 10:00:00 +0900</pubDate>
       
-      <guid>https://chiyosbigdragon.github.io/blog/2019/03/27/20190327/</guid>
+      <guid>https://chiyosbigdragon.github.io/blog/2019/03/27/</guid>
       <description>上を表示するためのHTMLは次の通りです．
-&amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-cpp&amp;quot; src=&amp;quot;https://chiyosbigdragon.github.io/post/2019/03/27/sample.cpp&amp;quot;&amp;gt;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;  端的には&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;にsrc属性を追加します．
+&amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-cpp&amp;quot; src=&amp;quot;./sample.cpp&amp;quot;&amp;gt;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;  端的には&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;にsrc属性を追加します．
 動機 最近はもっぱらラップトップでブログを書くわけですが，画面が小さく1，エディタとプレビューでいっぱいいっぱいになってしまいます．こんな状態でスニペットを含むMarkdownを開いた光景は，JR武蔵小杉駅の南武線ホームを彷彿とさせます．
 スニペットを省略できれば全体の見通しが良くなることはもちろん，メンテナンス性の向上(?)も期待されます．どっかの数学者も言ってましたね．「ソースコードは分割せよ」って．
 流れ  jQueryを読み込む DOMの書き換え Markdown  jQueryを読み込む 今回はjQueryを使うことにします．&amp;lt;head&amp;gt;内で読み込み．
 &amp;lt;head&amp;gt; &amp;lt;script src=&amp;quot;https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;head&amp;gt;  DOMの書き換え メモ  indexと書いたが実際は何を指しているのか不明．なんだろう．  Markdown 今回の記事のソースコードはこんな感じ．
---- title: &amp;quot;ブログ記事中のスニペットを外部参照する&amp;quot; date: 2019-03-27T10:00:00+09:00 draft: false topics: [&amp;quot;Programming&amp;quot;] tags: [&amp;quot;jQuery&amp;quot;, &amp;quot;HTML&amp;quot;] --- &amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-cpp&amp;quot; src=&amp;quot;https://chiyosbigdragon.github.io/post/2019/03/27/sample.cpp&amp;quot;&amp;gt;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 上を表示するためのHTMLは次の通りです． ```html &amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-cpp&amp;quot; src=&amp;quot;https://chiyosbigdragon.github.io/post/2019/03/27/sample.cpp&amp;quot;&amp;gt;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; ``` 端的には`&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;`に`src`属性を追加します． ## 動機 最近はもっぱらラップトップでブログを書くわけですが，画面が小さく[^1]，エディタとプレビューでいっぱいいっぱいになってしまいます．こんな状態でスニペットを含むMarkdownを開いた光景は，JR武蔵小杉駅の南武線ホームを彷彿とさせます． スニペットを省略できれば全体の見通しが良くなることはもちろん，メンテナンス性の向上(?)も期待されます．どっかの数学者も言ってましたね．「ソースコードは分割せよ」って． ## 流れ - [jQueryを読み込む](#jQueryを読み込む) - [DOMの書き換え](#DOMの書き換え) - [Markdown](#Markdown) ## jQueryを読み込む 今回はjQueryを使うことにします．`&amp;lt;head&amp;gt;`内で読み込み． ```html &amp;lt;head&amp;gt; &amp;lt;script src=&amp;quot;https://ajax.</description>
+--- title: &amp;quot;ブログ記事中のスニペットを外部参照する&amp;quot; date: 2019-03-27T10:00:00+09:00 draft: false topics: [&amp;quot;Programming&amp;quot;] tags: [&amp;quot;jQuery&amp;quot;, &amp;quot;HTML&amp;quot;] --- &amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-cpp&amp;quot; src=&amp;quot;./sample.cpp&amp;quot;&amp;gt;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; 上を表示するためのHTMLは次の通りです． ```html &amp;lt;pre&amp;gt;&amp;lt;code class=&amp;quot;language-cpp&amp;quot; src=&amp;quot;./sample.cpp&amp;quot;&amp;gt;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt; ``` 端的には`&amp;lt;pre&amp;gt;&amp;lt;code&amp;gt;`に`src`属性を追加します． ## 動機 最近はもっぱらラップトップでブログを書くわけですが，画面が小さく[^1]，エディタとプレビューでいっぱいいっぱいになってしまいます．こんな状態でスニペットを含むMarkdownを開いた光景は，JR武蔵小杉駅の南武線ホームを彷彿とさせます． スニペットを省略できれば全体の見通しが良くなることはもちろん，メンテナンス性の向上(?)も期待されます．どっかの数学者も言ってましたね．「ソースコードは分割せよ」って． ## 流れ - [jQueryを読み込む](#jQueryを読み込む) - [DOMの書き換え](#DOMの書き換え) - [Markdown](#Markdown) ## jQueryを読み込む 今回はjQueryを使うことにします．`&amp;lt;head&amp;gt;`内で読み込み． ```html &amp;lt;head&amp;gt; &amp;lt;script src=&amp;quot;https://ajax.</description>
     </item>
     
     <item>
       <title>SRM753 Div1Easy MaxCutFree</title>
-      <link>https://chiyosbigdragon.github.io/blog/2019/03/22/20190322/</link>
+      <link>https://chiyosbigdragon.github.io/blog/2019/03/22/</link>
       <pubDate>Fri, 22 Mar 2019 14:00:00 +0900</pubDate>
       
-      <guid>https://chiyosbigdragon.github.io/blog/2019/03/22/20190322/</guid>
+      <guid>https://chiyosbigdragon.github.io/blog/2019/03/22/</guid>
       <description>URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=15257
 概略 単純無向グラフ $G$ が与えられる．$G$ の橋を含まないような誘導部分グラフのうち，頂点数が最大となるものを求める．
 方針 要は，$G$ から橋だけを残したグラフについての最大独立集合問題である．このグラフは明らかに森であるから，木DPが使える．
@@ -42,10 +42,10 @@ dp等の初期化も忘れずに．</description>
     
     <item>
       <title>Node.jsで作る番組情報通知Bot</title>
-      <link>https://chiyosbigdragon.github.io/blog/2019/03/13/20190313/</link>
+      <link>https://chiyosbigdragon.github.io/blog/2019/03/13/</link>
       <pubDate>Wed, 13 Mar 2019 18:00:00 +0900</pubDate>
       
-      <guid>https://chiyosbigdragon.github.io/blog/2019/03/13/20190313/</guid>
+      <guid>https://chiyosbigdragon.github.io/blog/2019/03/13/</guid>
       <description> 実行結果 小さいかもしれませんね．すみません．
 先に この記事は下記事の内容をパクったと言っても過言ではありません．
  もはや写経ですが勉強記録用なので．
@@ -63,10 +63,10 @@ url.json スクレイピングと整形 TV_scrape.js メモ  ライブラリ�
     
     <item>
       <title>SRM508 Div1Easy DivideAndShift</title>
-      <link>https://chiyosbigdragon.github.io/blog/2018/08/22/20180822/</link>
+      <link>https://chiyosbigdragon.github.io/blog/2018/08/22/</link>
       <pubDate>Wed, 22 Aug 2018 16:30:00 +0900</pubDate>
       
-      <guid>https://chiyosbigdragon.github.io/blog/2018/08/22/20180822/</guid>
+      <guid>https://chiyosbigdragon.github.io/blog/2018/08/22/</guid>
       <description> URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11434
 概略 $1 \sim N$ のスロットが1列に並んでいる．プレイヤーは常にスロット $1$ の中身しか取得することができない．ゲームの目的は，開始時にスロット $M$ にあった中身を取得することである．
 スロットには2通りの操作を行うことが出来る．
@@ -79,10 +79,10 @@ Shiftは数えるだけなので先にDivideを行う．Divideのやり方は高
     
     <item>
       <title>SRM504.5 Div1Easy TheNumbersWithLuckyLastDigit</title>
-      <link>https://chiyosbigdragon.github.io/blog/2018/08/21/20180821/</link>
+      <link>https://chiyosbigdragon.github.io/blog/2018/08/21/</link>
       <pubDate>Tue, 21 Aug 2018 20:00:00 +0900</pubDate>
       
-      <guid>https://chiyosbigdragon.github.io/blog/2018/08/21/20180821/</guid>
+      <guid>https://chiyosbigdragon.github.io/blog/2018/08/21/</guid>
       <description> URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11096
 概略 $n$ が与えられる．$n$ を下1桁が $4$ または $7$ である正の数の和として表すとき，必要な項数の最小はいくつであるか．構成不可能であれば -1 を返す．
 方針 $4+10k,7+10k$ を使うことが出来るので，$n$ が項数 $x$ で構成可能であるとき，$n+10k$ も項数 $x$ で構成可能．したがって $n$ の下1桁に注目してやればいい．
@@ -93,10 +93,10 @@ Shiftは数えるだけなので先にDivideを行う．Divideのやり方は高
     
     <item>
       <title>SRM506 Div1Easy SlimeXSlimesCity</title>
-      <link>https://chiyosbigdragon.github.io/blog/2018/08/16/20180816/</link>
+      <link>https://chiyosbigdragon.github.io/blog/2018/08/16/</link>
       <pubDate>Thu, 16 Aug 2018 03:30:00 +0900</pubDate>
       
-      <guid>https://chiyosbigdragon.github.io/blog/2018/08/16/20180816/</guid>
+      <guid>https://chiyosbigdragon.github.io/blog/2018/08/16/</guid>
       <description> URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11154
 概略 $N$ 個の街があり各々には名前がついている．2つの街の合併を繰り返し，最終的に1つにすることを考える．
 合併前の街の人口を $i,j (i \leq j)$ とする．
@@ -110,10 +110,10 @@ Shiftは数えるだけなので先にDivideを行う．Divideのやり方は高
     
     <item>
       <title>SRM505 Div2Medium PerfectSequences</title>
-      <link>https://chiyosbigdragon.github.io/blog/2018/08/14/20180814/</link>
+      <link>https://chiyosbigdragon.github.io/blog/2018/08/14/</link>
       <pubDate>Tue, 14 Aug 2018 14:30:00 +0900</pubDate>
       
-      <guid>https://chiyosbigdragon.github.io/blog/2018/08/14/20180814/</guid>
+      <guid>https://chiyosbigdragon.github.io/blog/2018/08/14/</guid>
       <description>URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11397
 概略 perfect sequence とは以下の条件をともに満たす数列である．
  全要素が非負整数 全要素の積と和が等しい  seq の要素をひとつだけ変更して perfect sequence が作れるかを判定する．
@@ -124,10 +124,10 @@ Shiftは数えるだけなので先にDivideを行う．Divideのやり方は高
     
     <item>
       <title>SRM504 Div1Easy MathContest</title>
-      <link>https://chiyosbigdragon.github.io/blog/2018/08/04/20180804/</link>
+      <link>https://chiyosbigdragon.github.io/blog/2018/08/04/</link>
       <pubDate>Sat, 04 Aug 2018 12:00:00 +0900</pubDate>
       
-      <guid>https://chiyosbigdragon.github.io/blog/2018/08/04/20180804/</guid>
+      <guid>https://chiyosbigdragon.github.io/blog/2018/08/04/</guid>
       <description>URL http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11233
 概略 ボールが1列に並んでおり，先頭から順に取り出す．取り出したボールの色によって，列に以下の操作がなされる．
  white  列を反転させる  black  色を反転させる   操作終了までに取り出したblackの数を求める．
@@ -137,10 +137,10 @@ Shiftは数えるだけなので先にDivideを行う．Divideのやり方は高
     
     <item>
       <title>SRM503 Div1Easy ToastXToast</title>
-      <link>https://chiyosbigdragon.github.io/blog/2018/07/31/20180731/</link>
+      <link>https://chiyosbigdragon.github.io/blog/2018/07/31/</link>
       <pubDate>Tue, 31 Jul 2018 16:00:00 +0900</pubDate>
       
-      <guid>https://chiyosbigdragon.github.io/blog/2018/07/31/20180731/</guid>
+      <guid>https://chiyosbigdragon.github.io/blog/2018/07/31/</guid>
       <description> URL http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11204
 概略 $N$ 種のパンについての情報underとoverが与えられる．各種のパンには $X_i$ が定められており，これより小さいパンはunder，大きいパンはoverである．$\min N$ はいくらであるか．条件を満たすパンが存在しない場合-1を返す．
 方針 最初サンプル3の意味がわからなくて焦った.
@@ -150,10 +150,10 @@ Shiftは数えるだけなので先にDivideを行う．Divideのやり方は高
     
     <item>
       <title>SRM502 Div1Easy TheLotteryBothDivs</title>
-      <link>https://chiyosbigdragon.github.io/blog/2018/07/27/20180727/</link>
+      <link>https://chiyosbigdragon.github.io/blog/2018/07/27/</link>
       <pubDate>Fri, 27 Jul 2018 21:30:00 +0900</pubDate>
       
-      <guid>https://chiyosbigdragon.github.io/blog/2018/07/27/20180727/</guid>
+      <guid>https://chiyosbigdragon.github.io/blog/2018/07/27/</guid>
       <description>URL http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11359
 概略 &amp;quot;000000000&amp;quot;～&amp;quot;999999999&amp;quot;のうち，goodSuffixesを含むものを当たりとするときの当選確率を求める．
 方針 単純に数えると重複が生じることに気を付ける．集合を意識すると良い．
@@ -164,10 +164,10 @@ Shiftは数えるだけなので先にDivideを行う．Divideのやり方は高
     
     <item>
       <title>SRM501 Div1Easy FoxPlayingGame</title>
-      <link>https://chiyosbigdragon.github.io/blog/2018/07/26/20180726/</link>
+      <link>https://chiyosbigdragon.github.io/blog/2018/07/26/</link>
       <pubDate>Thu, 26 Jul 2018 17:30:00 +0900</pubDate>
       
-      <guid>https://chiyosbigdragon.github.io/blog/2018/07/26/20180726/</guid>
+      <guid>https://chiyosbigdragon.github.io/blog/2018/07/26/</guid>
       <description>URL http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11284
 概略 初期スコアを0として2種類の行動を任意の順番で行う．
  A: scoreAを足す． B: scoreBを掛ける  Aを $nA$ 回，Bを $nB$ 回行うときのスコアの最大値を求める．
@@ -177,10 +177,10 @@ Shiftは数えるだけなので先にDivideを行う．Divideのやり方は高
     
     <item>
       <title>SRM500 Div1Easy MafiaGame</title>
-      <link>https://chiyosbigdragon.github.io/blog/2018/07/18/20180718-2/</link>
-      <pubDate>Wed, 18 Jul 2018 12:00:00 +0900</pubDate>
+      <link>https://chiyosbigdragon.github.io/blog/2018/07/19/</link>
+      <pubDate>Thu, 19 Jul 2018 12:00:00 +0900</pubDate>
       
-      <guid>https://chiyosbigdragon.github.io/blog/2018/07/18/20180718-2/</guid>
+      <guid>https://chiyosbigdragon.github.io/blog/2018/07/19/</guid>
       <description> URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11342
 概略 このゲーム，言語化が難しい．
  $N$ 人には0-indexedで番号が振られている．またvulnerableには最初 $N$ 人全員がいる． 以下の手順でゲームは進行する．   vulnerable内で $N$ 票を振り分ける．  vulnerable&amp;amp;&amp;amp;decisionsの人はdecisionsで宣言された分だけ得票する．  vulnerable={0,1,3}，decisions={0,1,1,2}の場合，0は1票，1は2票を得る．2はvulnerableに含まれないので得票しない．  上で $k$ 票消費されたとする．余った $N-k$ 票は得票数の最小値が大きくなるよう，均等に振り分ける．  5人の得票数が{1,0,3,2,1}で残り5票ある場合，以下のように分ける． {1,0,3,2,1}→{1,1,3,2,1}(1票消費)→{2,2,3,2,2}(4票消費)→{3,2,3,2,2}(5票消費) ただし5票目に選ばれる人物は2票得ている者の中からランダム   票数の最も大きい者のみがvulnerableに残る． vulnerableが1人になるまで投票を繰り返す．最後に残った1人が敗者となる．  各人が敗者となる確率を $p[i]$ としたときの $\max p$を計算する．なお，ゲームが終わらない場合には0を返す．
@@ -191,10 +191,10 @@ Shiftは数えるだけなので先にDivideを行う．Divideのやり方は高
     
     <item>
       <title>SRM500 Div2Easy SRMCards</title>
-      <link>https://chiyosbigdragon.github.io/blog/2018/07/18/20180718-1/</link>
+      <link>https://chiyosbigdragon.github.io/blog/2018/07/18/</link>
       <pubDate>Wed, 18 Jul 2018 12:00:00 +0900</pubDate>
       
-      <guid>https://chiyosbigdragon.github.io/blog/2018/07/18/20180718-1/</guid>
+      <guid>https://chiyosbigdragon.github.io/blog/2018/07/18/</guid>
       <description> URL http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11341
 概略 数列が空になるまで以下の操作を繰り返す．
  数列から1つ数字を選びこれを消す． 上で選んだ数字を $n$とするとき，数列に $n\pm 1$ が存在すればこれ(ら)も同時に消す．  取り得る操作回数のうち最大を求める．

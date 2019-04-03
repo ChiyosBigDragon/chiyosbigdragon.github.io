@@ -13,10 +13,10 @@
     
     <item>
       <title>SRM506 Div1Easy SlimeXSlimesCity</title>
-      <link>https://chiyosbigdragon.github.io/blog/2018/08/16/20180816/</link>
+      <link>https://chiyosbigdragon.github.io/blog/2018/08/16/</link>
       <pubDate>Thu, 16 Aug 2018 03:30:00 +0900</pubDate>
       
-      <guid>https://chiyosbigdragon.github.io/blog/2018/08/16/20180816/</guid>
+      <guid>https://chiyosbigdragon.github.io/blog/2018/08/16/</guid>
       <description> URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11154
 概略 $N$ 個の街があり各々には名前がついている．2つの街の合併を繰り返し，最終的に1つにすることを考える．
 合併前の街の人口を $i,j (i \leq j)$ とする．
@@ -30,10 +30,10 @@
     
     <item>
       <title>SRM501 Div1Easy FoxPlayingGame</title>
-      <link>https://chiyosbigdragon.github.io/blog/2018/07/26/20180726/</link>
+      <link>https://chiyosbigdragon.github.io/blog/2018/07/26/</link>
       <pubDate>Thu, 26 Jul 2018 17:30:00 +0900</pubDate>
       
-      <guid>https://chiyosbigdragon.github.io/blog/2018/07/26/20180726/</guid>
+      <guid>https://chiyosbigdragon.github.io/blog/2018/07/26/</guid>
       <description>URL http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11284
 概略 初期スコアを0として2種類の行動を任意の順番で行う．
  A: scoreAを足す． B: scoreBを掛ける  Aを $nA$ 回，Bを $nB$ 回行うときのスコアの最大値を求める．
@@ -43,10 +43,10 @@
     
     <item>
       <title>SRM500 Div2Easy SRMCards</title>
-      <link>https://chiyosbigdragon.github.io/blog/2018/07/18/20180718-1/</link>
+      <link>https://chiyosbigdragon.github.io/blog/2018/07/18/</link>
       <pubDate>Wed, 18 Jul 2018 12:00:00 +0900</pubDate>
       
-      <guid>https://chiyosbigdragon.github.io/blog/2018/07/18/20180718-1/</guid>
+      <guid>https://chiyosbigdragon.github.io/blog/2018/07/18/</guid>
       <description> URL http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11341
 概略 数列が空になるまで以下の操作を繰り返す．
  数列から1つ数字を選びこれを消す． 上で選んだ数字を $n$とするとき，数列に $n\pm 1$ が存在すればこれ(ら)も同時に消す．  取り得る操作回数のうち最大を求める．
