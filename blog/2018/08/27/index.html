@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.54.0" />
 
-  <title>SRM &middot; Spielsand</title>
+  <title>SRM509 Div1Easy LuckyRemainder &middot; Spielsand</title>
 
   
   
@@ -39,8 +39,6 @@
   
 
  
-  
-  <link rel="alternate" type="application/rss+xml" title="Spielsand" href="https://chiyosbigdragon.github.io/tags/srm/index.xml" />
   
 
   
@@ -118,10 +116,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://chiyosbigdragon.github.io/tags/srm/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -229,20 +223,16 @@
 
 
 <div class="header">
-    <h1>SRM</h1>
-    <h2><a href="https://chiyosbigdragon.github.io/blog">Blog</a> >> <a href="https://chiyosbigdragon.github.io/tags">Tags</a> >> SRM</h2>
+    <h1>SRM509 Div1Easy LuckyRemainder</h1>
+    <h2><a href="https://chiyosbigdragon.github.io/blog">Blog</a> >> SRM509 Div1Easy LuckyRemainder</h2>
 </div>
-
 <div class="content">
-    
-        <article>
-  <header>
-    <h2><a href="https://chiyosbigdragon.github.io/blog/2018/07/19/">SRM500 Div1Easy MafiaGame</a></h2>
-    <div class="post-meta">
+
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>19 Jul 2018, 12:00</time>
+    <time>27 Aug 2018, 22:30</time>
   </div>
 
   
@@ -267,78 +257,95 @@
     
       <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/math">Math</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/simulation">Simulation</a>
+      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/math">Math</a>
     
   </div>
   
   
 
 </div>
-  </header>
 
   
-</article>
 
+<h2 id="url">URL</h2>
+
+<p><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=11138">https://community.topcoder.com/stat?c=problem_statement&amp;pm=11138</a></p>
+
+<h2 id="概略">概略</h2>
+
+<p>$N$ 桁の整数 $X$ が与えられる．$super(X)\pmod {9}$ を求める．ただし，$super(X)$ とは $X$ の部分列の総和である．</p>
+
+<h3 id="ex">ex)</h3>
+
+<p>$$
+super(123) = 123 + 12 + 13 + 23 + 1 + 2+ 3 = 177
+$$</p>
+
+<h2 id="方針">方針</h2>
+
+<p>$n\times 10^k\equiv n\times 1^k\equiv n\pmod 9$ なので，$super(X)$ を求める過程で各桁の数字が何回出現するかを数えればいい．</p>
+
+<p>$X[i]$ (0-indexed)が出現する回数は，$X[i]$ より左側から $l$ 個，右側から $r$ 個取るとして
+$$
+\sum _ {l=0} ^ {i} \sum _ {r=0} ^ {N-1-i} {}_{i} \mathrm{C} _ {l} \times {} _ {N-1-i} \mathrm{C} _ {r}
+$$
+で表される．</p>
+
+<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/SRM/master/500-519/509Div1E_LuckyRemainder.cpp"></code></pre>
+
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
     
-        <article>
-  <header>
-    <h2><a href="https://chiyosbigdragon.github.io/blog/2018/07/18/">SRM500 Div2Easy SRMCards</a></h2>
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>18 Jul 2018, 12:00</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://chiyosbigdragon.github.io/topics/competitiveprogramming">CompetitiveProgramming</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/greedy">Greedy</a>
+    <a href="https://chiyosbigdragon.github.io/blog/2018/08/22/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
-  
-  
-
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://chiyosbigdragon.github.io/blog/2018/08/22/">SRM508 Div1Easy DivideAndShift</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://chiyosbigdragon.github.io/blog/2019/03/13/">Node.jsで作る番組情報通知Bot</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://chiyosbigdragon.github.io/blog/2019/03/13/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
 </div>
-  </header>
+
+
 
   
-</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
 
+(function() {
     
     
+    if (window.location.hostname == "localhost")
+        return;
 
-
-<nav class="pagination" role="pagination">
-  
-  <a href="https://chiyosbigdragon.github.io/tags/srm/"><i class="fa fa-chevron-left"></i></a>
-  
-  <span>&nbsp;2 / 2&nbsp;</span>
-  
-  <i class="fa fa-chevron-right"></i>
-  
-</nav>
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'Your Disqus shortname';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
 </div>

@@ -62,6 +62,19 @@ url.json  スクレイピングと整形 TV_scrape.js  メモ  ライブラリ�
     </item>
     
     <item>
+      <title>SRM509 Div1Easy LuckyRemainder</title>
+      <link>https://chiyosbigdragon.github.io/blog/2018/08/27/</link>
+      <pubDate>Mon, 27 Aug 2018 22:30:00 +0900</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/blog/2018/08/27/</guid>
+      <description>URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11138
+概略 $N$ 桁の整数 $X$ が与えられる．$super(X)\pmod {9}$ を求める．ただし，$super(X)$ とは $X$ の部分列の総和である．
+ex) $$ super(123) = 123 + 12 + 13 + 23 + 1 + 2+ 3 = 177 $$
+方針 $n\times 10^k\equiv n\times 1^k\equiv n\pmod 9$ なので，$super(X)$ を求める過程で各桁の数字が何回出現するかを数えればいい．
+$X[i]$ (0-indexed)が出現する回数は，$X[i]$ より左側から $l$ 個，右側から $r$ 個取るとして $$ \sum _ {l=0} ^ {i} \sum _ {r=0} ^ {N-1-i} {}_{i} \mathrm{C} _ {l} \times {} _ {N-1-i} \mathrm{C} _ {r} $$ で表される．</description>
+    </item>
+    
+    <item>
       <title>SRM508 Div1Easy DivideAndShift</title>
       <link>https://chiyosbigdragon.github.io/blog/2018/08/22/</link>
       <pubDate>Wed, 22 Aug 2018 16:30:00 +0900</pubDate>
