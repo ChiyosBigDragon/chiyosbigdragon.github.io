@@ -43,6 +43,11 @@
   </url>
   
   <url>
+    <loc>https://chiyosbigdragon.github.io/blog/2018/08/10/</loc>
+    <lastmod>2018-08-10T22:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chiyosbigdragon.github.io/blog/2018/08/04/</loc>
     <lastmod>2018-08-04T12:00:00+09:00</lastmod>
   </url>
@@ -166,6 +171,12 @@
   <url>
     <loc>https://chiyosbigdragon.github.io/topics/programming/</loc>
     <lastmod>2019-03-27T10:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chiyosbigdragon.github.io/tags/recursion/</loc>
+    <lastmod>2018-08-10T22:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
