@@ -11,6 +11,17 @@
     
     
     <item>
+      <title>Combination</title>
+      <link>https://chiyosbigdragon.github.io/competitiveprogramming/library/math/combination/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/competitiveprogramming/library/math/combination/</guid>
+      <description>概略 Combinationに係る諸計算のライブラリ
+目次  アルゴリズム  逆元 パスカルの三角形  実装例  逆元 パスカルの三角形  verify  AOJ 1501 yukicoder 117 ABC021_D  参考  アルゴリズム 逆元 $$ {}_{n} \mathrm{C} _ {r} = \frac{n!}{r!(n-r)!} $$ なので分数のmodを求めたい気持ちになる．ここで逆元を使う．
+整数 $a$ と 素数 $p$ について $$ p = \left\lfloor \frac{p}{a} \right\rfloor \times a + p\%a $$ mod $p$ とすると $$ 0 \equiv \left\lfloor \frac{p}{a} \right\rfloor \times a + p\%a $$ $$ p\%a \equiv - \left\lfloor \frac{p}{a} \right\rfloor \times a $$ $$ p\%a \times a^{-1} \equiv - \left\lfloor \frac{p}{a} \right\rfloor $$ $$ a^{-1} \equiv - \left\lfloor \frac{p}{a} \right\rfloor \times (p\%a)^{-1} $$</description>
+    </item>
+    
+    <item>
       <title>LCA (Lowest Common Ancestor)</title>
       <link>https://chiyosbigdragon.github.io/competitiveprogramming/library/graph_theory/lca/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
