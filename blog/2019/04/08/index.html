@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.54.0" />
 
-  <title>SRM &middot; Spielsand</title>
+  <title>Google Code Jam 2019 - Qualification Round &middot; Spielsand</title>
 
   
   
@@ -39,8 +39,6 @@
   
 
  
-  
-  <link rel="alternate" type="application/rss+xml" title="Spielsand" href="https://chiyosbigdragon.github.io/tags/srm/index.xml" />
   
 
   
@@ -118,10 +116,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://chiyosbigdragon.github.io/tags/srm/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -229,20 +223,16 @@
 
 
 <div class="header">
-    <h1>SRM</h1>
-    <h2><a href="https://chiyosbigdragon.github.io/blog">Blog</a> >> <a href="https://chiyosbigdragon.github.io/tags">Tags</a> >> SRM</h2>
+    <h1>Google Code Jam 2019 - Qualification Round</h1>
+    <h2><a href="https://chiyosbigdragon.github.io/blog">Blog</a> >> Google Code Jam 2019 - Qualification Round</h2>
 </div>
-
 <div class="content">
-    
-        <article>
-  <header>
-    <h2><a href="https://chiyosbigdragon.github.io/blog/2018/07/19/">SRM500 Div1Easy MafiaGame</a></h2>
-    <div class="post-meta">
+
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>19 Jul 2018, 12:00</time>
+    <time>07 Apr 2019, 19:00</time>
   </div>
 
   
@@ -265,80 +255,116 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/gcj">GCJ</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/math">Math</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/simulation">Simulation</a>
+      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/write-up">Write Up</a>
     
   </div>
   
   
 
 </div>
-  </header>
 
   
-</article>
 
+<h1 id="結果">結果</h1>
+
+<p>AB2完41ptで通過した．CDも解くつもりでいたが，Cで多倍長整数が必要なことに気付いてやる気を無くした．Round1以降に多倍長が出たらこの人はどうするつもりなのだろうか．</p>
+
+<h1 id="a-foregone-solution">A: Foregone Solution</h1>
+
+<h2 id="概略">概略</h2>
+
+<p>正整数 $N$ が渡されるので $N=A+B$ となるように分割する．ただし $A,B$ は正整数で $4$ を含んではならない．</p>
+
+<p>$N$ には1つ以上 $4$ が含まれる．</p>
+
+<h2 id="雑感">雑感</h2>
+
+<p>読みやすくて助かる．桁ごとに見て，$4$ を $2+2$ に分解すればよさそう．この出力形式誰が得するんだ．</p>
+
+<pre><code class="language-cpp" src="./code/a.cpp"></code></pre>
+
+
+<h1 id="b-you-can-go-your-own-way">B: You Can Go Your Own Way</h1>
+
+<h2 id="概略-1">概略</h2>
+
+<p>正方形のグリッドを左上から右下に動く人がいる．この人と経路を共有しないように左上から右下に向かうにはどう動けばいいか．</p>
+
+<h2 id="雑感-1">雑感</h2>
+
+<p>即座に反転が思いついたがなぜか解法から外してしまった．まったく意味がわからない．結局場合分けをして解いた．結構重くなってしまった．</p>
+
+<ul>
+<li>左上から出る向きと右下に入る向きが違うとき</li>
+</ul>
+
+<p><img src="./images/ES.png" width="300px"></p>
+
+<p>図のように端を通る．</p>
+
+<ul>
+<li>左上から出る向きと右下に入る向きが同じとき</li>
+</ul>
+
+<p><img src="./images/EE.png" width="300px"></p>
+
+<p>鳩の巣原理から，同一方向に2連続で動くことがあるので，そこを狙って1回だけ交わる．図だと赤点を狙い撃ちしている．</p>
+
+<pre><code class="language-cpp" src="./code/b.cpp"></code></pre>
+
+
+<h1 id="感想">感想</h1>
+
+<p>通過するだけなら意外と簡単だった．「<em>Google Code Jam 2019 - Qualification Round通過</em> 」って字面だけ見たら激強に見えるな．Googleすごい．実際に強いと言えるのはTシャツを貰ってからだと思っているので，そこまでは頑張りたい．調べたら残りの参加者は27610人らしい．1000/27610…</p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
     
-        <article>
-  <header>
-    <h2><a href="https://chiyosbigdragon.github.io/blog/2018/07/18/">SRM500 Div2Easy SRMCards</a></h2>
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>18 Jul 2018, 12:00</time>
+    <a href="https://chiyosbigdragon.github.io/blog/2019/03/27/"><i class="fa fa-chevron-left"></i></a>
+    
   </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
+  <div class="pure-u-10-24">
     
-      <a class="post-taxonomy-topic" href="https://chiyosbigdragon.github.io/topics/competitiveprogramming">CompetitiveProgramming</a>
+    <nav class="prev">
+      <a href="https://chiyosbigdragon.github.io/blog/2019/03/27/">ブログ記事中のスニペットを外部参照する</a>
+    </nav>
     
   </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/greedy">Greedy</a>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
     
   </div>
-  
-  
-
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
 </div>
-  </header>
+
+
 
   
-</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
 
+(function() {
     
     
+    if (window.location.hostname == "localhost")
+        return;
 
-
-<nav class="pagination" role="pagination">
-  
-  <a href="https://chiyosbigdragon.github.io/tags/srm/"><i class="fa fa-chevron-left"></i></a>
-  
-  <span>&nbsp;2 / 2&nbsp;</span>
-  
-  <i class="fa fa-chevron-right"></i>
-  
-</nav>
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'Your Disqus shortname';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
 </div>
