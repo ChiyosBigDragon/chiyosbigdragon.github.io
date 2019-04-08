@@ -13,10 +13,10 @@
     
     <item>
       <title>Google Code Jam 2019 - Qualification Round</title>
-      <link>https://chiyosbigdragon.github.io/blog/2019/04/08/</link>
+      <link>https://chiyosbigdragon.github.io/blog/2019/04/07/</link>
       <pubDate>Sun, 07 Apr 2019 19:00:00 +0900</pubDate>
       
-      <guid>https://chiyosbigdragon.github.io/blog/2019/04/08/</guid>
+      <guid>https://chiyosbigdragon.github.io/blog/2019/04/07/</guid>
       <description>結果 AB2完41ptで通過した．CDも解くつもりでいたが，Cで多倍長整数が必要なことに気付いてやる気を無くした．Round1以降に多倍長が出たらこの人はどうするつもりなのだろうか．
 A: Foregone Solution 概略 正整数 $N$ が渡されるので $N=A+B$ となるように分割する．ただし $A,B$ は正整数で $4$ を含んではならない．
 $N$ には1つ以上 $4$ が含まれる．

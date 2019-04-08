@@ -4,6 +4,11 @@
   
   <url>
     <loc>https://chiyosbigdragon.github.io/blog/2019/04/08/</loc>
+    <lastmod>2019-04-08T23:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chiyosbigdragon.github.io/blog/2019/04/07/</loc>
     <lastmod>2019-04-07T19:00:00+09:00</lastmod>
   </url>
   
@@ -93,8 +98,14 @@
   </url>
   
   <url>
+    <loc>https://chiyosbigdragon.github.io/tags/beautifulsoup4/</loc>
+    <lastmod>2019-04-08T23:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://chiyosbigdragon.github.io/blog/</loc>
-    <lastmod>2019-04-07T19:00:00+09:00</lastmod>
+    <lastmod>2019-04-08T23:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -176,7 +187,13 @@
   
   <url>
     <loc>https://chiyosbigdragon.github.io/topics/programming/</loc>
-    <lastmod>2019-03-27T10:00:00+09:00</lastmod>
+    <lastmod>2019-04-08T23:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chiyosbigdragon.github.io/tags/python/</loc>
+    <lastmod>2019-04-08T23:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -206,7 +223,7 @@
   
   <url>
     <loc>https://chiyosbigdragon.github.io/</loc>
-    <lastmod>2019-04-07T19:00:00+09:00</lastmod>
+    <lastmod>2019-04-08T23:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
