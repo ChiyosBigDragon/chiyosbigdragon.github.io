@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.54.0" />
 
-  <title>BeautifulSoup4で某番組HPをスクレイピング &middot; Spielsand</title>
+  <title>Google Code Jam 2019 - Round 1A &middot; Spielsand</title>
 
   
   
@@ -223,8 +223,8 @@
 
 
 <div class="header">
-    <h1>BeautifulSoup4で某番組HPをスクレイピング</h1>
-    <h2><a href="https://chiyosbigdragon.github.io/blog">Blog</a> >> BeautifulSoup4で某番組HPをスクレイピング</h2>
+    <h1>Google Code Jam 2019 - Round 1A</h1>
+    <h2><a href="https://chiyosbigdragon.github.io/blog">Blog</a> >> Google Code Jam 2019 - Round 1A</h2>
 </div>
 <div class="content">
 
@@ -232,7 +232,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>08 Apr 2019, 23:00</time>
+    <time>13 Apr 2019, 15:00</time>
   </div>
 
   
@@ -243,7 +243,7 @@
   <div>
     <i class="fa fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="https://chiyosbigdragon.github.io/topics/programming">Programming</a>
+      <a class="post-taxonomy-topic" href="https://chiyosbigdragon.github.io/topics/competitiveprogramming">CompetitiveProgramming</a>
     
   </div>
   
@@ -255,9 +255,9 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/python">Python</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/gcj">GCJ</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/beautifulsoup4">BeautifulSoup4</a>
+      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/write-up">Write Up</a>
     
   </div>
   
@@ -267,113 +267,66 @@
 
   
 
-<p>今回は<a href="http://www.ntv.co.jp/anothersky/fashion/">ここのページ</a>をスクレイピングします．使途未定ですが，同一人物の写真が大量にあるので解析に使えるかもしれないし使えないかもしれない．</p>
-
-<p>春の番組改編でリニューアルしてましたけど何にも変わってなかったですね．でもホームページだけは変わってるんですよ．古いページは任天堂<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>を除いて十中八九消される運命なので救出しなければなりません．すでにバナー消えてたし．</p>
-
-<h1 id="解析">解析</h1>
-
-<pre><code>http://www.ntv.co.jp/anothersky/fashion/index.html
-http://www.ntv.co.jp/anothersky/fashion/index_2.html
-http://www.ntv.co.jp/anothersky/fashion/index_3.html
-…
-http://www.ntv.co.jp/anothersky/fashion/index_25.html
-</code></pre>
-
-<pre><code class="language-html">&lt;div class=&quot;entryBox clearfix&quot;&gt;
-  &lt;div class=&quot;img&quot;&gt;
-    &lt;img src=&quot;画像1&quot;&gt;
-    &lt;img src=&quot;画像2&quot;&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;entryBody&quot;&gt;
-    &lt;h3&gt;日付&lt;/h3&gt;
-    &lt;p&gt;詳細&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-
-<p>another skyの雰囲気良いですよね．シンプルで洗練された印象があります．一つ気に食わない点があって，ワイプが斜めなんですよ．そこだけ変に立体感があってゴチャっと見えるというか．惜しい．</p>
-
-<h1 id="スクレイピング">スクレイピング</h1>
-
-<pre><code class="language-python">def scrape(soup) :
-    pages = soup.find_all(class_='entryBox clearfix')
-    for page in pages :
-        div = page.find(class_='entryBody')
-        # 日付取得
-        date = ''.join(div.find('h3').text.split())
-        dir = './data/' + date + '/'
-        os.mkdir(dir)
-        # 詳細取得
-        details = div.find('p').text
-        with open(dir + str('details.txt'), 'w', encoding='utf-8') as file :
-            file.write(details)
-        # 画像取得
-        imgs = page.find_all('img')
-        cnt = 0
-        for img in imgs :
-            src = requests.get(img['src'])
-            with open(dir + str(cnt).zfill(3) + str('.jpg'), 'wb') as file :
-                file.write(src.content)
-                cnt += 1
-</code></pre>
-
-<p>金曜夜ってのも良いですね．肩の力を抜いて見ることが出来るので．another skyとタモリ倶楽部を見ることで僕の一週間に区切りが付きます．</p>
-
-<h1 id="全体">全体</h1>
-
-<pre><code class="language-python">import re
-import requests
-from bs4 import BeautifulSoup
-import os
-import shutil
-
-def scrape(soup) :
-    # 省略
-
-def main():
-    # dataディレクトリ作成
-    if os.path.isdir('./data') :
-        shutil.rmtree('./data')
-    os.mkdir('./data')
-    # URL生成
-    for page in range(1,26) :
-        url = 'http://www.ntv.co.jp/anothersky/fashion/index'
-        if page &gt; 1 :
-            url += '_' + str(page)
-        url += '.html'
-        res = requests.get(url)
-        content = res.content
-        soup = BeautifulSoup(content, 'html.parser')
-        # スクレイピング
-        scrape(soup)
-
-if __name__ == '__main__' :
-    main()
-</code></pre>
-
-<p>「ここが私のアナザースカイ」は一度言ってみたい台詞上位に食い込んでいます．</p>
-
 <h1 id="結果">結果</h1>
 
-<p>流石に載せられないのでディレクトリツリーを書きます．</p>
+<p>aC2完45pt．1500人通過で1584th(多分)でした．まさかペナ差で落ちるとは…</p>
 
-<pre><code>data
-│  ├─2016.10.07OA
-│  │ ├─000.jpg
-│  │ ├─001.jpg
-│  │ └─details.txt   
-│  ├─2016.10.14OA
-│  ├─2016.10.21OA
-│  ├─2016.10.28OA
-…
-</code></pre>
+<h1 id="a-pylons">A: Pylons</h1>
+
+<h2 id="概略">概略</h2>
+
+<p>$R\times C$のグリッドを後述するルールで動く駒がある．重複することなく全てのマスを踏めるならば，その動き方を示せ．</p>
+
+<h3 id="ルール">ルール</h3>
+
+<p>移動前の座標を $(r,c)$ ，移動後の座標を $(r&rsquo;,c&rsquo;)$ とする．以下のいずれにも該当してはいけない．</p>
+
+<ul>
+<li>$r = r&rsquo;$</li>
+<li>$c = c&rsquo;$</li>
+<li>$r - c = r&rsquo; - c&rsquo;$</li>
+<li>$r + c = r&rsquo; + c&rsquo;$</li>
+</ul>
+
+<h2 id="雑感">雑感</h2>
+
+<p>全探索しかわからない．最初はSmallすらも落ちたが，1解に到達した時点で強制終了させたらなんとか通った．Largeはまったくわからない．桃色大戦ぱいろんは昔やってましたね．</p>
+
+<pre><code class="language-cpp" src="./code/a.cpp"></code></pre>
+
+
+<h1 id="b-golf-gophers">B: Golf Gophers</h1>
+
+<h2 id="概略-1">概略</h2>
+
+<p>風車の羽根の枚数を毎晩いじって，ゴルフ場に棲むGopherの数を推定しよう．</p>
+
+<h2 id="雑感-1">雑感</h2>
+
+<p>残り30分を切ったころに読み始めた．インタラクティブで絶望．この時点で2完なのでSmallだけでもとりたい気持ち．SmallはGopherの数が少ないので，雑でも行けると思って書き始めたがTLE．風車は回らず，Qualのツケが回ってきた．今考えれば中国剰余だなあという感じ．みんなのGOLFは4を昔やってましたね．</p>
+
+<h1 id="c-alien-rhyme">C: Alien Rhyme</h1>
+
+<h2 id="概略-2">概略</h2>
+
+<p>与えられた単語からrhymeできるもの同士をペアにしたとき，最大何組ペアが出来るか．ただし同じ位置でのrhymeはありえんライムなのでやってはいけません．</p>
+
+<h2 id="雑感-2">雑感</h2>
+
+<p>後ろから見て共通する部分で木を作った．これを「trie木」と言うらしい．深さが1進むと，その位置でrhymeするペアを1組作れるので，作れるペアの数を返り値で管理してDFSした．共通部分が長いとペアの数が単語数を超えるので，きちんと<code>min</code>を取らないといけない．<code>substr</code>しまくったので計算量が不安だったがなんとかLargeも通った．バイオ4<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>は昔やってましたね．</p>
+
+<pre><code class="language-cpp" src="./code/c.cpp"></code></pre>
+
+
+<h1 id="感想">感想</h1>
+
+<p>あとの2回で通る気がしません．繰り上げとか，なさらないんですか？</p>
 <div class="footnotes">
 
 <hr />
 
 <ol>
-<li id="fn:1">この会社マジですごいと思う．当時のバーチャルボーイのページを見るやつなんて誰がいるんだ．
+<li id="fn:1"><a href="https://youtu.be/bseJZEgPa04?t=25">バイオ4空耳 完全版 &mdash; YouTube</a>
  <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
 </ol>
 </div>
@@ -383,13 +336,13 @@ if __name__ == '__main__' :
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://chiyosbigdragon.github.io/blog/2019/04/07/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://chiyosbigdragon.github.io/blog/2019/04/08/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://chiyosbigdragon.github.io/blog/2019/04/07/">Google Code Jam 2019 - Qualification Round</a>
+      <a href="https://chiyosbigdragon.github.io/blog/2019/04/08/">BeautifulSoup4で某番組HPをスクレイピング</a>
     </nav>
     
   </div>
@@ -398,14 +351,8 @@ if __name__ == '__main__' :
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="https://chiyosbigdragon.github.io/blog/2019/04/13/">Google Code Jam 2019 - Round 1A</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://chiyosbigdragon.github.io/blog/2019/04/13/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
