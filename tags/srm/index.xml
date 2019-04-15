@@ -26,6 +26,61 @@ dp等の初期化も忘れずに．</description>
     </item>
     
     <item>
+      <title>SRM512 Div1Easy MysteriousRestaurant</title>
+      <link>https://chiyosbigdragon.github.io/blog/2018/09/11/</link>
+      <pubDate>Tue, 11 Sep 2018 09:00:00 +0900</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/blog/2018/09/11/</guid>
+      <description> URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11295
+概略 $N$ 日間だけ開くレストランがある．メニューは $M$ 種類あり，その値段は日ごと，メニューごとに異なる．
+また，注文するメニューは $7$ 日前と同じでなくてはならない．
+1日1回注文をするとして，財布の限り粘るとすると何日間粘ることが出来るか．
+方針 サンプル1を見ると，1日だけいる場合と8日いる場合とでは，取る料理の種類が異なることがわかる．なので日を進めるたび，曜日( $7n$ 日前)の料理をおさらいして最小コストを再計算してやるとよい．
+7日目まではソートして一番左にくるやつを選ぶ．以降は曜日でかかったコストをいったんbudgetに戻してから再計算．この方法だと貪欲にやってる感が強いので見通しはいい．
+ </description>
+    </item>
+    
+    <item>
+      <title>SRM511 Div1Easy Zoo</title>
+      <link>https://chiyosbigdragon.github.io/blog/2018/09/05/</link>
+      <pubDate>Wed, 05 Sep 2018 09:00:00 +0900</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/blog/2018/09/05/</guid>
+      <description> これ本家のカテゴリが Recursion なんですけど，どうなんですかね．
+URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11485
+概略 ウサギとネコが合わせて $N$ 匹いる．彼らの身長は互いに異なる．
+1匹ずつに次の質問をする． 「あなたと同じ種類で，あなたよりも身長が高い動物は何匹いるか？」
+彼らの回答が全て正しいものとするとき，それを構成するウサギまたはネコの割り当ては何通りあるか．
+補足 {0,0,1,1,2}という回答が得られたとき，ウサギをR，ネコをCとすると，
+ {R,C,R,C,R} {R,C,R,C,C} {R,C,C,R,R} {R,C,C,R,C} {C,R,R,C,R} {C,R,R,C,C} {C,R,C,R,R} {C,R,C,R,C}  の8通りが考えられます．
+方針 $2^{40}$ をシミュレートすることはまず無理．
+とりあえずanswersをソートしてみる．ウサちゃんもネコちゃんも同じ身長の同種はいないとのことなので，構築可能であるとき，
+answers={0,0,1,1,2,2,…,n-1,n-1,n,n+1,n+2,…,m}
+になる．逆にこうでないものは全て弾く必要があってこれが結構面倒．実装ではmapで数えてuniqueを取っている．
+各数字へのウサギとネコの割り振り方は，
+$$ 2(多いほうがウサギかネコの2通り) \times 2^{n} = 2^{n+1} $$
+ </description>
+    </item>
+    
+    <item>
+      <title>SRM510 Div2Medium TheLuckyGameDivTwo</title>
+      <link>https://chiyosbigdragon.github.io/blog/2018/09/04/</link>
+      <pubDate>Tue, 04 Sep 2018 19:00:00 +0900</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/blog/2018/09/04/</guid>
+      <description> URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11464
+概略 Lucky numberは $4,7$ のみを含む数字である．
+JohnとBrusはゲームをする．先ずJohnが長さjLenの区間を選ぶ．そのあとBrusが長さbLenの区間を「Johnが選んだ区間」の中から選ぶ．Brusが選んだ区間に含まれるLucky numberの数がポイントになる．
+Johnがスコアを最大化するように，Brusがスコアを最小化するように戦術をとるとき，最終的なスコアはいくらになるか．
+方針 範囲が $[1,4747]$ と狭いので全探索できそう．
+Johnはスコアが大きくなるように，Brusはスコアが小さくなるように，それぞれ区間をとるというのがわかりにくい．こういう戦略最適化問題の場合，おおむね先手はエスパーなので，まずBrusの行動から考える．
+BrusはJohnの決めた区間のうち，スコアが小さくなるよう更に区間を定める．つまり，Johnの各選択に対してスコアは一意に確定することがわかる．こうなると後は単純で，Johnはこの内スコアが最も大きくなる選択をすればいい．数学でやる1文字固定に近い．
+どうせラッキーナンバーは少ないので，2進数を列挙する感覚で全部書き出した．春に受講した，ひたすらカルノー図を書く授業を思い出してちょっと鬱になった．
+Brusが全範囲の最小値を必死に探す中，Johnはそのうちの最大値を高みの見物で選ぶ．そんな主従関係が目に浮かぶと書きやすいですね．
+ </description>
+    </item>
+    
+    <item>
       <title>SRM508 Div1Easy DivideAndShift</title>
       <link>https://chiyosbigdragon.github.io/blog/2018/08/22/</link>
       <pubDate>Wed, 22 Aug 2018 16:30:00 +0900</pubDate>

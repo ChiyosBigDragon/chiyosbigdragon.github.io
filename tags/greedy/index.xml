@@ -6,10 +6,25 @@
     <description>Recent content in Greedy on Spielsand</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 16 Aug 2018 03:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 11 Sep 2018 09:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chiyosbigdragon.github.io/tags/greedy/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SRM512 Div1Easy MysteriousRestaurant</title>
+      <link>https://chiyosbigdragon.github.io/blog/2018/09/11/</link>
+      <pubDate>Tue, 11 Sep 2018 09:00:00 +0900</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/blog/2018/09/11/</guid>
+      <description> URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11295
+概略 $N$ 日間だけ開くレストランがある．メニューは $M$ 種類あり，その値段は日ごと，メニューごとに異なる．
+また，注文するメニューは $7$ 日前と同じでなくてはならない．
+1日1回注文をするとして，財布の限り粘るとすると何日間粘ることが出来るか．
+方針 サンプル1を見ると，1日だけいる場合と8日いる場合とでは，取る料理の種類が異なることがわかる．なので日を進めるたび，曜日( $7n$ 日前)の料理をおさらいして最小コストを再計算してやるとよい．
+7日目まではソートして一番左にくるやつを選ぶ．以降は曜日でかかったコストをいったんbudgetに戻してから再計算．この方法だと貪欲にやってる感が強いので見通しはいい．
+ </description>
+    </item>
     
     <item>
       <title>SRM506 Div1Easy SlimeXSlimesCity</title>

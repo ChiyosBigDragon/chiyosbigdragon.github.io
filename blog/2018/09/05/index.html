@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.54.0" />
 
-  <title>Node.js | Spielsand</title>
+  <title>SRM511 Div1Easy Zoo | Spielsand</title>
 
   
   
@@ -39,8 +39,6 @@
   
 
  
-  
-  <link rel="alternate" type="application/rss+xml" title="Spielsand" href="https://chiyosbigdragon.github.io/tags/node.js/index.xml" />
   
 
   
@@ -118,10 +116,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://chiyosbigdragon.github.io/tags/node.js/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -221,20 +215,16 @@
 
 
 <div class="header">
-    <h1>Node.js</h1>
-    <h2><a href="https://chiyosbigdragon.github.io/blog">Blog</a> >> <a href="https://chiyosbigdragon.github.io/tags">Tags</a> >> Node.js</h2>
+    <h1>SRM511 Div1Easy Zoo</h1>
+    <h2><a href="https://chiyosbigdragon.github.io/blog">Blog</a> >> SRM511 Div1Easy Zoo</h2>
 </div>
-
 <div class="content">
-    
-        <article>
-  <header>
-    <h2><a href="https://chiyosbigdragon.github.io/blog/2019/03/13/">Node.jsで作る番組情報通知Bot</a></h2>
-    <div class="post-meta">
+
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>13 Mar 2019, 18:00</time>
+    <time>05 Sep 2018, 09:00</time>
   </div>
 
   
@@ -245,7 +235,7 @@
   <div>
     <i class="fa fa-folder fa-fw"></i>
     
-      <a class="post-taxonomy-topic" href="https://chiyosbigdragon.github.io/topics/programming">Programming</a>
+      <a class="post-taxonomy-topic" href="https://chiyosbigdragon.github.io/topics/competitiveprogramming">CompetitiveProgramming</a>
     
   </div>
   
@@ -257,22 +247,120 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/node.js">Node.js</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/slack">Slack</a>
+      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/ad-hoc">Ad hoc</a>
     
   </div>
   
   
 
 </div>
-  </header>
 
   
-</article>
 
+<p>これ本家のカテゴリが <em>Recursion</em> なんですけど，どうなんですかね．</p>
+
+<h2 id="url">URL</h2>
+
+<p><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=11485">https://community.topcoder.com/stat?c=problem_statement&amp;pm=11485</a></p>
+
+<h2 id="概略">概略</h2>
+
+<p>ウサギとネコが合わせて $N$ 匹いる．彼らの身長は互いに異なる．</p>
+
+<p>1匹ずつに次の質問をする．
+「あなたと同じ種類で，あなたよりも身長が高い動物は何匹いるか？」</p>
+
+<p>彼らの回答が全て正しいものとするとき，それを構成するウサギまたはネコの割り当ては何通りあるか．</p>
+
+<h3 id="補足">補足</h3>
+
+<p><code>{0,0,1,1,2}</code>という回答が得られたとき，ウサギを<code>R</code>，ネコを<code>C</code>とすると，</p>
+
+<ul>
+<li><code>{R,C,R,C,R}</code></li>
+<li><code>{R,C,R,C,C}</code></li>
+<li><code>{R,C,C,R,R}</code></li>
+<li><code>{R,C,C,R,C}</code></li>
+<li><code>{C,R,R,C,R}</code></li>
+<li><code>{C,R,R,C,C}</code></li>
+<li><code>{C,R,C,R,R}</code></li>
+<li><code>{C,R,C,R,C}</code></li>
+</ul>
+
+<p>の8通りが考えられます．</p>
+
+<h2 id="方針">方針</h2>
+
+<p>$2^{40}$ をシミュレートすることはまず無理．</p>
+
+<p>とりあえず<code>answers</code>をソートしてみる．ウサちゃんもネコちゃんも同じ身長の同種はいないとのことなので，構築可能であるとき，</p>
+
+<p><code>answers={0,0,1,1,2,2,…,n-1,n-1,n,n+1,n+2,…,m}</code></p>
+
+<p>になる．逆にこうでないものは全て弾く必要があってこれが結構面倒．実装では<code>map</code>で数えて<code>unique</code>を取っている．</p>
+
+<p>各数字へのウサギとネコの割り振り方は，</p>
+
+<p>$$ 2(多いほうがウサギかネコの2通り) \times 2^{n} = 2^{n+1} $$</p>
+
+<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/SRM/master/500-519/511Div1E_Zoo.cpp"></code></pre>
+
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+    <a href="https://chiyosbigdragon.github.io/blog/2018/09/04/"><i class="fa fa-chevron-left"></i></a>
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="prev">
+      <a href="https://chiyosbigdragon.github.io/blog/2018/09/04/">SRM510 Div2Medium TheLuckyGameDivTwo</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+    <nav class="next">
+      <a href="https://chiyosbigdragon.github.io/blog/2018/09/11/">SRM512 Div1Easy MysteriousRestaurant</a>
+    </nav>
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+    <a href="https://chiyosbigdragon.github.io/blog/2018/09/11/"><i class="fa fa-chevron-right"></i></a>
+    
+  </div>
+</div>
+
+
+
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
     
     
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'chiyosbigdragon';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
 
 </div>
 
