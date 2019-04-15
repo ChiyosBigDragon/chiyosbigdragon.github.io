@@ -17,7 +17,8 @@
       <pubDate>Sat, 13 Apr 2019 15:00:00 +0900</pubDate>
       
       <guid>https://chiyosbigdragon.github.io/blog/2019/04/13/</guid>
-      <description> 結果 aC2完45pt．1500人通過で1584th(多分)でした．まさかペナ差で落ちるとは…
+      <description> QualのWrite Upはここ
+結果 aC2完45pt．1500人通過で1584th(多分)でした．まさかペナ差で落ちるとは…
 A: Pylons 概略 $R\times C$のグリッドを後述するルールで動く駒がある．重複することなく全てのマスを踏めるならば，その動き方を示せ．
 ルール 移動前の座標を $(r,c)$ ，移動後の座標を $(r&amp;rsquo;,c&amp;rsquo;)$ とする．以下のいずれにも該当してはいけない．
  $r = r&amp;rsquo;$ $c = c&amp;rsquo;$ $r - c = r&amp;rsquo; - c&amp;rsquo;$ $r + c = r&amp;rsquo; + c&amp;rsquo;$  雑感 全探索しかわからない．最初はSmallすらも落ちたが，1解に到達した時点で強制終了させたらなんとか通った．Largeはまったくわからない．桃色大戦ぱいろんは昔やってましたね．
@@ -35,7 +36,8 @@ C: Alien Rhyme 概略 与えられた単語からrhymeできるもの同士を�
       <pubDate>Sun, 07 Apr 2019 19:00:00 +0900</pubDate>
       
       <guid>https://chiyosbigdragon.github.io/blog/2019/04/07/</guid>
-      <description>結果 AB2完41ptで通過した．CDも解くつもりでいたが，Cで多倍長整数が必要なことに気付いてやる気を無くした．Round1以降に多倍長が出たらこの人はどうするつもりなのだろうか．
+      <description>R1AのWrite Upはここ
+結果 AB2完41ptで通過した．CDも解くつもりでいたが，Cで多倍長整数が必要なことに気付いてやる気を無くした．Round1以降に多倍長が出たらこの人はどうするつもりなのだろうか．
 A: Foregone Solution 概略 正整数 $N$ が渡されるので $N=A+B$ となるように分割する．ただし $A,B$ は正整数で $4$ を含んではならない．
 $N$ には1つ以上 $4$ が含まれる．
 雑感 読みやすくて助かる．桁ごとに見て，$4$ を $2+2$ に分解すればよさそう．この出力形式誰が得するんだ．
