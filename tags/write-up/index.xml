@@ -18,7 +18,7 @@
       
       <guid>https://chiyosbigdragon.github.io/blog/2019/04/13/</guid>
       <description> QualのWrite Upはここ
-結果 aC2完45pt．1500人通過で1584th(多分)でした．まさかペナ差で落ちるとは…
+結果 aC2完45pt．1500人通過で1584th1567th(何故か上がった)でした．まさかペナ差で落ちるとは…
 A: Pylons 概略 $R\times C$のグリッドを後述するルールで動く駒がある．重複することなく全てのマスを踏めるならば，その動き方を示せ．
 ルール 移動前の座標を $(r,c)$ ，移動後の座標を $(r&amp;rsquo;,c&amp;rsquo;)$ とする．以下のいずれにも該当してはいけない．
  $r = r&amp;rsquo;$ $c = c&amp;rsquo;$ $r - c = r&amp;rsquo; - c&amp;rsquo;$ $r + c = r&amp;rsquo; + c&amp;rsquo;$  雑感 全探索しかわからない．最初はSmallすらも落ちたが，1解に到達した時点で強制終了させたらなんとか通った．Largeはまったくわからない．桃色大戦ぱいろんは昔やってましたね．
