@@ -361,7 +361,18 @@ Euler Tour 木をDFSする．欲しい情報は以下の通り．
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chiyosbigdragon.github.io/competitiveprogramming/library/</guid>
-      <description> Graph Theory  Lowest Common Ancestor (LCA)  Math  Combination  </description>
+      <description> Graph Theory  Lowest Common Ancestor (LCA)  Math  Combination Matrix  </description>
+    </item>
+    
+    <item>
+      <title>Matrix</title>
+      <link>https://chiyosbigdragon.github.io/competitiveprogramming/library/math/matrix/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/competitiveprogramming/library/math/matrix/</guid>
+      <description>概略 行列計算
+目次  アルゴリズム 実装例 verify  ABC009_D  参考  アルゴリズム 特になし
+実装例  Matrix$(h,w)$ := $h$ 行 $w$ 列の行列を作成し，$0$ で初期化． Matrix$(G)$ := 行列を2次元配列 $G$ で初期化． height$()$, width$()$ := 行列のサイズを取得．  $O(1)$  I$(n,x)$ := 単位元を $x$ とする $n$ 次単位行列．  $O(n^2)$ 零元も設定できるようにするべき？  演算子オーバーロード  加法+,+=，差-,-= $O(n^2)$ 乗法*,*= $O(n^3)$ 添字アクセス[] $O(1)$  pow$(k)$ := 行列累乗  $O(n^3logk)$ 別でpower作って任意のクラスを載せられるほうがよくないか．取ってくるの面倒だけど  必要になったら作るやつ  線形代数の勉強から始めないといけない スカラー倍 転置 行列式 ランク トレース    verify D - 漸化式 - AtCoder Beginner Contest 009 &amp;mdash; AtCoder $$ \begin{aligned} \left( \begin{array}{ccc} A _ {N+K} \\ A _ {N+K-1} \\ A _ {N+K-2} \\ \vdots \\ A _ {N+1} \end{array} \right) = \left( \begin{array}{ccc} C _ 1 &amp;amp; C _ 2 &amp;amp; \ldots &amp;amp; C _ {K-1} &amp;amp; C _ K \\ 1 &amp;amp; 0 &amp;amp; \ldots &amp;amp; 0 &amp;amp; 0 \\ 0 &amp;amp; 1 &amp;amp; \ldots &amp;amp; 0 &amp;amp; 0 \\ \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots &amp;amp; \vdots \\ 0 &amp;amp; 0 &amp;amp; \ldots &amp;amp; 1 &amp;amp; 0 \end{array} \right) \left( \begin{array}{ccc} A _ {N+K-1} \\ A _ {N+K-2} \\ A _ {N+K-3} \\ \vdots \\ A _ {N} \end{array} \right) \end{aligned} $$</description>
     </item>
     
     <item>

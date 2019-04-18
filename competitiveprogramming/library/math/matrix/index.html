@@ -5,7 +5,7 @@
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <meta name="description" content="">
           <meta name="generator" content="Hugo 0.54.0" />
-          <title>Library | Spielsand</title>
+          <title>Matrix | Spielsand</title>
 
           
           
@@ -199,24 +199,136 @@
 
 
 <div class="header">
-    <h1>Library</h1>
+    <h1>Matrix</h1>
     
 </div>
 <div class="content">
 
   
 
-<h1 id="graph-theory">Graph Theory</h1>
+<h1 id="概略">概略</h1>
+
+<p>行列計算</p>
+
+<h1 id="目次">目次</h1>
 
 <ul>
-<li><a href="./graph_theory/lca">Lowest Common Ancestor (LCA)</a></li>
+<li><a href="#アルゴリズム">アルゴリズム</a></li>
+<li><a href="#実装例">実装例</a></li>
+<li><a href="#verify">verify</a>
+
+<ul>
+<li><a href="#ABC009_D">ABC009_D</a></li>
+</ul></li>
+<li><a href="#参考">参考</a></li>
 </ul>
 
-<h1 id="math">Math</h1>
+<h1 id="アルゴリズム">アルゴリズム</h1>
+
+<p>特になし</p>
+
+<h1 id="実装例">実装例</h1>
 
 <ul>
-<li><a href="./math/combination">Combination</a></li>
-<li><a href="./math/matrix">Matrix</a></li>
+<li>Matrix$(h,w)$ := $h$ 行 $w$ 列の行列を作成し，$0$ で初期化．</li>
+<li>Matrix$(G)$ := 行列を2次元配列 $G$ で初期化．</li>
+<li>height$()$, width$()$ := 行列のサイズを取得．
+
+<ul>
+<li>$O(1)$</li>
+</ul></li>
+<li>I$(n,x)$ := 単位元を $x$ とする $n$ 次単位行列．
+
+<ul>
+<li>$O(n^2)$</li>
+<li>零元も設定できるようにするべき？</li>
+</ul></li>
+<li>演算子オーバーロード
+
+<ul>
+<li>加法<code>+,+=</code>，差<code>-,-=</code> $O(n^2)$</li>
+<li>乗法<code>*,*=</code> $O(n^3)$</li>
+<li>添字アクセス<code>[]</code> $O(1)$</li>
+</ul></li>
+<li>pow$(k)$ := 行列累乗
+
+<ul>
+<li>$O(n^3logk)$</li>
+<li>別でpower作って任意のクラスを載せられるほうがよくないか．取ってくるの面倒だけど</li>
+</ul></li>
+<li>必要になったら作るやつ
+
+<ul>
+<li>線形代数の勉強から始めないといけない</li>
+<li>スカラー倍</li>
+<li>転置</li>
+<li>行列式</li>
+<li>ランク</li>
+<li>トレース</li>
+</ul></li>
+</ul>
+
+<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/Library/master/Math/Matrix/Matrix.cpp"></code></pre>
+
+
+<h1 id="verify">verify</h1>
+
+<h4 id="ABC009_D"><a href="https://atcoder.jp/contests/abc009/tasks/abc009_4">D - 漸化式 - AtCoder Beginner Contest 009 &mdash; AtCoder</a></h4>
+
+<p>$$
+\begin{aligned}
+    \left(
+        \begin{array}{ccc}
+            A _ {N+K} \\ A _ {N+K-1} \\ A _ {N+K-2} \\ \vdots \\ A _ {N+1}
+        \end{array}
+    \right)
+    =
+    \left(
+        \begin{array}{ccc}
+            C _ 1 &amp; C _ 2 &amp; \ldots &amp; C _ {K-1} &amp; C _ K \\ 1 &amp; 0 &amp; \ldots &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; \ldots &amp; 0 &amp; 0 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\ 0 &amp; 0 &amp; \ldots &amp; 1 &amp; 0
+        \end{array}
+    \right)
+    \left(
+        \begin{array}{ccc}
+            A _ {N+K-1} \\ A _ {N+K-2} \\ A _ {N+K-3} \\ \vdots \\ A _ {N}
+        \end{array}
+    \right)
+\end{aligned}
+$$</p>
+
+<p>$$
+\therefore
+\begin{aligned}
+    \left(
+        \begin{array}{ccc}
+            A _ {N+K} \\ A _ {N+K-1} \\ A _ {N+K-2} \\ \vdots \\ A _ {N+1}
+        \end{array}
+    \right)
+    =
+    \left(
+        \begin{array}{ccc}
+            C _ 1 &amp; C _ 2 &amp; \ldots &amp; C _ {K-1} &amp; C _ K \\ 1 &amp; 0 &amp; \ldots &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp;  \ldots &amp; 0 &amp; 0 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\ 0 &amp; 0 &amp; \ldots &amp; 1 &amp; 0
+        \end{array}
+    \right) ^ N
+    \left(
+        \begin{array}{ccc}
+            A _ {K} \\ A _ {K-1} \\ A _ {K-2} \\ \vdots \\ A _ {1}
+        \end{array}
+    \right)
+\end{aligned}
+$$</p>
+
+<p>AND演算の単位元が<code>UINT_MAX</code>であることに注意．</p>
+
+<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/Library/master/Math/Matrix/verify/ABC009_D.cpp"></code></pre>
+
+
+<h1 id="参考">参考</h1>
+
+<ul>
+<li><a href="https://ei1333.github.io/luzhiled/snippets/math/matrix.html">行列演算(Matrix) &mdash; Luzhiled&rsquo;s memo</a></li>
+<li><a href="http://www.learning-algorithms.com/entry/2017/10/13/193130">行列ライブラリ &mdash; Learning Algorithms</a></li>
+<li><a href="https://emtubasa.hateblo.jp/entry/2018/09/07/131441">ABC009 D - 漸化式 &mdash; ツバサの備忘録</a></li>
 </ul>
 
 
