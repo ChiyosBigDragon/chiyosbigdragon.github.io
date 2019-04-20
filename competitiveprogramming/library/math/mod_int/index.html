@@ -5,7 +5,7 @@
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <meta name="description" content="">
           <meta name="generator" content="Hugo 0.54.0" />
-          <title>Matrix | Spielsand</title>
+          <title>ModInt | Spielsand</title>
 
           
           
@@ -199,7 +199,7 @@
 
 
 <div class="header">
-    <h1>Matrix</h1>
+    <h1>ModInt</h1>
     
 </div>
 <div class="content">
@@ -208,7 +208,7 @@
 
 <h1 id="概略">概略</h1>
 
-<p>行列計算</p>
+<p>全自動mod取り機</p>
 
 <h1 id="目次">目次</h1>
 
@@ -218,8 +218,7 @@
 <li><a href="#verify">verify</a>
 
 <ul>
-<li><a href="#AOJ_ITP1_7_D">AOJ ITP1_7_D</a></li>
-<li><a href="#ABC009_D">ABC009_D</a></li>
+<li><a href="#ch_G">Chokudai Speed Run 001_G</a></li>
 <li><a href="#yuki_194">yukicoder No.194</a></li>
 </ul></li>
 <li><a href="#参考">参考</a></li>
@@ -227,159 +226,92 @@
 
 <h1 id="アルゴリズム">アルゴリズム</h1>
 
-<p>特になし</p>
+<p>逆元の実装について補足．</p>
+
+<p>$a^{-1} \mod b$ を求めるには
+$$ax + by = 1$$
+を満たす $x$ を求めることが必要である．ここで
+$$
+\left(
+    \begin{array}{ccc}
+        a &amp; 1 &amp; 0 \\ b &amp; 0 &amp; 1
+    \end{array}
+\right)
+\left(
+    \begin{array}{ccc}
+        -1 \\ a \\ b
+    \end{array}
+\right)
+= {\bm 0}
+$$
+という自明な式を考える．この式は行基本変形を用いて，次の形に持っていくことが出来る．
+$$
+\left(
+    \begin{array}{ccc}
+        \gcd(a,b) &amp; x &amp; y \\ 0 &amp; u &amp; v
+    \end{array}
+\right)
+\left(
+    \begin{array}{ccc}
+        -1 \\ a \\ b
+    \end{array}
+\right)
+= {\bm 0}
+$$
+1行目に注目すると
+$$ax + by = \gcd(a,b) = 1$$
+であるから，行基本変形の間に $ax + by = 1$ を満たす $x$ が求まっている事がわかる．</p>
+
+<p>したがってライブラリ内で行うことは
+$$
+\left(
+    \begin{array}{ccc}
+        a &amp; s &amp; - \\ b &amp; t &amp; -
+    \end{array}
+\right)
+$$
+を初期値 $(a,b,s,t) = (a,b,1,0)$ として，行基本変形を $b = 0$ になるまで繰り返すだけである．</p>
 
 <h1 id="実装例">実装例</h1>
 
 <ul>
-<li>Matrix$(h,w)$ := $h$ 行 $w$ 列の行列を作成し，$0$ で初期化．</li>
-<li>Matrix$(G)$ := 行列を2次元配列 $G$ で初期化．</li>
-<li>height$()$, width$()$ := 行列のサイズを取得．
-
-<ul>
-<li>$O(1)$</li>
-</ul></li>
-<li>I$(n,x)$ := 単位元を $x$ とする $n$ 次単位行列．
-
-<ul>
-<li>$O(n^2)$</li>
-<li>零元も設定できるようにするべき？</li>
-</ul></li>
+<li>ModInt&lt;$p$&gt;$(x)$ := $\mod p$ の演算をサポート</li>
 <li>演算子オーバーロード
 
 <ul>
-<li>加法<code>+,+=</code>，差<code>-,-=</code> $O(n^2)$</li>
-<li>乗法<code>*,*=</code> $O(n^3)$</li>
-<li>添字アクセス<code>[]</code> $O(1)$</li>
+<li>負号<code>-</code></li>
+<li>加法<code>+</code><code>+=</code></li>
+<li>減法<code>-</code><code>-=</code></li>
+<li>乗法<code>*</code><code>*=</code></li>
+<li>除法<code>/</code><code>/=</code></li>
+<li>等号<code>==</code><code>!=</code></li>
+<li>入出力<code>&gt;&gt;</code><code>&lt;&lt;</code></li>
 </ul></li>
-<li>pow$(k)$ := 行列累乗
+<li>pow$(n)$ := $x^n \mod p$
 
 <ul>
-<li>$O(n^3\log k)$</li>
-<li>別でpower作って任意のクラスを載せられるほうがよくないか．取ってくるの面倒だけど</li>
+<li>$O(\log n)$</li>
 </ul></li>
-<li>必要になったら作るやつ
+<li>inverse$()$ := $x$ の逆元を返す
 
 <ul>
-<li>線形代数の勉強から始めないといけない</li>
-<li>スカラー倍</li>
-<li>転置</li>
-<li>行列式</li>
-<li>ランク</li>
-<li>トレース</li>
+<li>$x$ と$p$ がフィボナッチ数列の隣接2項であるとき，最悪計算量$O(\log_{\gamma} p)(\gamma = \frac{1+\sqrt{5}}{2})$</li>
 </ul></li>
 </ul>
 
-<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/Library/master/Math/Matrix/Matrix.cpp"></code></pre>
+<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/Library/master/Math/ModInt/ModInt.cpp"></code></pre>
 
 
 <h1 id="verify">verify</h1>
 
-<h4 id="AOJ_ITP1_7_D"><a href="https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_D">行列の積 - ITP1_7_D &mdash; AIZU ONLINE JUDGE</a></h4>
+<h4 id="ch_G"><a href="https://atcoder.jp/contests/chokudai_S001/tasks/chokudai_S001_g">G - あまり - Chokudai SpeedRun 001 &mdash; AtCoder</a></h4>
 
-<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/Library/master/Math/Matrix/verify/ITP1_7_D.cpp"></code></pre>
-
-
-<h4 id="ABC009_D"><a href="https://atcoder.jp/contests/abc009/tasks/abc009_4">D - 漸化式 - AtCoder Beginner Contest 009 &mdash; AtCoder</a></h4>
-
-<p>$$
-\begin{aligned}
-    \left(
-        \begin{array}{ccc}
-            A _ {N+K} \\ A _ {N+K-1} \\ A _ {N+K-2} \\ \vdots \\ A _ {N+1}
-        \end{array}
-    \right)
-    =
-    \left(
-        \begin{array}{ccc}
-            C _ 1 &amp; C _ 2 &amp; \ldots &amp; C _ {K-1} &amp; C _ K \\ 1 &amp; 0 &amp; \ldots &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; \ldots &amp; 0 &amp; 0 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\ 0 &amp; 0 &amp; \ldots &amp; 1 &amp; 0
-        \end{array}
-    \right)
-    \left(
-        \begin{array}{ccc}
-            A _ {N+K-1} \\ A _ {N+K-2} \\ A _ {N+K-3} \\ \vdots \\ A _ {N}
-        \end{array}
-    \right)
-\end{aligned}
-$$</p>
-
-<p>$$
-\therefore
-\begin{aligned}
-    \left(
-        \begin{array}{ccc}
-            A _ {N+K} \\ A _ {N+K-1} \\ A _ {N+K-2} \\ \vdots \\ A _ {N+1}
-        \end{array}
-    \right)
-    =
-    \left(
-        \begin{array}{ccc}
-            C _ 1 &amp; C _ 2 &amp; \ldots &amp; C _ {K-1} &amp; C _ K \\ 1 &amp; 0 &amp; \ldots &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp;  \ldots &amp; 0 &amp; 0 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\ 0 &amp; 0 &amp; \ldots &amp; 1 &amp; 0
-        \end{array}
-    \right) ^ N
-    \left(
-        \begin{array}{ccc}
-            A _ {K} \\ A _ {K-1} \\ A _ {K-2} \\ \vdots \\ A _ {1}
-        \end{array}
-    \right)
-\end{aligned}
-$$</p>
-
-<p>AND演算の単位元が<code>UINT_MAX</code>であることに注意．</p>
-
-<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/Library/master/Math/Matrix/verify/ABC009_D.cpp"></code></pre>
+<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/Library/master/Math/ModInt/verify/ChokudaiSpeedRun001_G.cpp"></code></pre>
 
 
 <h4 id="yuki_194"><a href="https://yukicoder.me/problems/no/194">No.194 フィボナッチ数列の理解(1) &mdash; yukicoder</a></h4>
 
-<p>$$
-\begin{cases}
-    F(k) = S(k-1) - S(k-n-1) \\ S(k) = F(k) + S(k-1)
-\end{cases}
-$$</p>
-
-<p>$$
-\therefore S(k) = 2S(k-1) - S(k-n-1)
-$$</p>
-
-<p>$$
-\left(
-    \begin{array}{ccc}
-        S(k) \\ S(k-1) \\ \vdots \\ S(k-n)
-    \end{array}
-\right) =
-\left(
-    \begin{array}{ccc}
-        2 &amp; 0 &amp; \ldots &amp; 0 &amp; -1 \\ 1 &amp; 0 &amp; \ldots &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; \ldots &amp; 0 &amp; 0 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\ 0 &amp; 0 &amp; \ldots &amp; 1 &amp; 0
-    \end{array}
-\right)
-\left(
-    \begin{array}{ccc}
-        S(k-1) \\ S(k-2) \\ \vdots \\ S(k-n-1)
-    \end{array}
-\right)
-$$</p>
-
-<p>$$
-\therefore
-\left(
-    \begin{array}{ccc}
-        S(k) \\ S(k-1) \\ \vdots \\ S(k-n)
-    \end{array}
-\right) =
-\left(
-    \begin{array}{ccc}
-        2 &amp; 0 &amp; \ldots &amp; 0 &amp; -1 \\ 1 &amp; 0 &amp; \ldots &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; \ldots &amp; 0 &amp; 0 \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots \\ 0 &amp; 0 &amp; \ldots &amp; 1 &amp; 0
-    \end{array}
-\right) ^ {k-n}
-\left(
-    \begin{array}{ccc}
-        S(n) \\ S(n-1) \\ \vdots \\ S(0)
-    \end{array}
-\right)
-$$</p>
-
-<p>要: <a href="../mod_int/">ModInt</a></p>
+<p>要: <a href="../matrix/">Matrix</a></p>
 
 <pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/Library/master/Math/Matrix/verify/yuki194.cpp"></code></pre>
 
@@ -387,10 +319,16 @@ $$</p>
 <h1 id="参考">参考</h1>
 
 <ul>
-<li><a href="https://ei1333.github.io/luzhiled/snippets/math/matrix.html">行列演算(Matrix) &mdash; Luzhiled&rsquo;s memo</a></li>
-<li><a href="http://www.learning-algorithms.com/entry/2017/10/13/193130">行列ライブラリ &mdash; Learning Algorithms</a></li>
-<li><a href="https://emtubasa.hateblo.jp/entry/2018/09/07/131441">ABC009 D - 漸化式 &mdash; ツバサの備忘録</a></li>
+<li><a href="https://topcoder.g.hatena.ne.jp/spaghetti_source/20130126/1359171466">Euclidean algorithm (Blankinship algorithm) &mdash; 週刊 spaghetti_source</a></li>
+<li><a href="http://noshi91.hatenablog.com/entry/2019/03/31/174006">modint 構造体を使ってみませんか？ (C++) &mdash; noshi91のメモ</a></li>
+<li><a href="https://ei1333.github.io/luzhiled/snippets/math/mod-int.html">Mod-Int &mdash; Luzhiled&rsquo;s memo</a></li>
 </ul>
+
+<h3 id="入出力にfriendを付ける意味">入出力にfriendを付ける意味？</h3>
+
+<p><a href="http://www7b.biglobe.ne.jp/~robe/cpphtml/html02/cpp02043.html">第４３章　心の友よ！ &mdash; ロベールの部屋</a></p>
+
+<p><code>cin&gt;&gt;int&gt;&gt;mod</code>や<code>cout&lt;&lt;mod</code>は左項が<code>ModInt</code>ではないのでクラス外から呼び出す必要がある．しかしそれだと<code>private</code>である<code>ModInt.x</code>にアクセスできないので<code>friend</code>で解決する？</p>
 
 
 </div>

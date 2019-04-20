@@ -338,7 +338,7 @@ Shiftは数えるだけなので先にDivideを行う．Divideのやり方は高
       
       <guid>https://chiyosbigdragon.github.io/competitiveprogramming/library/math/combination/</guid>
       <description>概略 Combinationに係る諸計算のライブラリ
-目次  アルゴリズム  逆元 パスカルの三角形  実装例  逆元 パスカルの三角形  verify  AOJ 1501 yukicoder 117 ABC021_D  参考  アルゴリズム 逆元 $$ {}_{n} \mathrm{C} _ {r} = \frac{n!}{r!(n-r)!} $$ なので分数のmodを求めたい気持ちになる．ここで逆元を使う．
+目次  アルゴリズム  逆元 パスカルの三角形  実装例  逆元 パスカルの三角形  verify  AOJ 1501 yukicoder No.117 ABC021_D  参考  アルゴリズム 逆元 $$ {}_{n} \mathrm{C} _ {r} = \frac{n!}{r!(n-r)!} $$ なので分数のmodを求めたい気持ちになる．ここで逆元を使う．
 整数 $a$ と 素数 $p$ について $$ p = \left\lfloor \frac{p}{a} \right\rfloor \times a + p\%a $$ mod $p$ とすると $$ 0 \equiv \left\lfloor \frac{p}{a} \right\rfloor \times a + p\%a $$ $$ p\%a \equiv - \left\lfloor \frac{p}{a} \right\rfloor \times a $$ $$ p\%a \times a^{-1} \equiv - \left\lfloor \frac{p}{a} \right\rfloor $$ $$ a^{-1} \equiv - \left\lfloor \frac{p}{a} \right\rfloor \times (p\%a)^{-1} $$</description>
     </item>
     
@@ -361,7 +361,7 @@ Euler Tour 木をDFSする．欲しい情報は以下の通り．
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://chiyosbigdragon.github.io/competitiveprogramming/library/</guid>
-      <description> Graph Theory  Lowest Common Ancestor (LCA)  Math  Combination Matrix  </description>
+      <description> Graph Theory  Lowest Common Ancestor (LCA)  Math  Combination Matrix ModInt  </description>
     </item>
     
     <item>
@@ -371,8 +371,19 @@ Euler Tour 木をDFSする．欲しい情報は以下の通り．
       
       <guid>https://chiyosbigdragon.github.io/competitiveprogramming/library/math/matrix/</guid>
       <description>概略 行列計算
-目次  アルゴリズム 実装例 verify  ABC009_D  参考  アルゴリズム 特になし
-実装例  Matrix$(h,w)$ := $h$ 行 $w$ 列の行列を作成し，$0$ で初期化． Matrix$(G)$ := 行列を2次元配列 $G$ で初期化． height$()$, width$()$ := 行列のサイズを取得．  $O(1)$  I$(n,x)$ := 単位元を $x$ とする $n$ 次単位行列．  $O(n^2)$ 零元も設定できるようにするべき？  演算子オーバーロード  加法+,+=，差-,-= $O(n^2)$ 乗法*,*= $O(n^3)$ 添字アクセス[] $O(1)$  pow$(k)$ := 行列累乗  $O(n^3logk)$ 別でpower作って任意のクラスを載せられるほうがよくないか．取ってくるの面倒だけど  必要になったら作るやつ  線形代数の勉強から始めないといけない スカラー倍 転置 行列式 ランク トレース    verify D - 漸化式 - AtCoder Beginner Contest 009 &amp;mdash; AtCoder $$ \begin{aligned} \left( \begin{array}{ccc} A _ {N+K} \\ A _ {N+K-1} \\ A _ {N+K-2} \\ \vdots \\ A _ {N+1} \end{array} \right) = \left( \begin{array}{ccc} C _ 1 &amp;amp; C _ 2 &amp;amp; \ldots &amp;amp; C _ {K-1} &amp;amp; C _ K \\ 1 &amp;amp; 0 &amp;amp; \ldots &amp;amp; 0 &amp;amp; 0 \\ 0 &amp;amp; 1 &amp;amp; \ldots &amp;amp; 0 &amp;amp; 0 \\ \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots &amp;amp; \vdots \\ 0 &amp;amp; 0 &amp;amp; \ldots &amp;amp; 1 &amp;amp; 0 \end{array} \right) \left( \begin{array}{ccc} A _ {N+K-1} \\ A _ {N+K-2} \\ A _ {N+K-3} \\ \vdots \\ A _ {N} \end{array} \right) \end{aligned} $$</description>
+目次  アルゴリズム 実装例 verify  AOJ ITP1_7_D ABC009_D yukicoder No.194  参考  アルゴリズム 特になし
+実装例  Matrix$(h,w)$ := $h$ 行 $w$ 列の行列を作成し，$0$ で初期化． Matrix$(G)$ := 行列を2次元配列 $G$ で初期化． height$()$, width$()$ := 行列のサイズを取得．  $O(1)$  I$(n,x)$ := 単位元を $x$ とする $n$ 次単位行列．  $O(n^2)$ 零元も設定できるようにするべき？  演算子オーバーロード  加法+,+=，差-,-= $O(n^2)$ 乗法*,*= $O(n^3)$ 添字アクセス[] $O(1)$  pow$(k)$ := 行列累乗  $O(n^3\log k)$ 別でpower作って任意のクラスを載せられるほうがよくないか．取ってくるの面倒だけど  必要になったら作るやつ  線形代数の勉強から始めないといけない スカラー倍 転置 行列式 ランク トレース    verify 行列の積 - ITP1_7_D &amp;mdash; AIZU ONLINE JUDGE  D - 漸化式 - AtCoder Beginner Contest 009 &amp;mdash; AtCoder $$ \begin{aligned} \left( \begin{array}{ccc} A _ {N+K} \\ A _ {N+K-1} \\ A _ {N+K-2} \\ \vdots \\ A _ {N+1} \end{array} \right) = \left( \begin{array}{ccc} C _ 1 &amp;amp; C _ 2 &amp;amp; \ldots &amp;amp; C _ {K-1} &amp;amp; C _ K \\ 1 &amp;amp; 0 &amp;amp; \ldots &amp;amp; 0 &amp;amp; 0 \\ 0 &amp;amp; 1 &amp;amp; \ldots &amp;amp; 0 &amp;amp; 0 \\ \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots &amp;amp; \vdots \\ 0 &amp;amp; 0 &amp;amp; \ldots &amp;amp; 1 &amp;amp; 0 \end{array} \right) \left( \begin{array}{ccc} A _ {N+K-1} \\ A _ {N+K-2} \\ A _ {N+K-3} \\ \vdots \\ A _ {N} \end{array} \right) \end{aligned} $$</description>
+    </item>
+    
+    <item>
+      <title>ModInt</title>
+      <link>https://chiyosbigdragon.github.io/competitiveprogramming/library/math/mod_int/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/competitiveprogramming/library/math/mod_int/</guid>
+      <description>概略 全自動mod取り機
+目次  アルゴリズム 実装例 verify  Chokudai Speed Run 001_G yukicoder No.194  参考  アルゴリズム 逆元の実装について補足．
+$a^{-1} \mod b$ を求めるには $$ax + by = 1$$ を満たす $x$ を求めることが必要である．ここで $$ \left( \begin{array}{ccc} a &amp;amp; 1 &amp;amp; 0 \\ b &amp;amp; 0 &amp;amp; 1 \end{array} \right) \left( \begin{array}{ccc} -1 \\ a \\ b \end{array} \right) = {\bm 0} $$ という自明な式を考える．この式は行基本変形を用いて，次の形に持っていくことが出来る． $$ \left( \begin{array}{ccc} \gcd(a,b) &amp;amp; x &amp;amp; y \\ 0 &amp;amp; u &amp;amp; v \end{array} \right) \left( \begin{array}{ccc} -1 \\ a \\ b \end{array} \right) = {\bm 0} $$ 1行目に注目すると $$ax + by = \gcd(a,b) = 1$$ であるから，行基本変形の間に $ax + by = 1$ を満たす $x$ が求まっている事がわかる．</description>
     </item>
     
     <item>
