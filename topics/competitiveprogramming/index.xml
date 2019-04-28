@@ -6,10 +6,26 @@
     <description>Recent content in CompetitiveProgramming on Spielsand</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 13 Apr 2019 15:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 29 Apr 2019 06:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chiyosbigdragon.github.io/topics/competitiveprogramming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Google Code Jam 2019 - Round 1B</title>
+      <link>https://chiyosbigdragon.github.io/blog/2019/04/29/</link>
+      <pubDate>Mon, 29 Apr 2019 06:00:00 +0900</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/blog/2019/04/29/</guid>
+      <description>QualのWrite R1AのWriteUp R1BのWriteUp  結果 Ac2完41pt．1815th．Round1Cに進出．
+A: Manhattan Crepe Cart 概略 より多くの人が向かう交差点の場所を特定しよう．
+雑感 $(x,y)$ にいる人が $+x$ 方向を向いているなら交差点の候補は $(x&amp;rsquo;,y&amp;rsquo;) (x+1 \leq x&amp;rsquo; \leq Q, 0 \leq y&amp;rsquo; \leq Q)$
+点の候補が $x,y$ について独立なので別々に求めることが出来る．集計はimos法が楽か．何故か配列を4つ用意してさらに添字ミスで1WA．
+ B: Draupnir 概略 X-day ringはX日で倍に増える．$d$ 日目のリングの総数を質問できるので，0日目での各リングの数を求めよう．
+雑感 $W = 2$ って何．Smallであれば連立1次方程式を解くだけでいいのでネットに実装を探しに行く．Python+ガウスの消去法が見つかったので慣れないながらもやる．手元では合ったのにWAした．辛い．
+Editorialにあった実装．
+ C: Fair Fight 概略 $$ \left| \max _ {l \leq i \leq r} {c[i]} - \max _ {l \leq j \leq r} {d[j]} \right| \leq K $$</description>
+    </item>
     
     <item>
       <title>Google Code Jam 2019 - Round 1A</title>
@@ -17,8 +33,7 @@
       <pubDate>Sat, 13 Apr 2019 15:00:00 +0900</pubDate>
       
       <guid>https://chiyosbigdragon.github.io/blog/2019/04/13/</guid>
-      <description> QualのWrite Upはここ
-結果 aC2完45pt．1500人通過で1584th1567th(何故か上がった)でした．まさかペナ差で落ちるとは…
+      <description>  QualのWrite R1AのWriteUp R1BのWriteUp  結果 aC2完45pt．1500人通過で1584th1567th(何故か上がった)でした．まさかペナ差で落ちるとは…
 A: Pylons 概略 $R\times C$のグリッドを後述するルールで動く駒がある．重複することなく全てのマスを踏めるならば，その動き方を示せ．
 ルール 移動前の座標を $(r,c)$ ，移動後の座標を $(r&amp;rsquo;,c&amp;rsquo;)$ とする．以下のいずれにも該当してはいけない．
  $r = r&amp;rsquo;$ $c = c&amp;rsquo;$ $r - c = r&amp;rsquo; - c&amp;rsquo;$ $r + c = r&amp;rsquo; + c&amp;rsquo;$  雑感 全探索しかわからない．最初はSmallすらも落ちたが，1解に到達した時点で強制終了させたらなんとか通った．Largeはまったくわからない．桃色大戦ぱいろんは昔やってましたね．
@@ -36,8 +51,7 @@ C: Alien Rhyme 概略 与えられた単語からrhymeできるもの同士を�
       <pubDate>Sun, 07 Apr 2019 19:00:00 +0900</pubDate>
       
       <guid>https://chiyosbigdragon.github.io/blog/2019/04/07/</guid>
-      <description>R1AのWrite Upはここ
-結果 AB2完41ptで通過した．CDも解くつもりでいたが，Cで多倍長整数が必要なことに気付いてやる気を無くした．Round1以降に多倍長が出たらこの人はどうするつもりなのだろうか．
+      <description>QualのWrite R1AのWriteUp R1BのWriteUp  結果 AB2完41ptで通過した．CDも解くつもりでいたが，Cで多倍長整数が必要なことに気付いてやる気を無くした．Round1以降に多倍長が出たらこの人はどうするつもりなのだろうか．
 A: Foregone Solution 概略 正整数 $N$ が渡されるので $N=A+B$ となるように分割する．ただし $A,B$ は正整数で $4$ を含んではならない．
 $N$ には1つ以上 $4$ が含まれる．
 雑感 読みやすくて助かる．桁ごとに見て，$4$ を $2+2$ に分解すればよさそう．この出力形式誰が得するんだ．
