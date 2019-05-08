@@ -266,17 +266,17 @@
 <li><a href="../../05/05">R1CのWriteUp</a></li>
 </ul>
 
-<h1 id="結果">結果</h1>
+<h2 id="結果">結果</h2>
 
 <p>Ac2完41pt．<del>1815th</del>．1811st．やっぱりちょっと上がりますね．Round1Cに進出．</p>
 
-<h1 id="a-manhattan-crepe-cart">A: Manhattan Crepe Cart</h1>
+<h2 id="a-manhattan-crepe-cart">A: Manhattan Crepe Cart</h2>
 
-<h2 id="概略">概略</h2>
+<h3 id="概略">概略</h3>
 
 <p>より多くの人が向かう交差点の場所を特定しよう．</p>
 
-<h2 id="雑感">雑感</h2>
+<h3 id="雑感">雑感</h3>
 
 <p>$(x,y)$ にいる人が $+x$ 方向を向いているなら交差点の候補は $(x&rsquo;,y&rsquo;) (x+1 \leq x&rsquo; \leq Q, 0 \leq y&rsquo; \leq Q)$</p>
 
@@ -285,13 +285,13 @@
 <pre><code class="language-cpp" src="./code/a.cpp"></code></pre>
 
 
-<h1 id="b-draupnir">B: Draupnir</h1>
+<h2 id="b-draupnir">B: Draupnir</h2>
 
-<h2 id="概略-1">概略</h2>
+<h3 id="概略-1">概略</h3>
 
 <p>X-day ringはX日で倍に増える．$d$ 日目のリングの総数を質問できるので，0日目での各リングの数を求めよう．</p>
 
-<h2 id="雑感-1">雑感</h2>
+<h3 id="雑感-1">雑感</h3>
 
 <p>$W = 2$ って何．Smallであれば連立1次方程式を解くだけでいいのでネットに実装を探しに行く．Python+ガウスの消去法が見つかったので慣れないながらもやる．手元では合ったのにWAした．辛い．</p>
 
@@ -300,9 +300,9 @@
 <pre><code class="language-cpp" src="./code/b.cpp"></code></pre>
 
 
-<h1 id="c-fair-fight">C: Fair Fight</h1>
+<h2 id="c-fair-fight">C: Fair Fight</h2>
 
-<h2 id="概略-2">概略</h2>
+<h3 id="概略-2">概略</h3>
 
 <p>$$
 \left| \max _ {l \leq i \leq r} {c[i]} - \max _ {l \leq j \leq r} {d[j]} \right| \leq K
@@ -310,14 +310,14 @@ $$</p>
 
 <p>をみたす $[l,r]$ の組数．</p>
 
-<h2 id="雑感-2">雑感</h2>
+<h3 id="雑感-2">雑感</h3>
 
 <p>いやLargeなに．周りの様子的にみんなも解けてなさそうなので，セグ木貼るだけのSmallを通す．この作戦は実際悪くなく，通した時点で400thぐらいだった．悔しいなあ．</p>
 
 <pre><code class="language-cpp" src="./code/c.cpp"></code></pre>
 
 
-<h1 id="感想">感想</h1>
+<h2 id="感想">感想</h2>
 
 <p>$\sum{(rank-1500)}$ だったら1500th以内だと思うのでそれでどうにかなりませんか．</p>
 

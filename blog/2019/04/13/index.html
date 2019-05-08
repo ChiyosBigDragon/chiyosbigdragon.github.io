@@ -266,13 +266,13 @@
 <li><a href="../../05/05">R1CのWriteUp</a></li>
 </ul>
 
-<h1 id="結果">結果</h1>
+<h2 id="結果">結果</h2>
 
 <p>aC2完45pt．1500人通過で<del>1584th</del>1567th(何故か上がった)でした．まさかペナ差で落ちるとは…</p>
 
-<h1 id="a-pylons">A: Pylons</h1>
+<h2 id="a-pylons">A: Pylons</h2>
 
-<h2 id="概略">概略</h2>
+<h3 id="概略">概略</h3>
 
 <p>$R\times C$のグリッドを後述するルールで動く駒がある．重複することなく全てのマスを踏めるならば，その動き方を示せ．</p>
 
@@ -287,37 +287,37 @@
 <li>$r + c = r&rsquo; + c&rsquo;$</li>
 </ul>
 
-<h2 id="雑感">雑感</h2>
+<h3 id="雑感">雑感</h3>
 
 <p>全探索しかわからない．最初はSmallすらも落ちたが，1解に到達した時点で強制終了させたらなんとか通った．Largeはまったくわからない．桃色大戦ぱいろんは昔やってましたね．</p>
 
 <pre><code class="language-cpp" src="./code/a.cpp"></code></pre>
 
 
-<h1 id="b-golf-gophers">B: Golf Gophers</h1>
+<h2 id="b-golf-gophers">B: Golf Gophers</h2>
 
-<h2 id="概略-1">概略</h2>
+<h3 id="概略-1">概略</h3>
 
 <p>風車の羽根の枚数を毎晩いじって，ゴルフ場に棲むGopherの数を推定しよう．</p>
 
-<h2 id="雑感-1">雑感</h2>
+<h3 id="雑感-1">雑感</h3>
 
 <p>残り30分を切ったころに読み始めた．インタラクティブで絶望．この時点で2完なのでSmallだけでもとりたい気持ち．SmallはGopherの数が少ないので，雑でも行けると思って書き始めたがTLE．風車は回らず，Qualのツケが回ってきた．今考えれば中国剰余だなあという感じ．みんなのGOLFは4を昔やってましたね．</p>
 
-<h1 id="c-alien-rhyme">C: Alien Rhyme</h1>
+<h2 id="c-alien-rhyme">C: Alien Rhyme</h2>
 
-<h2 id="概略-2">概略</h2>
+<h3 id="概略-2">概略</h3>
 
 <p>与えられた単語からrhymeできるもの同士をペアにしたとき，最大何組ペアが出来るか．ただし同じ位置でのrhymeはありえんライムなのでやってはいけません．</p>
 
-<h2 id="雑感-2">雑感</h2>
+<h3 id="雑感-2">雑感</h3>
 
 <p>後ろから見て共通する部分で木を作った．これを「trie木」と言うらしい．深さが1進むと，その位置でrhymeするペアを1組作れるので，作れるペアの数を返り値で管理してDFSした．共通部分が長いとペアの数が単語数を超えるので，きちんと<code>min</code>を取らないといけない．<code>substr</code>しまくったので計算量が不安だったがなんとかLargeも通った．バイオ4<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>は昔やってましたね．</p>
 
 <pre><code class="language-cpp" src="./code/c.cpp"></code></pre>
 
 
-<h1 id="感想">感想</h1>
+<h2 id="感想">感想</h2>
 
 <p>あとの2回で通る気がしません．繰り上げとか，なさらないんですか？</p>
 <div class="footnotes">
