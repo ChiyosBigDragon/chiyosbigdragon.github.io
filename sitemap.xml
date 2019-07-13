@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://chiyosbigdragon.github.io/blog/2019/07/13/</loc>
+    <lastmod>2019-07-13T11:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chiyosbigdragon.github.io/blog/2019/05/30/</loc>
     <lastmod>2019-05-30T09:00:00+09:00</lastmod>
   </url>
@@ -145,7 +150,7 @@
   
   <url>
     <loc>https://chiyosbigdragon.github.io/blog/</loc>
-    <lastmod>2019-05-30T09:00:00+09:00</lastmod>
+    <lastmod>2019-07-13T11:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -166,7 +171,7 @@
   
   <url>
     <loc>https://chiyosbigdragon.github.io/topics/competitiveprogramming/</loc>
-    <lastmod>2019-05-30T09:00:00+09:00</lastmod>
+    <lastmod>2019-07-13T11:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -196,6 +201,12 @@
   <url>
     <loc>https://chiyosbigdragon.github.io/tags/html/</loc>
     <lastmod>2019-03-27T10:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chiyosbigdragon.github.io/tags/icpc/</loc>
+    <lastmod>2019-07-13T11:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -271,7 +282,7 @@
   
   <url>
     <loc>https://chiyosbigdragon.github.io/</loc>
-    <lastmod>2019-05-30T09:00:00+09:00</lastmod>
+    <lastmod>2019-07-13T11:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -287,7 +298,7 @@
   
   <url>
     <loc>https://chiyosbigdragon.github.io/topics/</loc>
-    <lastmod>2019-05-30T09:00:00+09:00</lastmod>
+    <lastmod>2019-07-13T11:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.54.0" />
 
-  <title>SRM759 Div1Easy EllysThreePrimes | Spielsand</title>
+  <title>ICPC 2019 Yokohama Regional Online First Round Contest | Spielsand</title>
 
   
   
@@ -215,8 +215,8 @@
 
 
 <div class="header">
-    <h1>SRM759 Div1Easy EllysThreePrimes</h1>
-    <h2><a href="https://chiyosbigdragon.github.io/blog">Blog</a> >> SRM759 Div1Easy EllysThreePrimes</h2>
+    <h1>ICPC 2019 Yokohama Regional Online First Round Contest</h1>
+    <h2><a href="https://chiyosbigdragon.github.io/blog">Blog</a> >> ICPC 2019 Yokohama Regional Online First Round Contest</h2>
 </div>
 <div class="content">
 
@@ -224,7 +224,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>30 May 2019, 09:00</time>
+    <time>13 Jul 2019, 11:00</time>
   </div>
 
   
@@ -247,9 +247,7 @@
   <div>
     <i class="fa fa-tags fa-fw"></i>
     
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/brute-force">Brute Force</a>
+      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/icpc">ICPC</a>
     
   </div>
   
@@ -259,34 +257,65 @@
 
   
 
-<h2 id="url">URL</h2>
 
-<p><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=15436">https://community.topcoder.com/stat?c=problem_statement&amp;pm=15436</a></p>
+<div class="pure-u-1">
+  <img class="pure-img" src="./images/rank.png" >
+</div>
 
-<h2 id="概略">概略</h2>
 
-<p>5桁の素数 $A, B, C$ がある．各桁の和が与えられるので，これを満たす $(A, B, C)$ の組を1つ求める．ただし $A, B, C$ は<strong>互いに異なる</strong>．</p>
 
-<h2 id="方針">方針</h2>
+<p>ABC3完で45位/学内2位，選抜順位だと32位でしょうか．よくわかっていません．とりあえずアジアには進めそうです．裏目標の「ホスト枠を自チームで潰さない」が達成できたので良かったです．</p>
 
-<p>$A, B$ を決め打つ全探索がしたくなる．5桁なので $O(n^2)$ は怪しいが，色々工夫すると通る．</p>
+<h2 id="チーム">チーム</h2>
 
-<p>主な枝刈りは以下の通り．手元で1s前後．</p>
+<p>「chmod rw-rw&mdash;x」は学科同期3人のチームでした．あえてIDで書きます．</p>
 
 <ul>
-<li>エラトステネスの篩で $A, B$ の候補を絞る．</li>
-<li>$A &lt; B$ とする．</li>
-<li>$C$ の1桁目は偶数でも $5$ でもないので，そこで探索を打ち切る．</li>
-<li>$C$ の最上位は $0$ ではないので，そこでも探索を打ち切る．</li>
-<li>$C$ の素数判定は篩の中を二分探索する．（これは怪しい）</li>
+<li>ChiyosBigDragon</li>
+<li>morio__</li>
+<li>daruma3
+<br /></li>
 </ul>
 
-<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/SRM/master/740-759/759Div1E_EllysThreePrimes.cpp"></code></pre>
+<p>構文解析と幾何だけは担当がありますが，それ以外は適当です．</p>
 
+<h2 id="作戦">作戦</h2>
 
-<h2 id="反省">反省</h2>
+<p>練習会や模擬国内を経験して，本番は次のようなフローで臨みました．</p>
 
-<p>どう頑張っても1sかかるので，ジャッジを信じて投げたら通った．あとでシステスを通したら最大で400msだった．信仰心が足りない．</p>
+<ol>
+<li>印刷タスク + A（考察実装：もりを）</li>
+<li>B と C の実装の軽いほう（考察実装：ぼく）</li>
+<li>(B or C) と D の実装の軽いほう（考察：だるまともりを，実装：もりを）</li>
+<li>…</li>
+</ol>
+
+<p>Cまでは自明問（実装は知らない）が出ると仮定して，3完早解き(+1,2完)を狙っています．学内の状況を考えると4完で確定ラインなのですが，4完前提の立ち回りをして壊滅すると不味いので，3完まで確実に潰し累積ペナルティを減らしに行きます．学内上位ならば最悪†ホスト校†で拾ってくれるので，悪い作戦ではないように見えますが，これを考える人の性格は悪そうです．</p>
+
+<h2 id="本番">本番</h2>
+
+<p>始まると同時にもりをが印刷タスクを投げます．学内の印刷機にはログインをしなければいけないのですが，ログインすると既にタスクが上がっていて流石でした．今年は印刷機が遠かったので歩きながら問題に目を通すと，Bの実装が無なことに気付きます．だるまにAの次がBであることを伝え，代わりにCをやってもらいます．FAのプロもりをにかかれば，Aは扇風機の前のガリガリ君レベルで溶けてしまうので，わずかな待機時間でできるだけ問題や入力を頭に叩き込みました．</p>
+
+<p>Bは空文字以外ユニークが強すぎる．<code>map</code>で文字ごとに座標を記録しておけば，各回の操作回数はマンハッタン距離 $+1$ です．ほとんどミスなしでしたがFAとはなりませんでした．高級寿司店で損をする人間なので妥当な結果です．2完．</p>
+
+<p>Cの考察が不十分らしいので，問題概要を聞いて考察に参加します．$3^n$ で重さを列挙すること，必要な分銅を<code>map</code>で持つことまで方針を固めたところで実装に移りました．割と非自明だったのでペアプロです．途中まで良かったのですが肝心の答えが合いません．やっぱり考察と実装は分けるべきですね．手動解とエラー出力を突き合わせながらデバッグをすると，手持ちの分銅でどうにかなる薬を除去していないことに気付きます．ここで解法が確信に変わったので後のデバッグはサンプルが合うようにエスパーで修正していきます．完成したところで本入力を食わせると中々に時間がかかっていてビビりますが，ICPCはこんなものという印象があるのでそのまま提出します．3完．</p>
+
+<p>ここでいったん順位表を見ます．正直，Cに時間をかけすぎたと思っていたので，学内1位を確認したときにはかなり安心しました．他の問題に目を通すと，</p>
+
+<ul>
+<li>D : セグ木みたいな操作しそう</li>
+<li>E : $5! \times 8^5$ をやるだけ？実装が重すぎる</li>
+<li>F : 操作してできるグラフが $O(2^n)$ ないか？</li>
+<li>G : $10^{18}$ の<strong>構文解析</strong>はもはやトラウマと言っても良い</li>
+</ul>
+
+<p>という印象．Eはやるだけですが，順位表から嫌な雰囲気が出ていたのでDを解くことに．</p>
+
+<p>この後，2時間ぐらい椅子を温めます．Dで区間DPを実装しますが合いません．考察が間違っています．ここでEに切り替えることができれば4完だったかもしれませんが，謎の自信でデバッグをしていきます．切り替えたいがEを実装する時間はないみたいな状況になって終了．だるまがEを詰めてくれていたのに申し訳ない気持ち．</p>
+
+<h2 id="おわり">おわり</h2>
+
+<p>最終盤で学内2位に落ちてからお祈りモードでした．終わってみると通常の選抜枠で抜けていますが，若干の不完全燃焼感があります．裏目標は上で述べたとおりですが，表目標は「ボーダーが発生しない完答数で通過」でした．今回だと4完以上です．アジア予選までは時間があるので精進を頑張ろうと思います．大学から支援が出るとか出ないとか（多分出ないけど）の話があるので国外も視野に入れています．ワクワクコンテストとか出てみたいですね．</p>
 
 
   <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -295,13 +324,13 @@
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://chiyosbigdragon.github.io/blog/2019/05/19/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://chiyosbigdragon.github.io/blog/2019/05/30/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://chiyosbigdragon.github.io/blog/2019/05/19/">Google Code Jam 2019 - Round 2</a>
+      <a href="https://chiyosbigdragon.github.io/blog/2019/05/30/">SRM759 Div1Easy EllysThreePrimes</a>
     </nav>
     
   </div>
@@ -310,14 +339,8 @@
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="https://chiyosbigdragon.github.io/blog/2019/07/13/">ICPC 2019 Yokohama Regional Online First Round Contest</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://chiyosbigdragon.github.io/blog/2019/07/13/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
