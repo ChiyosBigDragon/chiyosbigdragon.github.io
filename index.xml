@@ -6,10 +6,24 @@
     <description>Recent content on Spielsand</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 13 Jul 2019 11:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 14 Aug 2019 12:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chiyosbigdragon.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SRM715 Div1Easy MaximumRange</title>
+      <link>https://chiyosbigdragon.github.io/blog/2019/08/14/</link>
+      <pubDate>Wed, 14 Aug 2019 12:00:00 +0900</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/blog/2019/08/14/</guid>
+      <description> URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=14613
+概略 +，-からなる文字列がある．+はインクリメント，-はデクリメントに相当する．初期値を0として左から操作を行い，操作中の最大値と最小値の差がスコアになる．
+与えられた文字列の部分列についても同様に操作が行えるとき，スコアの最大値はいくらであるか．
+方針 +または-のみを取ることで簡単にスコアを最大化できます．最大値と最小値のペアを $(\max, \min)$ と表すことにします．+のみが $A$ 個ある操作列は $(A, 0)$ で，スコアは $A$ です．ここに-を $B$ 個加えてみましょう．スコアを上げるには最小値を小さくするしかなく，相殺する位置には置けません．
+ 先頭に加えたとき : $(\max(A - B, 0), -B)$  スコア : $\max(A, B)$  殿に加えたとき : $(A, \min(A - B, 0))$  スコア : $\max(A, B)$   が考えられますが，これは結局，+または-のみを取れば良いことを示しています．
+ </description>
+    </item>
     
     <item>
       <title>ICPC 2019 Yokohama Regional Online First Round Contest</title>
@@ -172,7 +186,7 @@ dp等の初期化も忘れずに．</description>
       <pubDate>Wed, 13 Mar 2019 18:00:00 +0900</pubDate>
       
       <guid>https://chiyosbigdragon.github.io/blog/2019/03/13/</guid>
-      <description> 実行結果 小さいかもしれませんね．すみません．
+      <description>  実行結果 小さいかもしれませんね．すみません．
 先に この記事は下記事の内容をパクったと言っても過言ではありません．
  もはや写経ですが勉強記録用なので．
 動機 時の流れか，我が家では4月から新聞の購読を停止することになりました．非常に残念であります．かくいう私も，新聞をまともに読んでいたのはGコードが消えるか否かのころまでだったと思います．今ではラテ欄とスポーツ欄に隔月で発生する大相撲ぐらいしか読んでいません．あと下世話な週刊誌の広告．
@@ -181,7 +195,7 @@ dp等の初期化も忘れずに．</description>
 https://tv.so-net.ne.jp/schedulesBySearch.action?condition.genres[0].parentId=-1&amp;amp;condition.genres[0].childId=-1&amp;amp;stationPlatformId=1&amp;amp;condition.keyword=%E9%87%91%E5%B1%9E%E3%83%90%E3%83%83%E3%83%88&amp;amp;submit=%E6%A4%9C%E7%B4%A2&amp;amp;descriptive=true
 このURLとページのソースを元にスクレイピングしていきます．url.jsonには後で使う情報を入れておきます．
 url.json  スクレイピングと整形 TV_scrape.js  メモ  ライブラリはcheerio-httpcliを使う．requireはimportみたいなものだろうか． 関数名の前にasyncを置くと内部でawaitが使える．awaitは待機と例外処理を担う？ index側からfetchにURLを投げる． タグはそのまま，idは#，classは.を付けて表現する． module.exportsは外から呼んだときに使えるようにするもの？  Slackへの通知 slack.js  メモ  一言一句違わず申し訳ない気持ちになる． やっていることは単純だが一から書くとなると…  index.js 通知といったら瓦版なのでチャンネル名は#瓦版です．fetchの前にawaitを入れないとエラーを吐くので気を付けます(1敗)．
- 実行 node index.js  角界のロボコップ
+ 実行 node index.js   角界のロボコップ
 他にやりたいこと  AWSで定期的に実行． Slackのslash-commandを用いた検索条件の追加削除．  今回はここまで．
 
  金属バット (お笑いコンビ) &amp;mdash; Wikipedia[return]   </description>
@@ -312,7 +326,7 @@ Shiftは数えるだけなので先にDivideを行う．Divideのやり方は高
       <description>URL http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11400
 概略 小長方形を組み合わせた長方形の盤面が与えられる．小長方形の各々について，面積がわかっていればY，そうでなければNと表記される．質問をするたび，任意のNが1つYに変化する．最低で何回質問をすれば盤面全てをYに変えられるか．
 方針 図の赤枠のように長方形をとる．このとき，頂点と接する4つの小長方形に着目する．
-図より，このうち3つの面積がわかっている(Y)ならば，残り1つの面積もわかる．このような作業を繰り返すといずれ盤面のYが増えなくなるため，小長方形の面積を質問する必要がある．
+ 図より，このうち3つの面積がわかっている(Y)ならば，残り1つの面積もわかる．このような作業を繰り返すといずれ盤面のYが増えなくなるため，小長方形の面積を質問する必要がある．
 質問する小長方形はどれでもよさそうだが確証はない．
 追記1: ケースが大きいとTLEするらしい．再帰部分が明らかに怪しいがいまいちわからない．改善中…
 追記2: creepさんなどの記事を参考にして通しました．TLE解では再帰時に頂点を全探索していたので $O(W^2H^2)$ だったが，実際にはN→Yとしたところに関係する場所しか変わらないので，$O(WH)$ に減らせるはず．結果として全体では $O(W^3H^3)$ → $O(W^2H^2)$ に削減．
@@ -426,7 +440,7 @@ Shiftは数えるだけなので先にDivideを行う．Divideのやり方は高
       
       <guid>https://chiyosbigdragon.github.io/competitiveprogramming/library/graph_theory/lca/</guid>
       <description>概略 根付き木における2頂点の共通祖先のうち，最も深いものを示す．
-目次  アルゴリズム  Euler Tour RMQ (Range Minimum Query)  実装例 verify  AOJ GRL_5_C ABC014_D  参考  アルゴリズム Euler Tourで木に対する情報を拾った後，RMQでLCAを求める．
+目次  概略 目次 アルゴリズム  Euler Tour RMQ (Range Minimum Query)  実装例 verify 参考  アルゴリズム Euler Tourで木に対する情報を拾った後，RMQでLCAを求める．
 例として下図の木にアルゴリズムを用いる．
 Euler Tour 木をDFSする．欲しい情報は以下の通り．
  nodeOrder[i]: $i$ 番目に訪問した頂点番号 depthOrder[i]: $i$ 番目に訪問した頂点の深さ（根を0とする） nodeFirstID[v]: 頂点 $v$ が最初に現れるタイミング     $i$ 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14     nodeOrder[i] 0 1 4 1 5 6 5 7 5 1 0 2 0 3 0   depthOrder[i] 0 1 2 1 2 3 2 3 2 1 0 1 0 1 0       $v$ 0 1 2 3 4 5 6 7     nodeFirstID[v] 0 1 11 13 2 4 5 7    nodeOrderのサイズは必ず頂点数*2-1になる．これは各辺を2回通ることに由来する．</description>

@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.56.3" />
 
-  <title>SRM500 Div1Easy MafiaGame | Spielsand</title>
+  <title>SRM715 Div1Easy MaximumRange | Spielsand</title>
 
   
   
@@ -215,8 +215,8 @@
 
 
 <div class="header">
-    <h1>SRM500 Div1Easy MafiaGame</h1>
-    <h2><a href="https://chiyosbigdragon.github.io/blog">Blog</a> >> SRM500 Div1Easy MafiaGame</h2>
+    <h1>SRM715 Div1Easy MaximumRange</h1>
+    <h2><a href="https://chiyosbigdragon.github.io/blog">Blog</a> >> SRM715 Div1Easy MaximumRange</h2>
 </div>
 <div class="content">
 
@@ -224,7 +224,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>19 Jul 2018, 12:00</time>
+    <time>14 Aug 2019, 12:00</time>
   </div>
 
   
@@ -249,9 +249,7 @@
     
       <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/math">Math</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/simulation">Simulation</a>
+      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/greedy">Greedy</a>
     
   </div>
   
@@ -263,60 +261,34 @@
 
 <h2 id="url">URL</h2>
 
-<p><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=11342">https://community.topcoder.com/stat?c=problem_statement&amp;pm=11342</a></p>
+<p><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=14613">https://community.topcoder.com/stat?c=problem_statement&amp;pm=14613</a></p>
 
 <h2 id="概略">概略</h2>
 
-<p>このゲーム，言語化が難しい．</p>
+<p><code>+</code>，<code>-</code>からなる文字列がある．<code>+</code>はインクリメント，<code>-</code>はデクリメントに相当する．初期値を0として左から操作を行い，操作中の最大値と最小値の差がスコアになる．</p>
 
-<ul>
-<li>$N$ 人には0-indexedで番号が振られている．また<code>vulnerable</code>には最初 $N$ 人全員がいる．</li>
-<li>以下の手順でゲームは進行する．</li>
-</ul>
-
-<ol>
-<li><code>vulnerable</code>内で $N$ 票を振り分ける．
-
-<ol>
-<li><code>vulnerable&amp;&amp;decisions</code>の人は<code>decisions</code>で宣言された分だけ得票する．
-
-<ul>
-<li><code>vulnerable={0,1,3}</code>，<code>decisions={0,1,1,2}</code>の場合，<code>0</code>は1票，<code>1</code>は2票を得る．<code>2</code>は<code>vulnerable</code>に含まれないので得票しない．</li>
-</ul></li>
-<li>上で $k$ 票消費されたとする．余った $N-k$ 票は得票数の最小値が大きくなるよう，均等に振り分ける．
-
-<ul>
-<li>5人の得票数が<code>{1,0,3,2,1}</code>で残り5票ある場合，以下のように分ける．</li>
-<li><code>{1,0,3,2,1}</code>→<code>{1,1,3,2,1}</code>(1票消費)→<code>{2,2,3,2,2}</code>(4票消費)→<code>{3,2,3,2,2}</code>(5票消費)</li>
-<li>ただし5票目に選ばれる人物は2票得ている者の中からランダム</li>
-</ul></li>
-</ol></li>
-<li>票数の最も大きい者のみが<code>vulnerable</code>に残る．</li>
-<li><code>vulnerable</code>が1人になるまで投票を繰り返す．最後に残った1人が敗者となる．</li>
-</ol>
-
-<p>各人が敗者となる確率を $p[i]$ としたときの $\max p$を計算する．なお，ゲームが終わらない場合には0を返す．</p>
+<p>与えられた文字列の部分列についても同様に操作が行えるとき，スコアの最大値はいくらであるか．</p>
 
 <h2 id="方針">方針</h2>
 
-<p>「ゲームが終わらない」というのは，ゲーム中のある時点で<code>vulnerable</code>のサイズが不変，つまり<code>vulnerable</code>内の得票数が全て等しくなるということである．この判定法は投票の回数で異なる．</p>
+<p><code>+</code>または<code>-</code>のみを取ることで簡単にスコアを最大化できます．最大値と最小値のペアを $(\max, \min)$ と表すことにします．<code>+</code>のみが $A$ 個ある操作列は $(A, 0)$ で，スコアは $A$ です．ここに<code>-</code>を $B$ 個加えてみましょう．スコアを上げるには最小値を小さくするしかなく，相殺する位置には置けません．</p>
 
 <ul>
-<li>投票1回目
+<li>先頭に加えたとき : $(\max(A - B, 0), -B)$
 
 <ul>
-<li><code>vulnerable</code>には $N$ 人全員がいるので，<code>decisions</code>に複数現れる人物がいない場合，全員の得票数は1となってループ.</li>
+<li>スコア : $\max(A, B)$</li>
 </ul></li>
-<li>投票2回目以降
+<li>殿に加えたとき : $(A, \min(A - B, 0))$
 
 <ul>
-<li><code>decisions</code>に係る投票を終えた時点で，<code>vulnerable</code>内の得票数は等しい（そういう風に投票1回目で分けます）．残りの票を振り分けたときに同票であるとループする．<code>vulnerable</code>のサイズを $i$ とするとループの条件は、$N\equiv 0\pmod i$</li>
+<li>スコア : $\max(A, B)$</li>
 </ul></li>
 </ul>
 
-<p>ループの条件がわかったのでシミュレーションができる．敗者は1回目の投票後に<code>vulnerable</code>にいる人のいずれかであり，彼らに区別はない．よって確率は、$1/i$</p>
+<p>が考えられますが，これは結局，<code>+</code>または<code>-</code>のみを取れば良いことを示しています．</p>
 
-<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/SRM/master/500-519/500Div1E_MafiaGame.cpp"></code></pre>
+<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/SRM/master/700-719/715Div1E_MaximumRange.cpp"></code></pre>
 
 
 
@@ -326,13 +298,13 @@
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://chiyosbigdragon.github.io/blog/2018/07/18/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://chiyosbigdragon.github.io/blog/2019/07/13/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://chiyosbigdragon.github.io/blog/2018/07/18/">SRM500 Div2Easy SRMCards</a>
+      <a href="https://chiyosbigdragon.github.io/blog/2019/07/13/">ICPC 2019 Yokohama Regional Online First Round Contest</a>
     </nav>
     
   </div>
@@ -341,14 +313,8 @@
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="https://chiyosbigdragon.github.io/blog/2018/07/26/">SRM501 Div1Easy FoxPlayingGame</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://chiyosbigdragon.github.io/blog/2018/07/26/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

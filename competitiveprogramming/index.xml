@@ -28,7 +28,7 @@
       
       <guid>https://chiyosbigdragon.github.io/competitiveprogramming/library/graph_theory/lca/</guid>
       <description>概略 根付き木における2頂点の共通祖先のうち，最も深いものを示す．
-目次  アルゴリズム  Euler Tour RMQ (Range Minimum Query)  実装例 verify  AOJ GRL_5_C ABC014_D  参考  アルゴリズム Euler Tourで木に対する情報を拾った後，RMQでLCAを求める．
+目次  概略 目次 アルゴリズム  Euler Tour RMQ (Range Minimum Query)  実装例 verify 参考  アルゴリズム Euler Tourで木に対する情報を拾った後，RMQでLCAを求める．
 例として下図の木にアルゴリズムを用いる．
 Euler Tour 木をDFSする．欲しい情報は以下の通り．
  nodeOrder[i]: $i$ 番目に訪問した頂点番号 depthOrder[i]: $i$ 番目に訪問した頂点の深さ（根を0とする） nodeFirstID[v]: 頂点 $v$ が最初に現れるタイミング     $i$ 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14     nodeOrder[i] 0 1 4 1 5 6 5 7 5 1 0 2 0 3 0   depthOrder[i] 0 1 2 1 2 3 2 3 2 1 0 1 0 1 0       $v$ 0 1 2 3 4 5 6 7     nodeFirstID[v] 0 1 11 13 2 4 5 7    nodeOrderのサイズは必ず頂点数*2-1になる．これは各辺を2回通ることに由来する．</description>

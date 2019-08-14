@@ -6,10 +6,24 @@
     <description>Recent content in CompetitiveProgramming on Spielsand</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 13 Jul 2019 11:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 14 Aug 2019 12:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chiyosbigdragon.github.io/topics/competitiveprogramming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SRM715 Div1Easy MaximumRange</title>
+      <link>https://chiyosbigdragon.github.io/blog/2019/08/14/</link>
+      <pubDate>Wed, 14 Aug 2019 12:00:00 +0900</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/blog/2019/08/14/</guid>
+      <description> URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=14613
+概略 +，-からなる文字列がある．+はインクリメント，-はデクリメントに相当する．初期値を0として左から操作を行い，操作中の最大値と最小値の差がスコアになる．
+与えられた文字列の部分列についても同様に操作が行えるとき，スコアの最大値はいくらであるか．
+方針 +または-のみを取ることで簡単にスコアを最大化できます．最大値と最小値のペアを $(\max, \min)$ と表すことにします．+のみが $A$ 個ある操作列は $(A, 0)$ で，スコアは $A$ です．ここに-を $B$ 個加えてみましょう．スコアを上げるには最小値を小さくするしかなく，相殺する位置には置けません．
+ 先頭に加えたとき : $(\max(A - B, 0), -B)$  スコア : $\max(A, B)$  殿に加えたとき : $(A, \min(A - B, 0))$  スコア : $\max(A, B)$   が考えられますが，これは結局，+または-のみを取れば良いことを示しています．
+ </description>
+    </item>
     
     <item>
       <title>ICPC 2019 Yokohama Regional Online First Round Contest</title>
@@ -264,7 +278,7 @@ Shiftは数えるだけなので先にDivideを行う．Divideのやり方は高
       <description>URL http://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=11400
 概略 小長方形を組み合わせた長方形の盤面が与えられる．小長方形の各々について，面積がわかっていればY，そうでなければNと表記される．質問をするたび，任意のNが1つYに変化する．最低で何回質問をすれば盤面全てをYに変えられるか．
 方針 図の赤枠のように長方形をとる．このとき，頂点と接する4つの小長方形に着目する．
-図より，このうち3つの面積がわかっている(Y)ならば，残り1つの面積もわかる．このような作業を繰り返すといずれ盤面のYが増えなくなるため，小長方形の面積を質問する必要がある．
+ 図より，このうち3つの面積がわかっている(Y)ならば，残り1つの面積もわかる．このような作業を繰り返すといずれ盤面のYが増えなくなるため，小長方形の面積を質問する必要がある．
 質問する小長方形はどれでもよさそうだが確証はない．
 追記1: ケースが大きいとTLEするらしい．再帰部分が明らかに怪しいがいまいちわからない．改善中…
 追記2: creepさんなどの記事を参考にして通しました．TLE解では再帰時に頂点を全探索していたので $O(W^2H^2)$ だったが，実際にはN→Yとしたところに関係する場所しか変わらないので，$O(WH)$ に減らせるはず．結果として全体では $O(W^3H^3)$ → $O(W^2H^2)$ に削減．

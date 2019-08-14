@@ -6,10 +6,24 @@
     <description>Recent content in Greedy on Spielsand</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 11 Sep 2018 09:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 14 Aug 2019 12:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chiyosbigdragon.github.io/tags/greedy/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SRM715 Div1Easy MaximumRange</title>
+      <link>https://chiyosbigdragon.github.io/blog/2019/08/14/</link>
+      <pubDate>Wed, 14 Aug 2019 12:00:00 +0900</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/blog/2019/08/14/</guid>
+      <description> URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=14613
+概略 +，-からなる文字列がある．+はインクリメント，-はデクリメントに相当する．初期値を0として左から操作を行い，操作中の最大値と最小値の差がスコアになる．
+与えられた文字列の部分列についても同様に操作が行えるとき，スコアの最大値はいくらであるか．
+方針 +または-のみを取ることで簡単にスコアを最大化できます．最大値と最小値のペアを $(\max, \min)$ と表すことにします．+のみが $A$ 個ある操作列は $(A, 0)$ で，スコアは $A$ です．ここに-を $B$ 個加えてみましょう．スコアを上げるには最小値を小さくするしかなく，相殺する位置には置けません．
+ 先頭に加えたとき : $(\max(A - B, 0), -B)$  スコア : $\max(A, B)$  殿に加えたとき : $(A, \min(A - B, 0))$  スコア : $\max(A, B)$   が考えられますが，これは結局，+または-のみを取れば良いことを示しています．
+ </description>
+    </item>
     
     <item>
       <title>SRM512 Div1Easy MysteriousRestaurant</title>
