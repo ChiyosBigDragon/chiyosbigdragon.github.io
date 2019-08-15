@@ -25,8 +25,8 @@
 流れ  手作業でのURL取得 スクレイピングと整形 Slackへの通知 実行  手作業でのURL取得 番組を探す &amp;mdash; Gガイド.テレビ王国で見たい番組のキーワードや芸能人の名前を入力しURLを生成します．ここ一番ダサいです．試しに地上波+金属バット1で検索します．
 https://tv.so-net.ne.jp/schedulesBySearch.action?condition.genres[0].parentId=-1&amp;amp;condition.genres[0].childId=-1&amp;amp;stationPlatformId=1&amp;amp;condition.keyword=%E9%87%91%E5%B1%9E%E3%83%90%E3%83%83%E3%83%88&amp;amp;submit=%E6%A4%9C%E7%B4%A2&amp;amp;descriptive=true
 このURLとページのソースを元にスクレイピングしていきます．url.jsonには後で使う情報を入れておきます．
-url.json  スクレイピングと整形 TV_scrape.js  メモ  ライブラリはcheerio-httpcliを使う．requireはimportみたいなものだろうか． 関数名の前にasyncを置くと内部でawaitが使える．awaitは待機と例外処理を担う？ index側からfetchにURLを投げる． タグはそのまま，idは#，classは.を付けて表現する． module.exportsは外から呼んだときに使えるようにするもの？  Slackへの通知 slack.js  メモ  一言一句違わず申し訳ない気持ちになる． やっていることは単純だが一から書くとなると…  index.js 通知といったら瓦版なのでチャンネル名は#瓦版です．fetchの前にawaitを入れないとエラーを吐くので気を付けます(1敗)．
- 実行 node index.js   角界のロボコップ
+url.json [展開する]   スクレイピングと整形 TV_scrape.js [展開する]   メモ  ライブラリはcheerio-httpcliを使う．requireはimportみたいなものだろうか． 関数名の前にasyncを置くと内部でawaitが使える．awaitは待機と例外処理を担う？ index側からfetchにURLを投げる． タグはそのまま，idは#，classは.を付けて表現する． module.exportsは外から呼んだときに使えるようにするもの？  Slackへの通知 slack.js [展開する]   メモ  一言一句違わず申し訳ない気持ちになる． やっていることは単純だが一から書くとなると…  index.js 通知といったら瓦版なのでチャンネル名は#瓦版です．fetchの前にawaitを入れないとエラーを吐くので気を付けます(1敗)．
+[展開する]   実行 node index.js   角界のロボコップ
 他にやりたいこと  AWSで定期的に実行． Slackのslash-commandを用いた検索条件の追加削除．  今回はここまで．
 
  金属バット (お笑いコンビ) &amp;mdash; Wikipedia[return]   </description>
