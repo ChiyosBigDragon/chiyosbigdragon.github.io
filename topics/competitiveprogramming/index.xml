@@ -6,10 +6,26 @@
     <description>Recent content in CompetitiveProgramming on Spielsand</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Wed, 14 Aug 2019 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 15 Aug 2019 12:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chiyosbigdragon.github.io/topics/competitiveprogramming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SRM757 Div1Easy CentipedeSocks</title>
+      <link>https://chiyosbigdragon.github.io/blog/2019/08/15/</link>
+      <pubDate>Thu, 15 Aug 2019 12:00:00 +0900</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/blog/2019/08/15/</guid>
+      <description>URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=15445&amp;amp;rd=17496
+概略 足が $F$ 本のムカデが $C$ 匹いる．それぞれのムカデはすべての足に同じ色の靴下を履かないと満足しない．靴下はビンに入っていて，各色の本数の内訳はvectorで示される．ビンからランダムに靴下を取り出していき，同色が $F$ 本揃った時点でムカデに履かせる．
+すべてのムカデが満足するためにビンから取り出す靴下の本数の最大値を求める．
+方針 最終的にできるだけ多くの靴下を無駄にしたいです．そこで次のような貪欲を考えます．
+「残りの本数から $F$ 本取ったあとに追加で取れる本数の多い順に取る」
+わかりづらいので実装したアルゴリズムを使って，適当な入力を処理します．あとは頑張ってください．
+F = 5, s(sockCounts) = {1, 3, 6, 7, 10, 14}とします．
+ Fに満たないものを全部取ります．  ans += 1 + 3 s = {6, 7, 10, 14}  sをソートして貪欲に取っていきます．ルールは「F本取ったあとに追加で取れる本数の多い順に取る」です．括弧内が指標です．F本取れる場合にはカウントCが減っていきます．今回はC = 5とします．  {14(4), 10(4), 7(2), 6(1)} {10(4), 9(4), 7(2), 6(1)}  C = 4 ans += 5  {9(4), 5(4), 7(2), 6(1)}  C = 3 ans += 5  {5(4), 4(4), 7(2), 6(1)}  C = 2 ans += 5</description>
+    </item>
     
     <item>
       <title>SRM715 Div1Easy MaximumRange</title>
