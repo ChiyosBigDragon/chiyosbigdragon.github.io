@@ -6,10 +6,25 @@
     <description>Recent content in SRM on Spielsand</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 15 Aug 2019 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 20 Aug 2019 12:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chiyosbigdragon.github.io/tags/srm/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SRM671 Div1Easy BearCries</title>
+      <link>https://chiyosbigdragon.github.io/blog/2019/08/20/</link>
+      <pubDate>Tue, 20 Aug 2019 12:00:00 +0900</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/blog/2019/08/20/</guid>
+      <description> URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=14010
+概略 泣き顔とは，2つのセミコロンでアンダースコア1つ以上を囲んだもののことを言う．正規表現では;_+;である．
+与えられたmessageをいくつかの部分列に分ける分け方のうち，過不足なく泣き顔が作れる分け方は何通りあるか．
+方針 dp[i][a][b] := iまで見て使っていない&amp;quot;;&amp;quot;がa個，&amp;quot;;_+&amp;quot;がb個とします．過不足なく使うことを考えると，解はdp[|message|][0][0]です．
+kmjpさんのブログの言葉を借りて，;_+;は「閉じている」，;_*は「開いている」と表現すると次のような遷移が考えられます．
+ セミコロンが来たとき  新たに開く dp[i][a][b] += dp[i - 1][a - 1][b] 1つ閉じる dp[i][a][b] += dp[i - 1][a][b + 1] * (b + 1)  アンダースコアが来たとき  開いている;のみの状態に追加する dp[i][a][b] += dp[i - 1][a + 1][b - 1] * (a + 1) 開いている;_+の状態に追加する dp[i][a][b] += dp[i - 1][a][b] * b   [展開する]   反省 最初，普通に数学をして壊滅した．DP解に目標を絞るも，dp[i][a][b] := iまで見て使っていない&#39;;&#39;がa個，&#39;_&#39;がb個からなかなか進まなかった．;，;_のような区別の仕方は典型なので，気づけなかったのは反省．
+参考  ABC104D - We Love ABC  </description>
+    </item>
     
     <item>
       <title>SRM757 Div1Easy CentipedeSocks</title>
