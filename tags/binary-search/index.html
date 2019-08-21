@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.56.3" />
 
-  <title>SRM671 Div1Easy BearCries | Spielsand</title>
+  <title>Binary-Search | Spielsand</title>
 
   
   
@@ -39,6 +39,8 @@
   
 
  
+  
+  <link rel="alternate" type="application/rss+xml" title="Spielsand" href="https://chiyosbigdragon.github.io/tags/binary-search/index.xml" />
   
 
   
@@ -116,6 +118,10 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
+    
+    <li class="pure-menu-item">
+      <a class="pure-menu-link" href="https://chiyosbigdragon.github.io/tags/binary-search/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+    </li>
     
 
     
@@ -215,16 +221,20 @@
 
 
 <div class="header">
-    <h1>SRM671 Div1Easy BearCries</h1>
-    <h2><a href="https://chiyosbigdragon.github.io/blog">Blog</a> >> SRM671 Div1Easy BearCries</h2>
+    <h1>Binary-Search</h1>
+    <h2><a href="https://chiyosbigdragon.github.io/blog">Blog</a> >> <a href="https://chiyosbigdragon.github.io/tags">Tags</a> >> Binary-Search</h2>
 </div>
-<div class="content">
 
-  <div class="post-meta">
+<div class="content">
+    
+        <article>
+  <header>
+    <h2><a href="https://chiyosbigdragon.github.io/blog/2019/08/21/">SRM681 Div1Easy FleetFunding</a></h2>
+    <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>20 Aug 2019, 12:00</time>
+    <time>21 Aug 2019, 12:00</time>
   </div>
 
   
@@ -249,122 +259,22 @@
     
       <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/dp">DP</a>
+      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/greedy">Greedy</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/binary-search">Binary-Search</a>
     
   </div>
   
   
 
 </div>
+  </header>
 
   
+</article>
 
-<h2 id="url">URL</h2>
-
-<p><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=14010">https://community.topcoder.com/stat?c=problem_statement&amp;pm=14010</a></p>
-
-<h2 id="概略">概略</h2>
-
-<p>泣き顔とは，2つのセミコロンでアンダースコア1つ以上を囲んだもののことを言う．正規表現では<code>;_+;</code>である．</p>
-
-<p>与えられた<code>message</code>をいくつかの部分列に分ける分け方のうち，過不足なく泣き顔が作れる分け方は何通りあるか．</p>
-
-<h2 id="方針">方針</h2>
-
-<p><code>dp[i][a][b] := iまで見て使っていない&quot;;&quot;がa個，&quot;;_+&quot;がb個</code>とします．過不足なく使うことを考えると，解は<code>dp[|message|][0][0]</code>です．</p>
-
-<p><a href="http://kmjp.hatenablog.jp/entry/2015/10/15/0900">kmjpさんのブログ</a>の言葉を借りて，<code>;_+;</code>は「閉じている」，<code>;_*</code>は「開いている」と表現すると次のような遷移が考えられます．</p>
-
-<ul>
-<li>セミコロンが来たとき
-
-<ul>
-<li>新たに開く</li>
-<li><code>dp[i][a][b] += dp[i - 1][a - 1][b]</code></li>
-<li>1つ閉じる</li>
-<li><code>dp[i][a][b] += dp[i - 1][a][b + 1] * (b + 1)</code></li>
-</ul></li>
-<li>アンダースコアが来たとき
-
-<ul>
-<li>開いている<code>;</code>のみの状態に追加する</li>
-<li><code>dp[i][a][b] += dp[i - 1][a + 1][b - 1] * (a + 1)</code></li>
-<li>開いている<code>;_+</code>の状態に追加する</li>
-<li><code>dp[i][a][b] += dp[i - 1][a][b] * b</code></li>
-</ul></li>
-</ul>
-
-<div class="SyntaxHighlight">
-	<div align="right" style="color: #3b8bba; margin:-10px 0px -10px 0px; cursor: pointer;">[展開する]</div>
-	<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/SRM/master/660-679/671Div1E_BearCries.cpp"></code></pre>
-</div>
-
-
-<h2 id="反省">反省</h2>
-
-<p>最初，普通に数学をして壊滅した．DP解に目標を絞るも，<code>dp[i][a][b] := iまで見て使っていない';'がa個，'_'がb個</code>からなかなか進まなかった．<code>;</code>，<code>;_</code>のような区別の仕方は典型なので，気づけなかったのは反省．</p>
-
-<h3 id="参考">参考</h3>
-
-<ul>
-<li><a href="https://atcoder.jp/contests/abc104/tasks/abc104_d">ABC104D - We Love ABC</a></li>
-</ul>
-
-
-  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-  
-<div class="prev-next-post pure-g">
-  <div class="pure-u-1-24" style="text-align: left;">
-    
-    <a href="https://chiyosbigdragon.github.io/blog/2019/08/15/"><i class="fa fa-chevron-left"></i></a>
-    
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="prev">
-      <a href="https://chiyosbigdragon.github.io/blog/2019/08/15/">SRM757 Div1Easy CentipedeSocks</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-2-24">
-    &nbsp;
-  </div>
-  <div class="pure-u-10-24">
-    
-    <nav class="next">
-      <a href="https://chiyosbigdragon.github.io/blog/2019/08/21/">SRM681 Div1Easy FleetFunding</a>
-    </nav>
-    
-  </div>
-  <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://chiyosbigdragon.github.io/blog/2019/08/21/"><i class="fa fa-chevron-right"></i></a>
-    
-  </div>
-</div>
-
-
-
-  
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-
-(function() {
     
     
-    if (window.location.hostname == "localhost")
-        return;
-
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    var disqus_shortname = 'chiyosbigdragon';
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
 
 </div>
 
