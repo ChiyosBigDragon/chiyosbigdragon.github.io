@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.56.3" />
 
-  <title>SRM681 Div1Easy FleetFunding | Spielsand</title>
+  <title>SRM659 Div1Easy ApplesAndOrangesEasy | Spielsand</title>
 
   
   
@@ -215,8 +215,8 @@
 
 
 <div class="header">
-    <h1>SRM681 Div1Easy FleetFunding</h1>
-    <h2><a href="https://chiyosbigdragon.github.io/blog">Blog</a> >> SRM681 Div1Easy FleetFunding</h2>
+    <h1>SRM659 Div1Easy ApplesAndOrangesEasy</h1>
+    <h2><a href="https://chiyosbigdragon.github.io/blog">Blog</a> >> SRM659 Div1Easy ApplesAndOrangesEasy</h2>
 </div>
 <div class="content">
 
@@ -224,7 +224,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>21 Aug 2019, 12:00</time>
+    <time>26 Aug 2019, 12:00</time>
   </div>
 
   
@@ -249,9 +249,7 @@
     
       <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/greedy">Greedy</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/binary-search">Binary-Search</a>
+      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/greedy">Greedy</a>
     
   </div>
   
@@ -263,25 +261,27 @@
 
 <h2 id="url">URL</h2>
 
-<p><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=14104">https://community.topcoder.com/stat?c=problem_statement&amp;pm=14104</a></p>
+<p><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=13791&amp;rd=16462">https://community.topcoder.com/stat?c=problem_statement&amp;pm=13791&amp;rd=16462</a></p>
 
 <h2 id="概略">概略</h2>
 
-<p>宇宙船1隻を作るには，$m$ 種類のパーツが1つずつ必要である．また，店が $n$ 個ある．店 $i$ は種類 $[a[i], b[i]]$ のパーツを合計 $k[i]$ 個まで売ってくれる．</p>
-
-<p>宇宙船は最大何隻作れるか．</p>
+<p>果物（リンゴまたはオレンジ）を順に $N$ 個食べる．<code>info[i]</code>番目は必ずリンゴを食べる．直近 $K$ 個の内，リンゴは最大でも $\left\lfloor \dfrac{K}{2} \right\rfloor$ 個までしか食べてはいけないとき，全体で食べるリンゴの最大値を求める．</p>
 
 <h2 id="方針">方針</h2>
 
-<p>$x$ 隻作れるかを二分探索します．判定にはパーツの種類を時間軸に持った，区間スケジューリング的な考え方を用います．パーツの種類を昇順に見ていき，現時点で購入可能な店について $b[i]$（区間の上限）の昇順に合計 $x$ 個購入します．途中で購入可能な店が無くなった場合，失敗です．このような操作は優先度付きキューを2本持つことで簡単に実現できます．</p>
+<p>左から見ていき，リンゴを食べられるならば必ず食べる貪欲をします．$i$ 番目にリンゴを食べるとその影響は $i + K - 1$ 番目まで及ぶため，後回しにして同じ個数を食べられる可能性はあっても，それより多く食べることはできません（？）．</p>
 
-<p>パーツの総数は $\sum k \leq nk _ {\max}$ なので操作回数は大体 $m \log \dfrac{n}{m}k _ {\max}$ で，これはおよそ $10^6$ です．</p>
+<p>あとは $i$ 番目でリンゴが食べられるかを判定できればよく，これは全ての $0 \leq d &lt; K$ について $[i - d, i + (K - d))$ に含まれるリンゴが $\left\lfloor \dfrac{K}{2} \right\rfloor$ 個未満であることが条件です．</p>
 
 <div class="SyntaxHighlight">
 	<div align="right" style="color: #3b8bba; margin:-10px 0px -10px 0px; cursor: pointer;">[展開する]</div>
-	<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/SRM/master/680-699/681Div1E_FleetFunding.cpp"></code></pre>
+	<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/SRM/master/640-659/659Div1E_ApplesAndOrangesEasy.cpp"></code></pre>
 </div>
 
+
+<h2 id="反省">反省</h2>
+
+<p>貪欲の証明があっているのかわからない．脳死でセグ木を貼らない．</p>
 
 
   <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -290,13 +290,13 @@
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://chiyosbigdragon.github.io/blog/2019/08/20/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://chiyosbigdragon.github.io/blog/2019/08/21/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://chiyosbigdragon.github.io/blog/2019/08/20/">SRM671 Div1Easy BearCries</a>
+      <a href="https://chiyosbigdragon.github.io/blog/2019/08/21/">SRM681 Div1Easy FleetFunding</a>
     </nav>
     
   </div>
@@ -305,14 +305,8 @@
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="https://chiyosbigdragon.github.io/blog/2019/08/26/">SRM659 Div1Easy ApplesAndOrangesEasy</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://chiyosbigdragon.github.io/blog/2019/08/26/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>
