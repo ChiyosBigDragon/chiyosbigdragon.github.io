@@ -6,10 +6,25 @@
     <description>Recent content on Spielsand</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 26 Aug 2019 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 27 Aug 2019 12:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chiyosbigdragon.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SRM730 Div1Easy StonesOnATree</title>
+      <link>https://chiyosbigdragon.github.io/blog/2019/08/27/</link>
+      <pubDate>Tue, 27 Aug 2019 12:00:00 +0900</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/blog/2019/08/27/</guid>
+      <description>URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=14811
+概略 有向木の頂点に石を置いていくゲームを行う．葉には無条件で置いてよい．親に置くためには，その直接の子すべてに石が置かれていなければならない．また，任意のタイミングで石を取り除くことができる．根に石を置いた時点でゲームは終了する．
+各頂点には重み $w$ が付いている．石が置かれている頂点 $i$ について $W = \sum w_i$ が逐一計算され，ゲームのスコアは $\max W$ である．スコアの最小値を求める．
+方針 操作を先読みしたいときにはメモ化再帰が有効です．
+dp[i] := iに石を置く操作をするときのスコアの最小値とします．頂点iの子がL，Rであるとき，iに石を置く操作には以下の工程が考えられます．
+ Lに石を置く  dp[L]  Rに石を置く  dp[R]  Lに石を置く操作を一通り行った後，Rに置く操作を行う．またはその逆．これは小さい方を選択できる．  min(w[L] + dp[R], w[R] + dp[L])  LとRの両方に石が置かれていて，iに石を置く  w[i] + w[L] + w[R]   dp[i]はこのうちの最大値を取ります．子が0, 1つの場合も同様に計算できます．
+[展開する]   反省 操作順を親と子の重みだけで評価できると思って時間を溶かす．そんなわけない．</description>
+    </item>
     
     <item>
       <title>SRM659 Div1Easy ApplesAndOrangesEasy</title>
@@ -31,9 +46,9 @@
       
       <guid>https://chiyosbigdragon.github.io/blog/2019/08/21/</guid>
       <description> URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=14104
-概略 宇宙船1隻を作るには，$m$ 種類のパーツが1つずつ必要である．また，店が $n$ 個ある．店 $i$ は種類 $[a[i], b[i]]$ のパーツを合計 $k[i]$ 個まで売ってくれる．
+概略 宇宙船1隻を作るには，$m$ 種類のパーツが1つずつ必要である．また，店が $n$ 個ある．店 $i$ は種類 $[a_i, b_i]$ のパーツを合計 $k_i$ 個まで売ってくれる．
 宇宙船は最大何隻作れるか．
-方針 $x$ 隻作れるかを二分探索します．判定にはパーツの種類を時間軸に持った，区間スケジューリング的な考え方を用います．パーツの種類を昇順に見ていき，現時点で購入可能な店について $b[i]$（区間の上限）の昇順に合計 $x$ 個購入します．途中で購入可能な店が無くなった場合，失敗です．このような操作は優先度付きキューを2本持つことで簡単に実現できます．
+方針 $x$ 隻作れるかを二分探索します．判定にはパーツの種類を時間軸に持った，区間スケジューリング的な考え方を用います．パーツの種類を昇順に見ていき，現時点で購入可能な店について $b_i$（区間の上限）の昇順に合計 $x$ 個購入します．途中で購入可能な店が無くなった場合，失敗です．このような操作は優先度付きキューを2本持つことで簡単に実現できます．
 パーツの総数は $\sum k \leq nk _ {\max}$ なので操作回数は大体 $m \log \dfrac{n}{m}k _ {\max}$ で，これはおよそ $10^6$ です．
 [展開する]   </description>
     </item>

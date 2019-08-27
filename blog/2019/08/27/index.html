@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.56.3" />
 
-  <title>SRM753 Div1Easy MaxCutFree | Spielsand</title>
+  <title>SRM730 Div1Easy StonesOnATree | Spielsand</title>
 
   
   
@@ -215,8 +215,8 @@
 
 
 <div class="header">
-    <h1>SRM753 Div1Easy MaxCutFree</h1>
-    <h2><a href="https://chiyosbigdragon.github.io/blog">Blog</a> >> SRM753 Div1Easy MaxCutFree</h2>
+    <h1>SRM730 Div1Easy StonesOnATree</h1>
+    <h2><a href="https://chiyosbigdragon.github.io/blog">Blog</a> >> SRM730 Div1Easy StonesOnATree</h2>
 </div>
 <div class="content">
 
@@ -224,7 +224,7 @@
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>22 Mar 2019, 14:00</time>
+    <time>27 Aug 2019, 12:00</time>
   </div>
 
   
@@ -249,11 +249,9 @@
     
       <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/graph-theory">Graph Theory</a>&nbsp;&#47;
+      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/dp">DP</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/independent-set">Independent Set</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/dp">DP</a>
+      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/graph-theory">Graph Theory</a>
     
   </div>
   
@@ -265,33 +263,54 @@
 
 <h2 id="url">URL</h2>
 
-<p><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=15257">https://community.topcoder.com/stat?c=problem_statement&amp;pm=15257</a></p>
+<p><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=14811">https://community.topcoder.com/stat?c=problem_statement&amp;pm=14811</a></p>
 
 <h2 id="概略">概略</h2>
 
-<p>単純無向グラフ $G$ が与えられる．$G$ の<a href="https://ja.wikipedia.org/wiki/%E9%80%A3%E7%B5%90%E3%82%B0%E3%83%A9%E3%83%95#%E8%BE%BA%E9%80%A3%E7%B5%90%E5%BA%A6">橋</a>を含まないような<a href="https://ja.wikipedia.org/wiki/%E3%82%B0%E3%83%A9%E3%83%95%E7%90%86%E8%AB%96#%E9%83%A8%E5%88%86%E3%82%B0%E3%83%A9%E3%83%95%E3%81%A8%E6%8B%A1%E5%A4%A7%E3%82%B0%E3%83%A9%E3%83%95">誘導部分グラフ</a>のうち，頂点数が最大となるものを求める．</p>
+<p>有向木の頂点に石を置いていくゲームを行う．葉には無条件で置いてよい．親に置くためには，その直接の子すべてに石が置かれていなければならない．また，任意のタイミングで石を取り除くことができる．根に石を置いた時点でゲームは終了する．</p>
+
+<p>各頂点には重み $w$ が付いている．石が置かれている頂点 $i$ について $W = \sum w_i$ が逐一計算され，ゲームのスコアは $\max W$ である．スコアの最小値を求める．</p>
 
 <h2 id="方針">方針</h2>
 
-<p>要は，$G$ から橋だけを残したグラフについての<a href="https://ja.wikipedia.org/wiki/%E6%9C%80%E5%A4%A7%E7%8B%AC%E7%AB%8B%E9%9B%86%E5%90%88%E5%95%8F%E9%A1%8C">最大独立集合問題</a>である．このグラフは明らかに<a href="https://ja.wikipedia.org/wiki/%E6%9C%A8_(%E6%95%B0%E5%AD%A6)">森</a>であるから，木DPが使える．</p>
+<p>操作を先読みしたいときにはメモ化再帰が有効です．</p>
 
-<h3 id="参考">参考</h3>
+<p><code>dp[i] := iに石を置く操作をするときのスコアの最小値</code>とします．頂点<code>i</code>の子が<code>L</code>，<code>R</code>であるとき，<code>i</code>に石を置く操作には以下の工程が考えられます．</p>
 
-<iframe src="https://hatenablog-parts.com/embed?url=http%3A%2F%2Ftatanaideyo.hatenablog.com%2Fentry%2F2015%2F04%2F26%2F182621" style="border: 0; width: 100%; height: 190px;" allowfullscreen scrolling="no" allow="autoplay; encrypted-media"></iframe>
+<ol>
+<li><code>L</code>に石を置く
 
-<p>制約が甘いので橋の検出にはUnionFindを使う．各辺ごとにそれを除いたグラフを構築し，端点の連結性を判定する．</p>
+<ul>
+<li><code>dp[L]</code></li>
+</ul></li>
+<li><code>R</code>に石を置く
+
+<ul>
+<li><code>dp[R]</code></li>
+</ul></li>
+<li><code>L</code>に石を置く操作を一通り行った後，<code>R</code>に置く操作を行う．またはその逆．これは小さい方を選択できる．
+
+<ul>
+<li><code>min(w[L] + dp[R], w[R] + dp[L])</code></li>
+</ul></li>
+<li><code>L</code>と<code>R</code>の両方に石が置かれていて，<code>i</code>に石を置く
+
+<ul>
+<li><code>w[i] + w[L] + w[R]</code></li>
+</ul></li>
+</ol>
+
+<p><code>dp[i]</code>はこのうちの最大値を取ります．子が0, 1つの場合も同様に計算できます．</p>
 
 <div class="SyntaxHighlight">
 	<div align="right" style="color: #3b8bba; margin:-10px 0px -10px 0px; cursor: pointer;">[展開する]</div>
-	<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/SRM/master/740-759/753Div1E_MaxCutFree.cpp"></code></pre>
+	<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/SRM/master/720-739/730Div1E_StonesOnATree.cpp"></code></pre>
 </div>
 
 
 <h2 id="反省">反省</h2>
 
-<p>本番では橋の検出までしかできなかった．最大独立集合問題であることにはなんとなく気付いていたが，名前だけが先走った．「NP困難じゃん…」</p>
-
-<p><code>dp</code>等の初期化も忘れずに．</p>
+<p>操作順を親と子の重みだけで評価できると思って時間を溶かす．そんなわけない．</p>
 
 
   <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -300,13 +319,13 @@
 <div class="prev-next-post pure-g">
   <div class="pure-u-1-24" style="text-align: left;">
     
-    <a href="https://chiyosbigdragon.github.io/blog/2019/03/13/"><i class="fa fa-chevron-left"></i></a>
+    <a href="https://chiyosbigdragon.github.io/blog/2019/08/26/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
   <div class="pure-u-10-24">
     
     <nav class="prev">
-      <a href="https://chiyosbigdragon.github.io/blog/2019/03/13/">Node.jsで作る番組情報通知Bot</a>
+      <a href="https://chiyosbigdragon.github.io/blog/2019/08/26/">SRM659 Div1Easy ApplesAndOrangesEasy</a>
     </nav>
     
   </div>
@@ -315,14 +334,8 @@
   </div>
   <div class="pure-u-10-24">
     
-    <nav class="next">
-      <a href="https://chiyosbigdragon.github.io/blog/2019/03/27/">ブログ記事中のスニペットを外部参照する</a>
-    </nav>
-    
   </div>
   <div class="pure-u-1-24" style="text-align: right;">
-    
-    <a href="https://chiyosbigdragon.github.io/blog/2019/03/27/"><i class="fa fa-chevron-right"></i></a>
     
   </div>
 </div>

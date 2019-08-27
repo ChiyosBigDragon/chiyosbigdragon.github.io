@@ -251,7 +251,7 @@
     
       <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/greedy">Greedy</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/binary-search">Binary-Search</a>
+      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/binary-search">Binary Search</a>
     
   </div>
   
@@ -267,13 +267,13 @@
 
 <h2 id="概略">概略</h2>
 
-<p>宇宙船1隻を作るには，$m$ 種類のパーツが1つずつ必要である．また，店が $n$ 個ある．店 $i$ は種類 $[a[i], b[i]]$ のパーツを合計 $k[i]$ 個まで売ってくれる．</p>
+<p>宇宙船1隻を作るには，$m$ 種類のパーツが1つずつ必要である．また，店が $n$ 個ある．店 $i$ は種類 $[a_i, b_i]$ のパーツを合計 $k_i$ 個まで売ってくれる．</p>
 
 <p>宇宙船は最大何隻作れるか．</p>
 
 <h2 id="方針">方針</h2>
 
-<p>$x$ 隻作れるかを二分探索します．判定にはパーツの種類を時間軸に持った，区間スケジューリング的な考え方を用います．パーツの種類を昇順に見ていき，現時点で購入可能な店について $b[i]$（区間の上限）の昇順に合計 $x$ 個購入します．途中で購入可能な店が無くなった場合，失敗です．このような操作は優先度付きキューを2本持つことで簡単に実現できます．</p>
+<p>$x$ 隻作れるかを二分探索します．判定にはパーツの種類を時間軸に持った，区間スケジューリング的な考え方を用います．パーツの種類を昇順に見ていき，現時点で購入可能な店について $b_i$（区間の上限）の昇順に合計 $x$ 個購入します．途中で購入可能な店が無くなった場合，失敗です．このような操作は優先度付きキューを2本持つことで簡単に実現できます．</p>
 
 <p>パーツの総数は $\sum k \leq nk _ {\max}$ なので操作回数は大体 $m \log \dfrac{n}{m}k _ {\max}$ で，これはおよそ $10^6$ です．</p>
 
