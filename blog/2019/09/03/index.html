@@ -271,7 +271,9 @@
 
 <p><code>dp[i][j] := 一番上の大きさがiで既にj個積んでいる確率</code>とします．パンケーキは大きい順に見ると遷移が簡単です．</p>
 
-<p>個数が $j$ で一番上が $k$ である山に積む場合を考えます．パンケーキ $i$ を引く確率は $\dfrac{1}{n - j}$ なので，<code>dp[i][j + 1]</code> = $\sum<em>{k}^{i - 1}$ <code>dp[k][j] / (n - j)</code>です．また $i$ を積む場合の確率はこれで網羅できていることになるので，その期待値は $\sum</em>{j}$ <code>dp[i][j] * d[i]</code>です．</p>
+<p>個数が $j$ で一番上が $k$ である山に積む場合を考えます．パンケーキ $i$ を引く確率は $\dfrac{1}{n - j}$ なので，<code>dp[i][j + 1]</code>について，$\sum_{k}^{i - 1}$  <code>dp[k][j] / (n - j)</code>です．</p>
+
+<p>また $i$ を積む場合の確率はこれで網羅できていることになるので，その期待値は $\sum_{j}$ <code>dp[i][j] * d[i]</code>です．</p>
 
 <div class="SyntaxHighlight">
 	<div align="right" style="color: #3b8bba; margin:-10px 0px -10px 0px; cursor: pointer;">[展開する]</div>
