@@ -4,20 +4,60 @@
   
   <url>
     <loc>https://chiyosbigdragon.github.io/blog/</loc>
-    <lastmod>2019-08-27T12:00:00+09:00</lastmod>
+    <lastmod>2019-09-03T12:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://chiyosbigdragon.github.io/topics/competitiveprogramming/</loc>
-    <lastmod>2019-08-27T12:00:00+09:00</lastmod>
+    <lastmod>2019-09-03T12:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://chiyosbigdragon.github.io/tags/dp/</loc>
-    <lastmod>2019-08-27T12:00:00+09:00</lastmod>
+    <lastmod>2019-09-03T12:00:00+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chiyosbigdragon.github.io/tags/srm/</loc>
+    <lastmod>2019-09-03T12:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chiyosbigdragon.github.io/blog/2019/09/03/</loc>
+    <lastmod>2019-09-03T12:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chiyosbigdragon.github.io/</loc>
+    <lastmod>2019-09-03T12:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chiyosbigdragon.github.io/tags/</loc>
+    <lastmod>2019-09-03T12:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chiyosbigdragon.github.io/topics/</loc>
+    <lastmod>2019-09-03T12:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chiyosbigdragon.github.io/tags/brute-force/</loc>
+    <lastmod>2019-09-02T12:00:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://chiyosbigdragon.github.io/blog/2019/09/02/</loc>
+    <lastmod>2019-09-02T12:00:00+09:00</lastmod>
   </url>
   
   <url>
@@ -27,32 +67,8 @@
   </url>
   
   <url>
-    <loc>https://chiyosbigdragon.github.io/tags/srm/</loc>
-    <lastmod>2019-08-27T12:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://chiyosbigdragon.github.io/blog/2019/08/27/</loc>
     <lastmod>2019-08-27T12:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chiyosbigdragon.github.io/</loc>
-    <lastmod>2019-08-27T12:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chiyosbigdragon.github.io/tags/</loc>
-    <lastmod>2019-08-27T12:00:00+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://chiyosbigdragon.github.io/topics/</loc>
-    <lastmod>2019-08-27T12:00:00+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -101,12 +117,6 @@
   <url>
     <loc>https://chiyosbigdragon.github.io/blog/2019/07/13/</loc>
     <lastmod>2019-07-13T11:00:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://chiyosbigdragon.github.io/tags/brute-force/</loc>
-    <lastmod>2019-05-30T09:00:00+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

@@ -6,10 +6,23 @@
     <description>Recent content in DP on Spielsand</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Tue, 27 Aug 2019 12:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 03 Sep 2019 12:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chiyosbigdragon.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SRM656 Div1Easy RandomPancakeStack</title>
+      <link>https://chiyosbigdragon.github.io/blog/2019/09/03/</link>
+      <pubDate>Tue, 03 Sep 2019 12:00:00 +0900</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/blog/2019/09/03/</guid>
+      <description>URL https://community.topcoder.com/stat?c=problem_statement&amp;amp;pm=13747&amp;amp;rd=16416
+概略 大きさの異なるパンケーキをランダムに積む．自分より小さいパンケーキの上には積むことができず，積めなくなった時点で美味しさの総和が計算される．総和の期待値を求める．
+方針 dp[i][j] := 一番上の大きさがiで既にj個積んでいる確率とします．パンケーキは大きい順に見ると遷移が簡単です．
+個数が $j$ で一番上が $k$ である山に積む場合を考えます．パンケーキ $i$ を引く確率は $\dfrac{1}{n - j}$ なので，dp[i][j + 1] = $\sum{k}^{i - 1}$ dp[k][j] / (n - j)です．また $i$ を積む場合の確率はこれで網羅できていることになるので，その期待値は $\sum{j}$ dp[i][j] * d[i]です．
+[展開する]   反省 確率DPは配るDPのほうが良いと思っているのに，なんで貰うDPにしたのか謎．</description>
+    </item>
     
     <item>
       <title>SRM730 Div1Easy StonesOnATree</title>

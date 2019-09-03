@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.56.3" />
 
-  <title>SRM | Spielsand</title>
+  <title>SRM656 Div1Easy RandomPancakeStack | Spielsand</title>
 
   
   
@@ -39,8 +39,6 @@
   
 
  
-  
-  <link rel="alternate" type="application/rss+xml" title="Spielsand" href="https://chiyosbigdragon.github.io/tags/srm/index.xml" />
   
 
   
@@ -118,10 +116,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://chiyosbigdragon.github.io/tags/srm/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -221,20 +215,16 @@
 
 
 <div class="header">
-    <h1>SRM</h1>
-    <h2><a href="https://chiyosbigdragon.github.io/blog">Blog</a> >> <a href="https://chiyosbigdragon.github.io/tags">Tags</a> >> SRM</h2>
+    <h1>SRM656 Div1Easy RandomPancakeStack</h1>
+    <h2><a href="https://chiyosbigdragon.github.io/blog">Blog</a> >> SRM656 Div1Easy RandomPancakeStack</h2>
 </div>
-
 <div class="content">
-    
-        <article>
-  <header>
-    <h2><a href="https://chiyosbigdragon.github.io/blog/2018/07/27/">SRM502 Div1Easy TheLotteryBothDivs</a></h2>
-    <div class="post-meta">
+
+  <div class="post-meta">
 
   <div>
     <i class="fa fa-calendar fa-fw"></i>
-    <time>27 Jul 2018, 21:30</time>
+    <time>03 Sep 2019, 12:00</time>
   </div>
 
   
@@ -259,170 +249,88 @@
     
       <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
     
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/math">Math</a>
+      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/dp">DP</a>
     
   </div>
   
   
 
 </div>
-  </header>
-
-  
-</article>
-
-    
-        <article>
-  <header>
-    <h2><a href="https://chiyosbigdragon.github.io/blog/2018/07/26/">SRM501 Div1Easy FoxPlayingGame</a></h2>
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>26 Jul 2018, 17:30</time>
-  </div>
 
   
 
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://chiyosbigdragon.github.io/topics/competitiveprogramming">CompetitiveProgramming</a>
-    
-  </div>
-  
-  
+<h2 id="url">URL</h2>
 
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/math">Math</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/greedy">Greedy</a>
-    
-  </div>
-  
-  
+<p><a href="https://community.topcoder.com/stat?c=problem_statement&amp;pm=13747&amp;rd=16416">https://community.topcoder.com/stat?c=problem_statement&amp;pm=13747&amp;rd=16416</a></p>
 
+<h2 id="概略">概略</h2>
+
+<p>大きさの異なるパンケーキをランダムに積む．自分より小さいパンケーキの上には積むことができず，積めなくなった時点で美味しさの総和が計算される．総和の期待値を求める．</p>
+
+<h2 id="方針">方針</h2>
+
+<p><code>dp[i][j] := 一番上の大きさがiで既にj個積んでいる確率</code>とします．パンケーキは大きい順に見ると遷移が簡単です．</p>
+
+<p>個数が $j$ で一番上が $k$ である山に積む場合を考えます．パンケーキ $i$ を引く確率は $\dfrac{1}{n - j}$ なので，<code>dp[i][j + 1]</code> = $\sum<em>{k}^{i - 1}$ <code>dp[k][j] / (n - j)</code>です．また $i$ を積む場合の確率はこれで網羅できていることになるので，その期待値は $\sum</em>{j}$ <code>dp[i][j] * d[i]</code>です．</p>
+
+<div class="SyntaxHighlight">
+	<div align="right" style="color: #3b8bba; margin:-10px 0px -10px 0px; cursor: pointer;">[展開する]</div>
+	<pre><code class="language-cpp" src="https://raw.githubusercontent.com/ChiyosBigDragon/SRM/master/640-659/656Div1E_RandomPancakeStack.cpp"></code></pre>
 </div>
-  </header>
+
+
+<h2 id="反省">反省</h2>
+
+<p>確率DPは配るDPのほうが良いと思っているのに，なんで貰うDPにしたのか謎．</p>
+
+
+  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
   
-</article>
-
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
     
-        <article>
-  <header>
-    <h2><a href="https://chiyosbigdragon.github.io/blog/2018/07/19/">SRM500 Div1Easy MafiaGame</a></h2>
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>19 Jul 2018, 12:00</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://chiyosbigdragon.github.io/topics/competitiveprogramming">CompetitiveProgramming</a>
+    <a href="https://chiyosbigdragon.github.io/blog/2019/09/02/"><i class="fa fa-chevron-left"></i></a>
     
   </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
+  <div class="pure-u-10-24">
     
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/math">Math</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/simulation">Simulation</a>
+    <nav class="prev">
+      <a href="https://chiyosbigdragon.github.io/blog/2019/09/02/">SRM654 Div1Easy SquareScores</a>
+    </nav>
     
   </div>
-  
-  
-
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
 </div>
-  </header>
+
+
 
   
-</article>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
 
-    
-        <article>
-  <header>
-    <h2><a href="https://chiyosbigdragon.github.io/blog/2018/07/18/">SRM500 Div2Easy SRMCards</a></h2>
-    <div class="post-meta">
-
-  <div>
-    <i class="fa fa-calendar fa-fw"></i>
-    <time>18 Jul 2018, 12:00</time>
-  </div>
-
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-folder fa-fw"></i>
-    
-      <a class="post-taxonomy-topic" href="https://chiyosbigdragon.github.io/topics/competitiveprogramming">CompetitiveProgramming</a>
-    
-  </div>
-  
-  
-
-  
-  
-  
-  <div>
-    <i class="fa fa-tags fa-fw"></i>
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/srm">SRM</a>&nbsp;&#47;
-    
-      <a class="post-taxonomy-tag" href="https://chiyosbigdragon.github.io/tags/greedy">Greedy</a>
-    
-  </div>
-  
-  
-
-</div>
-  </header>
-
-  
-</article>
-
+(function() {
     
     
+    if (window.location.hostname == "localhost")
+        return;
 
-
-<nav class="pagination" role="pagination">
-  
-  <a href="https://chiyosbigdragon.github.io/tags/srm/page/2/"><i class="fa fa-chevron-left"></i></a>
-  
-  <span>&nbsp;3 / 3&nbsp;</span>
-  
-  <i class="fa fa-chevron-right"></i>
-  
-</nav>
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'chiyosbigdragon';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
 </div>
