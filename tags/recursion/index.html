@@ -7,7 +7,9 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.56.3" />
 
-  <title>Recursion | Spielsand</title>
+  <title>Recursion &middot; Spielsand</title>
+
+    
 
   
   
@@ -30,32 +32,31 @@
   <link rel="stylesheet" href="https://chiyosbigdragon.github.io/css/blackburn.css">
 
   
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
   
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" type="text/css">
 
   
-  
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
   
-  <link rel="alternate" type="application/rss+xml" title="Spielsand" href="https://chiyosbigdragon.github.io/tags/recursion/index.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Spielsand"
+    href='https://chiyosbigdragon.github.io/tags/recursion/index.xml' />
   
 
   
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/github-gist.min.css">
+  <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
   
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/languages/yaml.min.js"></script>
   
   <script>hljs.initHighlightingOnLoad();</script>
   
 
   <link rel="shortcut icon" href="https://chiyosbigdragon.github.io/img/favicon.ico" type="image/x-icon" />
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   
     
@@ -120,7 +121,8 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://chiyosbigdragon.github.io/tags/recursion/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      <a class="pure-menu-link" href='https://chiyosbigdragon.github.io/tags/recursion/index.xml'><i
+          class="fas fa-rss fa-fw"></i>RSS</a>
     </li>
     
 
@@ -169,10 +171,8 @@
     
 
     
-
-    
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://github.com/ChiyosBigDragon" target="_blank"><i class="fa fa-github fa-fw"></i>GitHub</a>
+      <a class="pure-menu-link" href="https://github.com/ChiyosBigDragon" rel="me" target="_blank"><i class="fab fa-github-square fa-fw"></i>GitHub</a>
     </li>
     
 
@@ -230,6 +230,7 @@
         <article>
   <header>
     <h2><a href="https://chiyosbigdragon.github.io/blog/2018/08/10/">SRM505 Div1Easy RectangleArea</a></h2>
+
     <div class="post-meta">
 
   <div>
@@ -268,8 +269,24 @@
   
 
 </div>
+
   </header>
 
+  <p>
+  URL http://community.topcoder.com/stat?c=problem_statement&amp;pm=11400
+概略 小長方形を組み合わせた長方形の盤面が与えられる．小長方形の各々について，面積がわかっていればY，そうでなければNと表記される．質問をするたび，任意のNが1つYに変化する．最低で何回質問をすれば盤面全てをYに変えられるか．
+方針 図の赤枠のように長方形をとる．このとき，頂点と接する4つの小長方形に着目する．
+ 図より，このうち3つの面積がわかっている(Y)ならば，残り1つの面積もわかる．このような作業を繰り返すといずれ盤面のYが増えなくなるため，小長方形の面積を質問する必要がある．
+質問する小長方形はどれでもよさそうだが確証はない．
+追記1: ケースが大きいとTLEするらしい．再帰部分が明らかに怪しいがいまいちわからない．改善中…
+追記2: creepさんなどの記事を参考にして通しました．TLE解では再帰時に頂点を全探索していたので $O(W^2H^2)$ だったが，実際にはN→Yとしたところに関係する場所しか変わらないので，$O(WH)$ に減らせるはず．結果として全体では $O(W^3H^3)$ → $O(W^2H^2)$ に削減．
+ 改善後 [展開する]   改善前 #include &lt;bits/stdc++.h&gt; using namespace std; class RectangleArea { public: int h,w; int board[51][51]; int ret=-1; void greed(){ for(int y=0;y&lt;h-1;y++){ for(int x=0;x&lt;w-1;x++){ for(int dy=y;dy&lt;h;dy++){ for(int dx=x;dx&lt;w;dx++){ if(board[y][x]+board[y][dx]+board[dy][x]+board[dy][dx]==3){ board[y][x]=board[y][dx]=board[dy][x]=board[dy][dx]=1; greed(); } } } } } } int minimumQueries( vector &lt;string&gt; known ){ h=known.size(); w=known[0].size(); for(int y=0;y&lt;h;y++){ for(int x=0;x&lt;w;x++){ if(known[y][x]=='Y') board[y][x]=1; else board[y][x]=0; } } while(1){ ret++; greed(); bool end=true; for(int y=0;y&lt;h;y++){ for(int x=0;x&lt;w;x++){ if(board[y][x]==0){ board[y][x]=1; end=false; break; } } if(!
+  </p>
+
+  
+  <footer>
+    <a href="https://chiyosbigdragon.github.io/blog/2018/08/10/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
   
 </article>
 

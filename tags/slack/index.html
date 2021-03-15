@@ -7,7 +7,9 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.56.3" />
 
-  <title>Slack | Spielsand</title>
+  <title>Slack &middot; Spielsand</title>
+
+    
 
   
   
@@ -30,32 +32,31 @@
   <link rel="stylesheet" href="https://chiyosbigdragon.github.io/css/blackburn.css">
 
   
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
   
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" type="text/css">
 
   
-  
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
   
-  <link rel="alternate" type="application/rss+xml" title="Spielsand" href="https://chiyosbigdragon.github.io/tags/slack/index.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Spielsand"
+    href='https://chiyosbigdragon.github.io/tags/slack/index.xml' />
   
 
   
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/github-gist.min.css">
+  <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
   
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/languages/yaml.min.js"></script>
   
   <script>hljs.initHighlightingOnLoad();</script>
   
 
   <link rel="shortcut icon" href="https://chiyosbigdragon.github.io/img/favicon.ico" type="image/x-icon" />
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   
     
@@ -120,7 +121,8 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://chiyosbigdragon.github.io/tags/slack/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      <a class="pure-menu-link" href='https://chiyosbigdragon.github.io/tags/slack/index.xml'><i
+          class="fas fa-rss fa-fw"></i>RSS</a>
     </li>
     
 
@@ -169,10 +171,8 @@
     
 
     
-
-    
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://github.com/ChiyosBigDragon" target="_blank"><i class="fa fa-github fa-fw"></i>GitHub</a>
+      <a class="pure-menu-link" href="https://github.com/ChiyosBigDragon" rel="me" target="_blank"><i class="fab fa-github-square fa-fw"></i>GitHub</a>
     </li>
     
 
@@ -230,6 +230,7 @@
         <article>
   <header>
     <h2><a href="https://chiyosbigdragon.github.io/blog/2019/03/13/">Node.jsで作る番組情報通知Bot</a></h2>
+
     <div class="post-meta">
 
   <div>
@@ -266,7 +267,24 @@
   
 
 </div>
+
   </header>
+
+  <p>
+    実行結果 小さいかもしれませんね．すみません．
+先に この記事は下記事の内容をパクったと言っても過言ではありません．
+ もはや写経ですが勉強記録用なので．
+動機 時の流れか，我が家では4月から新聞の購読を停止することになりました．非常に残念であります．かくいう私も，新聞をまともに読んでいたのはGコードが消えるか否かのころまでだったと思います．今ではラテ欄とスポーツ欄に隔月で発生する大相撲ぐらいしか読んでいません．あと下世話な週刊誌の広告．
+テレビっ子な私はラテ欄の代替を探さなければならないわけですが，Webの番組表の扱いにくさは厳しいものがあります．あの縦長どうにかなりませんか．あの中で見たい番組を探すのは至難の技でしょう．こんな状態なので最低限，自分が興味のある番組くらいは抑えておきたいわけです．スクレイピングはPythonでかじっているので苦労はしないと思うのですが．
+流れ  手作業でのURL取得 スクレイピングと整形 Slackへの通知 実行  手作業でのURL取得 番組を探す &mdash; Gガイド.テレビ王国で見たい番組のキーワードや芸能人の名前を入力しURLを生成します．ここ一番ダサいです．試しに地上波+金属バット1で検索します．
+https://tv.so-net.ne.jp/schedulesBySearch.action?condition.genres[0].parentId=-1&amp;condition.genres[0].childId=-1&amp;stationPlatformId=1&amp;condition.keyword=%E9%87%91%E5%B1%9E%E3%83%90%E3%83%83%E3%83%88&amp;submit=%E6%A4%9C%E7%B4%A2&amp;descriptive=true
+このURLとページのソースを元にスクレイピングしていきます．url.jsonには後で使う情報を入れておきます．
+url.json [展開する]   スクレイピングと整形 TV_scrape.js [展開する]   メモ  ライブラリはcheerio-httpcliを使う．requireはimportみたいなものだろうか． 関数名の前にasyncを置くと内部でawaitが使える．awaitは待機と例外処理を担う？ index側からfetchにURLを投げる． タグはそのまま，idは#，classは.を付けて表現する． module.exportsは外から呼んだときに使えるようにするもの？  Slackへの通知 slack.js [展開する]   メモ  一言一句違わず申し訳ない気持ちになる． やっていることは単純だが一から書くとなると…  index.js 通知といったら瓦版なのでチャンネル名は#瓦版です．fetchの前にawaitを入れないとエラーを吐くので気を付けます(1敗)．
+[展開する]   実行 node index.js   角界のロボコップ
+他にやりたいこと  AWSで定期的に実行． Slackのslash-commandを用いた検索条件の追加削除．  今回はここまで．
+
+ 金属バット (お笑いコンビ) &mdash; Wikipedia[return]   
+  </p>
 
   
 </article>

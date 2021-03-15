@@ -7,7 +7,9 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.56.3" />
 
-  <title>BeautifulSoup4 | Spielsand</title>
+  <title>BeautifulSoup4 &middot; Spielsand</title>
+
+    
 
   
   
@@ -30,32 +32,31 @@
   <link rel="stylesheet" href="https://chiyosbigdragon.github.io/css/blackburn.css">
 
   
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
   
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" type="text/css">
 
   
-  
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
   
-  <link rel="alternate" type="application/rss+xml" title="Spielsand" href="https://chiyosbigdragon.github.io/tags/beautifulsoup4/index.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Spielsand"
+    href='https://chiyosbigdragon.github.io/tags/beautifulsoup4/index.xml' />
   
 
   
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/github-gist.min.css">
+  <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
   
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/languages/yaml.min.js"></script>
   
   <script>hljs.initHighlightingOnLoad();</script>
   
 
   <link rel="shortcut icon" href="https://chiyosbigdragon.github.io/img/favicon.ico" type="image/x-icon" />
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   
     
@@ -120,7 +121,8 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://chiyosbigdragon.github.io/tags/beautifulsoup4/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      <a class="pure-menu-link" href='https://chiyosbigdragon.github.io/tags/beautifulsoup4/index.xml'><i
+          class="fas fa-rss fa-fw"></i>RSS</a>
     </li>
     
 
@@ -169,10 +171,8 @@
     
 
     
-
-    
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://github.com/ChiyosBigDragon" target="_blank"><i class="fa fa-github fa-fw"></i>GitHub</a>
+      <a class="pure-menu-link" href="https://github.com/ChiyosBigDragon" rel="me" target="_blank"><i class="fab fa-github-square fa-fw"></i>GitHub</a>
     </li>
     
 
@@ -230,6 +230,7 @@
         <article>
   <header>
     <h2><a href="https://chiyosbigdragon.github.io/blog/2019/04/08/">BeautifulSoup4で某番組HPをスクレイピング</a></h2>
+
     <div class="post-meta">
 
   <div>
@@ -266,8 +267,20 @@
   
 
 </div>
+
   </header>
 
+  <p>
+  今回はここのページをスクレイピングします．使途未定ですが，同一人物の写真が大量にあるので解析に使えるかもしれないし使えないかもしれない．
+春の番組改編でリニューアルしてましたけど何にも変わってなかったですね．でもホームページだけは変わってるんですよ．古いページは任天堂1を除いて十中八九消される運命なので救出しなければなりません．すでにバナー消えてたし．
+解析 http://www.ntv.co.jp/anothersky/fashion/index.html http://www.ntv.co.jp/anothersky/fashion/index_2.html http://www.ntv.co.jp/anothersky/fashion/index_3.html … http://www.ntv.co.jp/anothersky/fashion/index_25.html  &lt;div class=&quot;entryBox clearfix&quot;&gt; &lt;div class=&quot;img&quot;&gt; &lt;img src=&quot;画像1&quot;&gt; &lt;img src=&quot;画像2&quot;&gt; &lt;/div&gt; &lt;div class=&quot;entryBody&quot;&gt; &lt;h3&gt;日付&lt;/h3&gt; &lt;p&gt;詳細&lt;/p&gt; &lt;/div&gt; &lt;/div&gt;  another skyの雰囲気良いですよね．シンプルで洗練された印象があります．一つ気に食わない点があって，ワイプが斜めなんですよ．そこだけ変に立体感があってゴチャっと見えるというか．惜しい．
+スクレイピング def scrape(soup) : pages = soup.find_all(class_='entryBox clearfix') for page in pages : div = page.find(class_='entryBody') # 日付取得 date = ''.join(div.find('h3').text.split()) dir = './data/' + date + '/' os.mkdir(dir) # 詳細取得 details = div.find('p').text with open(dir + str('details.txt'), 'w', encoding='utf-8') as file : file.
+  </p>
+
+  
+  <footer>
+    <a href="https://chiyosbigdragon.github.io/blog/2019/04/08/">Read more<i class="fa fa-angle-double-right fa-fw"></i></a>
+  </footer>
   
 </article>
 

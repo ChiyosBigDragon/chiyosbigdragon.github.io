@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Spielsand</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019. All rights reserved.</copyright>
-    <lastBuildDate>Thu, 21 Nov 2019 23:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 15 Mar 2021 20:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://chiyosbigdragon.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Marathon</title>
+      <link>https://chiyosbigdragon.github.io/tags/marathon/</link>
+      <pubDate>Mon, 15 Mar 2021 20:00:00 +0900</pubDate>
+      
+      <guid>https://chiyosbigdragon.github.io/tags/marathon/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>ICPC</title>

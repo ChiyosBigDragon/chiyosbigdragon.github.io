@@ -7,7 +7,9 @@
   <meta name="description" content="">
   <meta name="generator" content="Hugo 0.56.3" />
 
-  <title>Independent Set | Spielsand</title>
+  <title>Independent Set &middot; Spielsand</title>
+
+    
 
   
   
@@ -30,32 +32,31 @@
   <link rel="stylesheet" href="https://chiyosbigdragon.github.io/css/blackburn.css">
 
   
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
   
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" type="text/css">
 
   
-  
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
  
   
-  <link rel="alternate" type="application/rss+xml" title="Spielsand" href="https://chiyosbigdragon.github.io/tags/independent-set/index.xml" />
+  <link rel="alternate" type="application/rss+xml" title="Spielsand"
+    href='https://chiyosbigdragon.github.io/tags/independent-set/index.xml' />
   
 
   
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/github-gist.min.css">
+  <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
   
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+  <script async src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/languages/yaml.min.js"></script>
   
   <script>hljs.initHighlightingOnLoad();</script>
   
 
   <link rel="shortcut icon" href="https://chiyosbigdragon.github.io/img/favicon.ico" type="image/x-icon" />
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   
     
@@ -120,7 +121,8 @@
 
     
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://chiyosbigdragon.github.io/tags/independent-set/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      <a class="pure-menu-link" href='https://chiyosbigdragon.github.io/tags/independent-set/index.xml'><i
+          class="fas fa-rss fa-fw"></i>RSS</a>
     </li>
     
 
@@ -169,10 +171,8 @@
     
 
     
-
-    
     <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://github.com/ChiyosBigDragon" target="_blank"><i class="fa fa-github fa-fw"></i>GitHub</a>
+      <a class="pure-menu-link" href="https://github.com/ChiyosBigDragon" rel="me" target="_blank"><i class="fab fa-github-square fa-fw"></i>GitHub</a>
     </li>
     
 
@@ -230,6 +230,7 @@
         <article>
   <header>
     <h2><a href="https://chiyosbigdragon.github.io/blog/2019/03/22/">SRM753 Div1Easy MaxCutFree</a></h2>
+
     <div class="post-meta">
 
   <div>
@@ -270,7 +271,17 @@
   
 
 </div>
+
   </header>
+
+  <p>
+  URL https://community.topcoder.com/stat?c=problem_statement&amp;pm=15257
+概略 単純無向グラフ $G$ が与えられる．$G$ の橋を含まないような誘導部分グラフのうち，頂点数が最大となるものを求める．
+方針 要は，$G$ から橋だけを残したグラフについての最大独立集合問題である．このグラフは明らかに森であるから，木DPが使える．
+参考  制約が甘いので橋の検出にはUnionFindを使う．各辺ごとにそれを除いたグラフを構築し，端点の連結性を判定する．
+[展開する]   反省 本番では橋の検出までしかできなかった．最大独立集合問題であることにはなんとなく気付いていたが，名前だけが先走った．「NP困難じゃん…」
+dp等の初期化も忘れずに．
+  </p>
 
   
 </article>
